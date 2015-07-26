@@ -1,0 +1,12 @@
+[
+	{
+		"modid": "machinilorum",
+		"name": "Craftus Machinilorum",
+		"description": "Extending minecraft with useful machines and tools!",
+		"version": "0.2.2.3",
+		"mcversion": "1.7.10",
+		"url": "http://www.dalthow.com",
+		"authorList": ["Trevi Awater"],
+		"credits": "A modification by Dalthow Game Studios"
+	}
+]

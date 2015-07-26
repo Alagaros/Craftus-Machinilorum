@@ -1,0 +1,18 @@
+itemGroup.tabMachinilorumItems=Machinilorum Predmeti
+itemGroup.tabMachinilorumBlocks=Machinilorum Kocke
+
+item.filter.name=Filter
+item.bomb.name=Bomba
+
+container.fragmentizer=Fragmentizer
+container.stoneCutter=Kamen Rezaè	
+container.mobRadar=Radar Mobova
+
+tile.stoneCutter.name=Kamen Rezaè
+tile.fragmentizer.name=Fragmentizer
+tile.eggIncubator.name=Inkubator Jaja
+tile.woodCutter.name=Drvo Rezaè
+tile.mobRadar.name=Radar Mobova
+tile.conveyorBelt.name=Pokretna Traka
+tile.chalk.raw.name=Kreda
+tile.chalk.bricks.name=Kreda Kocka
