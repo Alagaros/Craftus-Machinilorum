@@ -1,12 +1,3 @@
-/**
- * Craftus Machinilorum
- *
- * 
- * @Author Dalthow Game Studios 
- * @Class BlockEggIncubator.java
- * 
- **/
-
 package com.dalthow.machinilorum.block;
 
 import com.dalthow.machinilorum.base.Main;
@@ -26,9 +17,18 @@ import net.minecraft.world.World;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
+/**
+ * Craftus Machinilorum
+ *
+ * 
+ * @author Dalthow Game Studios 
+ * @class BlockEggIncubator.java
+ * 
+ **/
+
 public class BlockEggIncubator extends Block implements ITileEntityProvider
 {
-	// Constructor
+	// Constructor that adds data to the block.
 	
 	public BlockEggIncubator()
 	{
@@ -40,7 +40,7 @@ public class BlockEggIncubator extends Block implements ITileEntityProvider
 	}
 	
 	
-	// Determines the textures displayed on the blocks based on the side and meta data also gets ignored by the server
+	// Determines the textures displayed on the blocks based on the side and meta data also gets ignored by the server.
 	
 	@SideOnly(Side.CLIENT)
 	public IIcon getIcon(int side, int meta)
@@ -49,7 +49,7 @@ public class BlockEggIncubator extends Block implements ITileEntityProvider
 	}
 	
 	
-	// Creates a tile entity when you place it down
+	// Creates a tile entity when you place it down.
 	
 	public TileEntity createNewTileEntity(World world, int par1) 
 	{
@@ -59,7 +59,7 @@ public class BlockEggIncubator extends Block implements ITileEntityProvider
 	}
 	
 	
-	// Makes you not see trough the world because the block isn't full
+	// Makes you not see trough the world because the block isn't full.
 	
 	@Override
 	public boolean isOpaqueCube()
@@ -68,7 +68,7 @@ public class BlockEggIncubator extends Block implements ITileEntityProvider
     }
 	
 	
-	// Makes the block render as a custom block
+	// Makes the block render as a custom block.
 	
 	@Override
     public int getRenderType()
@@ -83,13 +83,16 @@ public class BlockEggIncubator extends Block implements ITileEntityProvider
     }
 	
 	
-	// Makes something happen when you click the block
+	// Makes something happen when you click the block.
 	
     @Override
     public boolean onBlockActivated(World world, int xPos, int yPos, int zPos, EntityPlayer player, int par1, float par2, float par3, float par4) 
     {  
         TileEntityEggIncubator tile = (TileEntityEggIncubator)world.getTileEntity(xPos, yPos, zPos); 
-         
+        
+        
+        // Rotating the block if its clicked with an empty hand.
+        
         if(player.getHeldItem() == null) 
         { 
         	if(world.getBlockMetadata(xPos, yPos, zPos) < 5)
@@ -103,7 +106,10 @@ public class BlockEggIncubator extends Block implements ITileEntityProvider
     		}
         	
             return true; 
-        } 
+        }
+        
+        
+        // Speeding up the hatching process if the item is wheat.
         
         if(player.getHeldItem().getItem() == Items.wheat) 
         { 
@@ -130,7 +136,10 @@ public class BlockEggIncubator extends Block implements ITileEntityProvider
             
           	return true;
         }
-          
+        
+        
+        // Inserting or resetting if the item is an egg.
+        
         if(player.getHeldItem().getItem() == Items.egg) 
         { 
             if(tile.canPutEggIn == false) 
@@ -162,17 +171,6 @@ public class BlockEggIncubator extends Block implements ITileEntityProvider
             return true; 
         }
         
-        else if(player.getHeldItem().getItem() == Items.wheat)
-        {
-        	if(tile.canPutEggIn == false)
-        	{
-        		if(world.isRemote)
-        		{
-        			return true;
-        		}
-        	}
-        }
-         
         return false; 
     } 
 }

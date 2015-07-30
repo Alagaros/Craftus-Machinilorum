@@ -1,12 +1,3 @@
-/**
- * Craftus Machinilorum
- *
- * 
- * @Author Dalthow Game Studios 
- * @Class BlockChalkboard.java
- * 
- **/
-
 package com.dalthow.machinilorum.block;
 
 import com.dalthow.machinilorum.base.Main;
@@ -25,9 +16,18 @@ import net.minecraft.world.World;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
+/**
+ * Craftus Machinilorum
+ *
+ * 
+ * @author Dalthow Game Studios 
+ * @class BlockChalkboard.java
+ * 
+ **/
+
 public class BlockChalkboard extends Block implements ITileEntityProvider
 {
-	// Constructor
+	// Constructor that adds data to the block.
 	
 	public BlockChalkboard()
 	{
@@ -39,7 +39,7 @@ public class BlockChalkboard extends Block implements ITileEntityProvider
 	}
 	
 	
-	// Sets the block bounds based on the meta data 
+	// Sets the block bounds based on the meta data.
 	
 	public void setBlockBoundsBasedOnState(IBlockAccess access, int xPos, int yPos, int zPos)
     {
@@ -67,7 +67,7 @@ public class BlockChalkboard extends Block implements ITileEntityProvider
     }
 	
 	
-	// Determines the textures displayed on the blocks based on the side and meta data also gets ignored by the server
+	// Determines the textures displayed on the blocks based on the side and meta data also gets ignored by the server.
 	
 	@SideOnly(Side.CLIENT)
 	public IIcon getIcon(int side, int meta)
@@ -76,7 +76,7 @@ public class BlockChalkboard extends Block implements ITileEntityProvider
 	}
 	
 	
-	// Creates a tile entity when you place it down
+	// Creates a tile entity when you place it down.
 	
 	public TileEntity createNewTileEntity(World world, int par1) 
 	{
@@ -86,7 +86,7 @@ public class BlockChalkboard extends Block implements ITileEntityProvider
 	}
 	
 	
-	// Makes you not see trough the world because the block isn't full
+	// Makes you not see trough the world because the block isn't full.
 	
 	@Override
 	public boolean isOpaqueCube()
@@ -95,7 +95,7 @@ public class BlockChalkboard extends Block implements ITileEntityProvider
     }
 	
 	
-	// Makes the block render as a custom block
+	// Makes the block render as a custom block.
 	
 	@Override
     public int getRenderType()
@@ -110,19 +110,27 @@ public class BlockChalkboard extends Block implements ITileEntityProvider
     }
 	
 	
-	// Opens the user interface
+	// Opens the user interface when the player uses this block.
     
 	@Override
     public boolean onBlockActivated(World world, int xPos, int yPos, int zPos, EntityPlayer player, int par1, float par2, float par3, float par4)  
     {
+		// Obtaining the tile entity.
+		
 		TileEntityChalkboard tile = (TileEntityChalkboard)world.getTileEntity(xPos, yPos, zPos); 
 
+		
+		// Clearing the chalk board if the player is sneaking.
+		
 		if(player.isSneaking())
 		{
 			clearChalkBoard(tile);
 			
 			return true;
 		}
+		
+		
+		// Rotating it if the user has an empty hand.
 		
 		else if(player.getHeldItem() == null)
 		{
@@ -138,6 +146,9 @@ public class BlockChalkboard extends Block implements ITileEntityProvider
 			
 			clearChalkBoard(tile);
 		}
+		
+		
+		// Drawing a line on the chalk board.
 		
 		else if(player.getHeldItem().getItem() == Main.blockChalk.getItem(world, xPos, yPos, zPos))
 		{
@@ -158,6 +169,9 @@ public class BlockChalkboard extends Block implements ITileEntityProvider
 				
 				tile.startDefined = false;
 				
+				
+				// Checking if the player is in creative mode, if not consume a piece of chalk.
+				
 				if(!player.capabilities.isCreativeMode)
 				{
 					player.inventory.consumeInventoryItem(new ItemStack(Main.blockChalk).getItem());
@@ -170,6 +184,14 @@ public class BlockChalkboard extends Block implements ITileEntityProvider
 		return false;
     }
 	
+	
+	/**
+     * addRecipes Adds custom recipe's to the game if they are allowed to be crafted.
+     *
+     * @param {TileEntityChalkboard} tile The tile entity that is linked to the block that should be cleared.
+     *
+     * @return {void}
+     */
 	private void clearChalkBoard(TileEntityChalkboard tile)
 	{
 		tile.startPosX = 0;

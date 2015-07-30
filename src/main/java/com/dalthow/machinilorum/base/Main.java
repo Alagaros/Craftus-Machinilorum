@@ -1,12 +1,3 @@
-/**
- * Craftus Machinilorum
- *
- * 
- * @Author Dalthow Game Studios
- * @Class Main.java 
- * 
- **/
-
 package com.dalthow.machinilorum.base;
 
 import java.io.File;
@@ -66,10 +57,19 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 
+/**
+ * Craftus Machinilorum
+ *
+ * 
+ * @author Dalthow Game Studios
+ * @class Main.java 
+ * 
+ **/
+
 @Mod(modid = Reference.modId, name = Reference.name, version = Reference.version, dependencies="required-after:RenderPlayerAPI")
 public class Main 
 {
-	// Declaration for the configuration file variables
+	// Declaration for the configuration file variables.
 
 	public static Property recipeObsidian;
 	public static Property recipeMossCobblestone;
@@ -94,13 +94,13 @@ public class Main
 	public static Property recipeShoppingCart;
 	
 	
-	// Used to reference to itself
+	// Used to reference to itself.
 	
 	@Instance
 	public static Main instance;
 	
 	
-	// Registering the proxy's
+	// Registering the proxy's.
 	
 	@SidedProxy(clientSide = "com.dalthow.machinilorum.proxy.ClientProxy", serverSide = "com.dalthow.machinilorum.proxy.CommonProxy") 
 	
@@ -108,18 +108,18 @@ public class Main
     public static ClientProxy ClientProxy; 
       
     
-    // Network packet declaration
+    // Network packet declaration.
 	
  	public static final PacketPipeline packetPipeline = new PacketPipeline();
  	
     
-	// Creative tabs
+	// Creative tabs declaration.
 	
 	public static CreativeTabs tabMachinilorumTools = new TabTools(CreativeTabs.getNextID(), "tabMachinilorumTools");
 	public static CreativeTabs tabMachinilorumMachines = new TabMachines(CreativeTabs.getNextID(), "tabMachinilorumMachines");
 		
 		
-	// Declaration for items
+	// Declaration for items.
 	
 	public static Item itemFilter;
 	public static Item itemBomb;
@@ -127,7 +127,7 @@ public class Main
 	public static Item itemChecker;
 	
 	
-	// Declaration for blocks
+	// Declaration for blocks.
 	
 	public static Block blockStoneCutter;
 	public static Block blockFragmentizer;
@@ -140,15 +140,20 @@ public class Main
 	public static Block blockChalkboard;
 		
 	
-	// Initialisation that happens before any of the world is loaded
+	// Initialization that happens before any of the world is loaded.
 
 	@Mod.EventHandler
 	public void preInit(FMLInitializationEvent event)
 	{
+		// Setting up the items.
+		
 		itemFilter  = new ItemFilter();
 		itemBomb = new ItemBomb();
 		itemShoppingCart = new ItemShoppingCart();
 		itemChecker = new ItemChecker();
+		
+		
+		// Setting up the blocks.
 		
 		blockStoneCutter = new BlockStoneCutter().setBlockName("stoneCutter");
 		blockFragmentizer = new BlockFragmentizer().setBlockName("fragmentizer");
@@ -160,9 +165,15 @@ public class Main
 		blockSprinkler = new BlockSprinkler().setBlockName("sprinkler");
 		blockChalkboard = new BlockChalkboard().setBlockName("chalkboard");
 		
+		
+		// Registering the blocks in the block registry.
+		
 		RegisterHandler.registerBlock(blockStoneCutter);
 		RegisterHandler.registerBlock(blockFragmentizer);
 
+		
+		// Registering the item blocks, this is used for every block that has a custom render.
+		
 		RegisterHandler.registerBlockWithItem(blockChalk, ItemChalk.class);
 		RegisterHandler.registerBlockWithItem(blockEggIncubator, ItemEggIncubator.class);
 		RegisterHandler.registerBlockWithItem(blockWoodCutter, ItemWoodCutter.class);
@@ -170,6 +181,9 @@ public class Main
 		RegisterHandler.registerBlockWithItem(blockConveyorBelt, ItemConveyorBelt.class);
 		RegisterHandler.registerBlockWithItem(blockSprinkler, ItemSprinkler.class);
 		RegisterHandler.registerBlockWithItem(blockChalkboard, ItemChalkboard.class);
+		
+		
+		// Registering the tile entities so they get ticked.
 		
 		RegisterHandler.registerTileEntity(TileEntityFragmentizer.class, "fragmentizer");
 		RegisterHandler.registerTileEntity(TileEntityEggIncubator.class, "eggIncubator");
@@ -179,20 +193,35 @@ public class Main
 		RegisterHandler.registerTileEntity(TileEntitySprinkler.class, "sprinkler");
 		RegisterHandler.registerTileEntity(TileEntityChalkboard.class, "chalkboard");
 		
+		
+		// Registering the items in the item registry.
+		
 		RegisterHandler.registerItem(itemFilter);
 		RegisterHandler.registerItem(itemBomb);
 		RegisterHandler.registerItem(itemShoppingCart);
 		RegisterHandler.registerItem(itemChecker);
 
+		
+		// Registering the entities in the entity registry.
+		
 		RegisterHandler.registerEntity(EntityShoppingCart.class, "shoppingCart");
 		RegisterHandler.registerEntity(EntityBomb.class, "bomb");
 		
+		
+		// Registering the world generator so chalk gets created.
+		
 		GameRegistry.registerWorldGenerator(new WorldBlockGenerator(), 1);
+		
+		
+		// Allowing some of the utility items to be spawned in randomly generated chests.
 		
         ChestGenHooks.getInfo(ChestGenHooks.VILLAGE_BLACKSMITH).addItem(new WeightedRandomChestContent(new ItemStack(itemFilter), 1, 1, 40)); 
         ChestGenHooks.getInfo(ChestGenHooks.MINESHAFT_CORRIDOR).addItem(new WeightedRandomChestContent(new ItemStack(itemBomb), 1, 5, 25));          
         ChestGenHooks.getInfo(ChestGenHooks.PYRAMID_JUNGLE_CHEST).addItem(new WeightedRandomChestContent(new ItemStack(itemChecker), 1, 1, 30));          
-
+   
+        
+        // Creates a configuration file if there isn't one already.
+		
         Configuration config = new Configuration(new File("config/" + Reference.modId + ".cfg"));
 		
 		config.load();
@@ -221,14 +250,20 @@ public class Main
 		
 		config.save();
 
+		
+		// Adding and removing custom recipe's to or out of the game.
+		
 		RecipeHandler.loadRecipes();
 		RecipeHandler.removeRecipes();
+		
+		
+		// Loading the custom models.
 		
 		CommonProxy.loadRenderers();
 	}
 	
 	
-	// Initialisation that happens when the world is loaded
+	// Initialization that happens when the world is loaded.
 	
 	@Mod.EventHandler
 	public void init(FMLInitializationEvent event) 

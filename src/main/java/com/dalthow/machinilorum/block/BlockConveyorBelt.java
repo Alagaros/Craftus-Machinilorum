@@ -1,12 +1,3 @@
-/**
- * Craftus Machinilorum
- *
- * 
- * @Author Dalthow Game Studios 
- * @Class BlockConveyorBelt.java
- * 
- **/
-
 package com.dalthow.machinilorum.block;
 
 import com.dalthow.machinilorum.base.Main;
@@ -24,9 +15,18 @@ import net.minecraft.world.World;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
+/**
+ * Craftus Machinilorum
+ *
+ * 
+ * @author Dalthow Game Studios 
+ * @class BlockConveyorBelt.java
+ * 
+ **/
+
 public class BlockConveyorBelt extends Block implements ITileEntityProvider
 {
-	// Constructor
+	// Constructor that adds data to the block.
 	
 	public BlockConveyorBelt()
 	{
@@ -39,7 +39,7 @@ public class BlockConveyorBelt extends Block implements ITileEntityProvider
 	}
 	
 	
-	// Determines the textures displayed on the blocks based on the side and meta data also gets ignored by the server
+	// Determines the textures displayed on the blocks based on the side and meta data also gets ignored by the server.
 	
 	@SideOnly(Side.CLIENT)
 	public IIcon getIcon(int side, int meta)
@@ -48,7 +48,7 @@ public class BlockConveyorBelt extends Block implements ITileEntityProvider
 	}
 	
 	
-	// If a redstone wire is next to this block it connects
+	// If a redstone wire is next to this block it connects.
 	
 	@Override
 	public boolean canConnectRedstone(IBlockAccess access, int xPos, int yPos, int zPos, int par1)
@@ -57,7 +57,7 @@ public class BlockConveyorBelt extends Block implements ITileEntityProvider
 	}
 	
 	
-	// Creates a tile entity when you place it down
+	// Creates a tile entity when you place it down.
 	
 	public TileEntity createNewTileEntity(World world, int par1) 
 	{
@@ -67,7 +67,7 @@ public class BlockConveyorBelt extends Block implements ITileEntityProvider
 	}
 	
 	
-	// Makes you not see trough the world because the block isn't full
+	// Makes you not see trough the world because the block isn't full.
 	
 	@Override
 	public boolean isOpaqueCube()
@@ -76,7 +76,7 @@ public class BlockConveyorBelt extends Block implements ITileEntityProvider
     }
 	
 	
-	// Makes the block render as a custom block
+	// Makes the block render as a custom block.
 	
 	@Override
     public int getRenderType()
@@ -91,7 +91,7 @@ public class BlockConveyorBelt extends Block implements ITileEntityProvider
     }
 	
 	
-	// Makes something happen when you click the block
+	// Rotating it if the user has an empty hand.
 	
 	public boolean onBlockActivated(World world, int xPos, int yPos, int zPos, EntityPlayer player, int par1, float par2, float par3, float par4) 
     {  
