@@ -1,12 +1,3 @@
-/**
- * Craftus Machinilorum
- *
- * 
- * @Author Dalthow Game Studios
- * @Class BlockFragmentizer.java 
- * 
- **/
-
 package com.dalthow.machinilorum.block;
 
 import com.dalthow.machinilorum.base.Main;
@@ -32,9 +23,18 @@ import cpw.mods.fml.common.network.internal.FMLNetworkHandler;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
+/**
+ * Craftus Machinilorum
+ *
+ * 
+ * @author Dalthow Game Studios
+ * @class BlockFragmentizer.java 
+ * 
+ **/
+
 public class BlockFragmentizer extends BlockContainer
 {
-	// Constructor
+	// Constructor that adds data to the block.
 	
 	public BlockFragmentizer() 
 	{
@@ -47,13 +47,13 @@ public class BlockFragmentizer extends BlockContainer
 	}
 
 	
-	// Only make the texture variables on the client side so the server ignores this 
+	// Only make the texture variables on the client side so the server ignores this.
 	
 	@SideOnly(Side.CLIENT)
 	private IIcon frontIcon;
 
 	
-	// Determines the textures displayed on the blocks based on the side and meta data also gets ignored by the server
+	// Determines the textures displayed on the blocks based on the side and meta data also gets ignored by the server.
 	
 	@SideOnly(Side.CLIENT)
 	public IIcon getIcon(int side, int meta)
@@ -62,7 +62,7 @@ public class BlockFragmentizer extends BlockContainer
 	}
 	
 	
-	// Loads the different textures also gets ignored by the server
+	// Loads the different textures also gets ignored by the server.
 	
 	@SideOnly(Side.CLIENT)
 	public void registerBlockIcons(IIconRegister registry)
@@ -71,7 +71,7 @@ public class BlockFragmentizer extends BlockContainer
 	}
 	
 	
-	// If a redstone wire is next to this block it connects
+	// If a redstone wire is next to this block it connects.
 	
 	@Override
 	public boolean canConnectRedstone(IBlockAccess access, int xPos, int yPos, int zPos, int par1)
@@ -80,7 +80,7 @@ public class BlockFragmentizer extends BlockContainer
 	}
 	
 	
-	// Tells the game that a comparator can be used on this block
+	// Tells the game that a comparator can be used on this block.
 	
 	public boolean hasComparatorInputOverride()
     {
@@ -88,7 +88,7 @@ public class BlockFragmentizer extends BlockContainer
     }
 	
 	
-	// Tells the game how the comparator can be used on this block
+	// Tells the game how the comparator can be used on this block.
 	
     public int getComparatorInputOverride(World world, int xPos, int yPos, int zPos, int par1)
     {
@@ -96,7 +96,7 @@ public class BlockFragmentizer extends BlockContainer
     }
 	    
 	
-	// Checks if there is a hopper on top and a lever on the side, then it opens the user interface 
+	// Checks if there is a hopper on top and a lever on the side, then it opens the user interface.
     
     @Override
     public boolean onBlockActivated(World world, int xPos, int yPos, int zPos, EntityPlayer player, int par1, float par2, float par3, float par4)  
@@ -123,7 +123,7 @@ public class BlockFragmentizer extends BlockContainer
     }
    
     
-	// Creates a tile entity when you place down this block
+	// Creates a TileEntity when you place down this block.
 	
 	public TileEntity createNewTileEntity(World world, int par1) 
 	{
@@ -133,7 +133,7 @@ public class BlockFragmentizer extends BlockContainer
 	}
 	
 	
-	// When the player breaks the block
+	// When the player breaks the block.
 	
 	public void breakBlock(World world, int xPos, int yPos, int zPos, Block block, int meta) 
 	{
@@ -141,15 +141,17 @@ public class BlockFragmentizer extends BlockContainer
 	
 		if(tile != null) 
 		{
+			// Getting all the items in the inventory.
+			
 			for(int i = 0; i < tile.getSizeInventory(); i++) 
 			{
 				ItemStack itemStack = tile.getStackInSlot(i);
 			
 				if(itemStack != null) 
 				{
-					float f = world.rand.nextFloat() * 0.8F + 0.1F;
-					float f1 = world.rand.nextFloat() * 0.8F + 0.1F;
-					float f2 = world.rand.nextFloat() * 0.8F + 0.1F;
+					float var1 = world.rand.nextFloat() * 0.8F + 0.1F;
+					float var2 = world.rand.nextFloat() * 0.8F + 0.1F;
+					float var3 = world.rand.nextFloat() * 0.8F + 0.1F;
 				
 					while(itemStack.stackSize > 0) 
 					{
@@ -162,7 +164,7 @@ public class BlockFragmentizer extends BlockContainer
 					
 						itemStack.stackSize -= j;
 					
-						EntityItem item = new EntityItem(world, (double)((float)xPos + f), (double)((float)yPos + f1), (double)((float)zPos + f2), new ItemStack(itemStack.getItem(), j, itemStack.getItemDamage()));
+						EntityItem item = new EntityItem(world, (double)((float)xPos + var1), (double)((float)yPos + var2), (double)((float)zPos + var3), new ItemStack(itemStack.getItem(), j, itemStack.getItemDamage()));
 					
 						if(itemStack.hasTagCompound()) 
 						{

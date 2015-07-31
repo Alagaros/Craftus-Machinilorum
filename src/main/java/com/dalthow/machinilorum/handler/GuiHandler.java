@@ -1,12 +1,3 @@
-/**
- * Craftus Machinilorum
- *
- * 
- * @Author Dalthow Game Studios 
- * @Class GuiHandler.java
- * 
- **/
-
 package com.dalthow.machinilorum.handler;
 
 import com.dalthow.machinilorum.base.Main;
@@ -24,9 +15,18 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 import cpw.mods.fml.common.network.IGuiHandler;
 
+/**
+ * Craftus Machinilorum
+ *
+ * 
+ * @author Dalthow Game Studios 
+ * @class GuiHandler.java
+ * 
+ **/
+
 public class GuiHandler implements IGuiHandler
 {
-	// Whenever a player opens a interface it opens the container on the server side
+	// Whenever a player opens a interface it opens the container on the server side.
 	
 	public Object getServerGuiElement(int id, EntityPlayer player, World world, int xPos, int yPos, int zPos) 
 	{	
@@ -67,7 +67,7 @@ public class GuiHandler implements IGuiHandler
 	}
 	
 	
-	// Whenever a player opens a interface it opens the user interface on the client side
+	// Whenever a player opens a interface it opens the user interface on the client side.
 	
 	public Object getClientGuiElement(int id, EntityPlayer player, World world, int xPos, int yPos, int zPos) 
 	{

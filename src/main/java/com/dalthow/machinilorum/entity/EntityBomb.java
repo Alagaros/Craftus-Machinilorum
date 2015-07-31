@@ -1,12 +1,3 @@
-/**
-* Craftus Machinilorum
-*
-* 
-* @Author Dalthow Game Studios 
-* @Class EntityBomb.java
-* 
-**/
-
 package com.dalthow.machinilorum.entity; 
 
 import net.minecraft.entity.Entity;
@@ -16,16 +7,25 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.world.World;
 
+/**
+* Craftus Machinilorum
+*
+* 
+* @author Dalthow Game Studios 
+* @class EntityBomb.java
+* 
+**/
+
 public class EntityBomb extends EntityThrowable 
 { 
-	// Declarations 
+	// Declarations for the fuse time and explosion radius.
 	
 	private int fuse; 
 	
 	public static float explosionRadius;
 	
 	
-	// Constructor
+	// Constructors, the first one adds data to the entity.
 	
 	public EntityBomb(World world) 
 	{ 
@@ -48,7 +48,7 @@ public class EntityBomb extends EntityThrowable
 	} 
 	
 	
-	// Setting up how the bomb acts when its on ground or in the air
+	// Setting up how the bomb acts when its on ground or in the air.
 	
 	public void onUpdate() 
 	{ 
@@ -63,7 +63,7 @@ public class EntityBomb extends EntityThrowable
 		motionY *= 0.9800000190734863F; 
 		motionZ *= 0.9800000190734863F; 
 		
-		if (onGround) 
+		if(onGround) 
 		{ 
 			motionX *= 0.699999988079071F; 
 			motionZ *= 0.699999988079071F; 
@@ -71,7 +71,7 @@ public class EntityBomb extends EntityThrowable
 			
 		} 
 		
-		if (fuse++ >= 50) 
+		if(fuse++ >= 50) 
 		{ 
 			setDead(); 
 			
@@ -88,7 +88,7 @@ public class EntityBomb extends EntityThrowable
 	} 
 	
 	
-	// Do the explosion
+	// Do the explosion.
 	
 	private void explode() 
 	{ 
@@ -96,7 +96,7 @@ public class EntityBomb extends EntityThrowable
 	} 
 	
 	
-	// Writing the bomb fuse time to the world file
+	// Writing the bomb fuse time to the world file.
 	
 	public void writeEntityToNBT(NBTTagCompound tag) 
 	{ 
@@ -105,7 +105,7 @@ public class EntityBomb extends EntityThrowable
 	} 
 	
 	
-	// Reading the bomb fuse time from the world file
+	// Reading the bomb fuse time from the world file.
 	
 	public void readEntityFromNBT(NBTTagCompound tag) 
 	{ 
@@ -114,19 +114,16 @@ public class EntityBomb extends EntityThrowable
 	} 
 	
 	
-	// If the bomb hits a other entity
+	// If the bomb hits a other entity.
 	
-	public void onCollideWithEntity(EntityBomb Entity) 
+	public void onCollideWithEntity(EntityBomb entity) 
 	{ 
-		Entity.explode(); 
+		entity.explode(); 
 	} 
-	
-	
-	// If the bomb hits the ground or something that is not a entity
-	
+		
 	@Override
 	protected void onImpact(MovingObjectPosition movingPosition) 
-	{ 
-	
+	{
+		
 	} 
 }

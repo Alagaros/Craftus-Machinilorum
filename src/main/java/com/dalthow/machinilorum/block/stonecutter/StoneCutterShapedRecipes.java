@@ -1,12 +1,3 @@
-/**
- * Craftus Machinilorum
- *
- * 
- * @Author Dalthow Game Studios 
- * @Class StoneCutterShapedRecipes.java
- * 
- **/
-
 package com.dalthow.machinilorum.block.stonecutter;
 
 import net.minecraft.inventory.InventoryCrafting;
@@ -15,21 +6,36 @@ import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.world.World;
 
+/**
+ * Craftus Machinilorum
+ *
+ * 
+ * @author Dalthow Game Studios 
+ * @class StoneCutterShapedRecipes.java
+ * 
+ **/
+
 public class StoneCutterShapedRecipes implements IRecipe
 { 
-	// Declaration
+	// Declaration of the crafting output.
 	
 	private ItemStack recipeOutput;
+	
+	
+	// Declaring some other value's
 	
 	private boolean flag;
 
     public final int recipeWidth;
     public final int recipeHeight;
     
+    
+    // Declaring the items that can now be crafted.
+    
     public final ItemStack[] recipeItems;
    
     
-    // Constructor
+    // Constructor that sets the local variables based on its parameters.
     
     public StoneCutterShapedRecipes(int recipeWidth, int recipeHeight, ItemStack[] recipeItems, ItemStack recipeOutput)
     {
@@ -40,7 +46,7 @@ public class StoneCutterShapedRecipes implements IRecipe
     }
 
     
-    // Returns a single recipe
+    // Returns a single recipe.
     
     public ItemStack getRecipeOutput()
     {
@@ -48,7 +54,7 @@ public class StoneCutterShapedRecipes implements IRecipe
     }
 
     
-    // Used to check if a recipe matches current crafting inventory
+    // Used to check if a recipe matches current crafting inventory.
      
     public boolean matches(InventoryCrafting inventoryCrafting, World world)
     {
@@ -124,7 +130,7 @@ public class StoneCutterShapedRecipes implements IRecipe
     }
 
     
-    // Returns an Item that is the result of this recipe
+    // Returns an Item that is the result of this recipe.
      
     public ItemStack getCraftingResult(InventoryCrafting inventoryCrafting)
     {
@@ -147,7 +153,7 @@ public class StoneCutterShapedRecipes implements IRecipe
     }
 
     
-    // Returns the size of the recipe area
+    // Returns the size of the recipes array-list.
      
     public int getRecipeSize()
     {

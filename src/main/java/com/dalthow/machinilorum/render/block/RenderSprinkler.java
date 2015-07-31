@@ -67,7 +67,7 @@ public class RenderSprinkler extends TileEntitySpecialRenderer
         FMLClientHandler.instance().getClient().getTextureManager().bindTexture(texture);
        
         engine.renderAll();
-        
+
         switch(tileEntitySprinkler.getBlockMetadata())
         {
         	case 0:	GL11.glTranslated(0, 0, + 2);

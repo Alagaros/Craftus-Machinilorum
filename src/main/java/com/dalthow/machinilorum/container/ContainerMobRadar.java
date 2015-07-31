@@ -1,12 +1,3 @@
-/**
- * Craftus Machinilorum
- *
- * 
- * @Author Dalthow Game Studios 
- * @Class ContainerMobRadar.java
- * 
- **/
-
 package com.dalthow.machinilorum.container;
 
 import com.dalthow.machinilorum.tile.TileEntityMobRadar;
@@ -17,18 +8,30 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.Container;
 import net.minecraft.inventory.ICrafting;
 
+/**
+ * Craftus Machinilorum
+ *
+ * 
+ * @author Dalthow Game Studios 
+ * @class ContainerMobRadar.java
+ * 
+ **/
+
 public class ContainerMobRadar extends Container 
 {
-	// Declaration
+	// Declaration of the TileEntity.
 	
 	private TileEntityMobRadar tile;
 
+	
+	// Declaring some other variables.
+	
 	public int lastMobId;
 	public int lastRadius;
 	public int lastSignal;
 
 	
-	// Constructor
+	// Constructor that sets the local TileEntity to the one that is provided as parameter.
 	
 	public ContainerMobRadar(TileEntityMobRadar tile) 
 	{
@@ -36,7 +39,7 @@ public class ContainerMobRadar extends Container
 	}
 	
 	
-	// Detects and send changes to the gui from the tile entity
+	// Detects and send changes to the gui from the tile entity.
 	
 	public void detectAndSendChanges() 
 	{
@@ -68,7 +71,7 @@ public class ContainerMobRadar extends Container
 	}
 	
 	
-	// Updates the progress bar in the interface
+	// Updates the progress bar in the interface.
 	
 	@SideOnly(Side.CLIENT)
     public void updateProgressBar(int par1, int par2)
@@ -90,7 +93,7 @@ public class ContainerMobRadar extends Container
     }
 	
 	
-	// Makes the container able to interact with the player
+	// Makes the container able to interact with the player.
 	
 	@Override
 	public boolean canInteractWith(EntityPlayer player) 

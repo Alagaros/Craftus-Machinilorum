@@ -1,26 +1,26 @@
-/**
- * Craftus Machinilorum
- *
- * 
- * @Author Dalthow Game Studios 
- * @Class StoneCutterRecipeSorter.java
- * 
- **/
-
 package com.dalthow.machinilorum.block.stonecutter;
 
 import java.util.Comparator;
 
 import net.minecraft.item.crafting.IRecipe;
 
+/**
+ * Craftus Machinilorum
+ *
+ * 
+ * @author Dalthow Game Studios 
+ * @class StoneCutterRecipeSorter.java
+ * 
+ **/
+
 public class StoneCutterRecipeSorter implements Comparator<Object> 
 {
-	// Declaration
+	// Declaration.
 	
 	final StoneCutterRecipeManager stoneCutterRecipeManager;
 
 	
-	// Constructor
+	// Creating a new instance.
 	
 	public StoneCutterRecipeSorter(StoneCutterRecipeManager stoneCutterRecipeManager) 
 	{
@@ -28,7 +28,7 @@ public class StoneCutterRecipeSorter implements Comparator<Object>
 	}
 
 	
-	// Checks if the recipes are no duplicates
+	// Checks if the recipes are no duplicates.
 	
 	public int compareRecipes(IRecipe firstRecipe, IRecipe secondRecipe) 
 	{

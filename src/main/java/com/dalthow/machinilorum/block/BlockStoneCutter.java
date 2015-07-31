@@ -1,12 +1,3 @@
-/**
- * Craftus Machinilorum
- *
- * 
- * @Author Dalthow Game Studios 
- * @Class BlockStoneCutter.java
- * 
- **/
-
 package com.dalthow.machinilorum.block;
 
 import com.dalthow.machinilorum.base.Main;
@@ -22,9 +13,18 @@ import net.minecraft.world.World;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
+/**
+ * Craftus Machinilorum
+ *
+ * 
+ * @author Dalthow Game Studios 
+ * @class BlockStoneCutter.java
+ * 
+ **/
+
 public class BlockStoneCutter extends Block 
 {
-	// Constructor
+	// Constructor that adds data to the block.
 	
 	public BlockStoneCutter()
 	{
@@ -37,7 +37,7 @@ public class BlockStoneCutter extends Block
 	}
 	
 	
-	// Only make the texture variables on the client side so the server ignores this 
+	// Only make the texture variables on the client side so the server ignores this.
 	
 	@SideOnly(Side.CLIENT)
 	private IIcon frontIcon;
@@ -46,7 +46,7 @@ public class BlockStoneCutter extends Block
 	private IIcon topIcon;
 	
 	
-	// Determines the textures displayed on the blocks based on the side and meta data also gets ignored by the server
+	// Determines the textures displayed on the blocks based on the side and meta data also gets ignored by the server.
 	
 	@SideOnly(Side.CLIENT)
 	public IIcon getIcon(int side, int meta)
@@ -55,7 +55,7 @@ public class BlockStoneCutter extends Block
 	}
 	
 	
-	// Loads the different textures also gets ignored by the server
+	// Loads the different textures also gets ignored by the server.
 	
 	@SideOnly(Side.CLIENT)
 	public void registerBlockIcons(IIconRegister registry)
@@ -65,7 +65,7 @@ public class BlockStoneCutter extends Block
 	}
 	
 	
-	// Opens the user interface 
+	// Opens the user interface.
     
     @Override
     public boolean onBlockActivated(World world, int xPos, int yPos, int zPos, EntityPlayer player, int par1, float par2, float par3, float par4)  

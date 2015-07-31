@@ -1,12 +1,3 @@
-/**
- * Craftus Machinilorum
- *
- * 
- * @Author Dalthow Game Studios 
- * @Class StoneCutterShapelessRecipes.java
- * 
- **/
-
 package com.dalthow.machinilorum.block.stonecutter;
 
 import java.util.ArrayList;
@@ -18,16 +9,28 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.world.World;
 
+/**
+ * Craftus Machinilorum
+ *
+ * 
+ * @author Dalthow Game Studios 
+ * @class StoneCutterShapelessRecipes.java
+ * 
+ **/
+
 public class StoneCutterShapelessRecipes implements IRecipe
 {
-	// Declaration
+	// Declaration of the crafting output.
 
     private final ItemStack recipeOutput;
-   
+    
+    
+    // Declaring the items that can now be crafted.
+    
     public final List<?> recipeItems;
   
     
-    // Constructor
+    // Constructor that sets the local variables based on its parameters.
     
     public StoneCutterShapelessRecipes(ItemStack recipeOutput, List<?> recipeItems)
     {
@@ -36,7 +39,7 @@ public class StoneCutterShapelessRecipes implements IRecipe
     }
     
     
-    // Returns a single recipe
+    // Returns a single recipe.
     
     public ItemStack getRecipeOutput()
     {
@@ -44,7 +47,7 @@ public class StoneCutterShapelessRecipes implements IRecipe
     }
 
    
-    // Used to check if a recipe matches current crafting inventory
+    // Used to check if a recipe matches current crafting inventory.
     
     public boolean matches(InventoryCrafting inventoryCrafting, World world)
     {
@@ -87,7 +90,7 @@ public class StoneCutterShapelessRecipes implements IRecipe
     }
 
     
-    // Returns an Item that is the result of this recipe
+    // Returns an Item that is the result of this recipe.
      
     public ItemStack getCraftingResult(InventoryCrafting inventoryCrafting)
     {
@@ -95,7 +98,7 @@ public class StoneCutterShapelessRecipes implements IRecipe
     }
 
     
-    // Returns the size of the recipe area
+    // Returns the size of the recipes array-list.
      
     public int getRecipeSize()
     {

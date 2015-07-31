@@ -1,12 +1,3 @@
-/**
- * Craftus Machinilorum
- *
- * 
- * @Author Dalthow Game Studios 
- * @Class FragmentingHandler.java
- * 
- **/
-
 package com.dalthow.machinilorum.block.fragmentizer;
 
 import java.util.HashMap;
@@ -20,25 +11,41 @@ import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
+/**
+ * Craftus Machinilorum
+ *
+ * 
+ * @author Dalthow Game Studios 
+ * @class FragmentingHandler.java
+ * 
+ **/
+
 public class FragmentingHandler
 {
-	// Declaration
+	// Declaration for data lists.
 	
     private Map<ItemStack, ItemStack> fragmentingList = new HashMap<ItemStack, ItemStack>();
     private Map<ItemStack, Float> experienceList = new HashMap<ItemStack, Float>();
 
+    
+    // Creating a new instance.
+    
     private static final FragmentingHandler fragmentingBase = new FragmentingHandler();
 
     
-    // Constructors
+    // Constructors.
     
     public static FragmentingHandler fragmenting()
     {
+    	// Returning the new instance.
+    	
         return fragmentingBase;
     }
     
     private FragmentingHandler()
     {
+    	// Adding the block recipe's.
+    	
         addBlock(Blocks.stone, new ItemStack(Blocks.cobblestone), 0.5F);
         addBlock(Blocks.cobblestone, new ItemStack(Blocks.sand), 0.5F);
         addBlock(Blocks.glass, new ItemStack(Blocks.sand), 0.5F);
@@ -50,13 +57,16 @@ public class FragmentingHandler
         addBlock(Blocks.glowstone, new ItemStack(Items.glowstone_dust, 4), 0.5F);
         addBlock(Blocks.gravel, new ItemStack(Items.flint, 1), 0.5F);
      
+        
+        // Adding the item recipe's
+        
         addItem(Items.reeds, new ItemStack(Items.sugar, 3), 0.5F);
         addItem(Items.bone, new ItemStack(Items.dye, 6, 15), 0.5F);
         addItem(Items.blaze_rod, new ItemStack(Items.blaze_powder, 4), 0.5F);
     }
 
     
-    // Adds a block to the recipe list
+    // Adds a block to the recipe list.
     
     public void addBlock(Block block, ItemStack itemStack, float experience)
     {
@@ -64,7 +74,7 @@ public class FragmentingHandler
     }
 
     
-    // Adds a item to the recipe list
+    // Adds a item to the recipe list.
     
     public void addItem(Item item, ItemStack itemStack, float experience)
     {
@@ -72,7 +82,7 @@ public class FragmentingHandler
     }
 
     
-    // The method used to put objects in the list 
+    // The method used to put objects in the list.
     
     public void putItemInList(ItemStack inputStack, ItemStack outputStack, float experience)
     {
@@ -81,7 +91,7 @@ public class FragmentingHandler
     }
 
     
-    // Returns the recipes from the list
+    // Returns the recipes from the list.
     
     public ItemStack getFragmentingResult(ItemStack itemStack)
     {
@@ -104,7 +114,7 @@ public class FragmentingHandler
     }
     
     
-    // Checks if the input is equal to the output
+    // Checks if the input is equal to the output.
 
     private boolean inputEqualToOutput(ItemStack inputStack, ItemStack outputStack)
     {
@@ -112,7 +122,7 @@ public class FragmentingHandler
     }
 
     
-    // Returns the fragmenting list
+    // Returns the fragmenting list.
     
     public Map<ItemStack, ItemStack> getFragmentingList()
     {
@@ -120,7 +130,7 @@ public class FragmentingHandler
     }
 
     
-    // Returns the amount you get from fragmenting something
+    // Returns the amount you get from fragmenting something.
     
     public float getExperienceFromItemStack(ItemStack itemStack)
     {
@@ -136,7 +146,7 @@ public class FragmentingHandler
 
         do
         {
-            if (!iterator.hasNext())
+            if(!iterator.hasNext())
             {
                 return 0.0F;
             }

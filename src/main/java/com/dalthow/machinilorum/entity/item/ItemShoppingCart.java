@@ -1,12 +1,3 @@
-/**
- * Craftus Machinilorum
- *
- * 
- * @Author Dalthow Game Studios 
- * @Class ItemShoppingCart.java
- * 
- **/
-
 package com.dalthow.machinilorum.entity.item;
 
 import java.util.List;
@@ -25,9 +16,18 @@ import com.dalthow.machinilorum.entity.EntityShoppingCart;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
+/**
+ * Craftus Machinilorum
+ *
+ * 
+ * @author Dalthow Game Studios 
+ * @class ItemShoppingCart.java
+ * 
+ **/
+
 public class ItemShoppingCart extends Item 
 {
-	// Constructor 
+	// Constructor that adds data to the item.
 	
 	public ItemShoppingCart()
 	{
@@ -38,7 +38,7 @@ public class ItemShoppingCart extends Item
 	}
 	
 	
-	// Gets triggered when you use the item on a block
+	// Gets triggered when you use the item on a block.
 	
 	public boolean onItemUse(ItemStack itemStack, EntityPlayer player, World world, int xPos, int yPos, int zPos, int par1, float par2, float par3, float par4)
 	{
@@ -57,7 +57,7 @@ public class ItemShoppingCart extends Item
 	}
 	
 	
-   // Adds a tooltip to the item
+   // Adds a tool-tip to the item.
 
 	@SideOnly(Side.CLIENT)
     public void addInformation(ItemStack itemStack, EntityPlayer player, List list, boolean isValid)

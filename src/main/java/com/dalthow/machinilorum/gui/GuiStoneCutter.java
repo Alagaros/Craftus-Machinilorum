@@ -1,12 +1,3 @@
-/**
-* Craftus Machinilorum
-*
-* 
-* @Author Dalthow Game Studios 
-* @Class GuiStoneCutter.java
-* 
-**/
-
 package com.dalthow.machinilorum.gui;
 
 import net.minecraft.client.Minecraft;
@@ -22,14 +13,23 @@ import org.lwjgl.opengl.GL11;
 import com.dalthow.machinilorum.base.Reference;
 import com.dalthow.machinilorum.container.ContainerStoneCutter;
 
+/**
+* Craftus Machinilorum
+*
+* 
+* @author Dalthow Game Studios 
+* @class GuiStoneCutter.java
+* 
+**/
+
 public class GuiStoneCutter extends GuiContainer 
 {
-	// Declaration
+	// Declaration of the elements used in the gui.
 	
 	private final ResourceLocation background = new ResourceLocation(Reference.modId + ":" + "textures/gui/stone cutter.png");
 
 	
-	// Constructor
+	// Constructor that adds data to the gui.
 	
 	public GuiStoneCutter(InventoryPlayer inventoryPlayer, World world, int xPos, int yPos, int zPos)
 	{
@@ -40,7 +40,7 @@ public class GuiStoneCutter extends GuiContainer
 	}
 
 	
-	// Gets called when the gui gets closed
+	// Gets called when the gui gets closed.
 	
 	public void onGuiClosed() 
 	{
@@ -48,7 +48,7 @@ public class GuiStoneCutter extends GuiContainer
 	}
 	
 	
-	// Everything in front of the items
+	// Everything in front of the slots.
 	
 	protected void drawGuiContainerForegroundLayer(int par1, int par2)
 	{
@@ -61,7 +61,7 @@ public class GuiStoneCutter extends GuiContainer
 	}
 	
 	
-	// Everything behind the items
+	// Everything behind the slots.
 	
 	@Override
 	protected void drawGuiContainerBackgroundLayer(float var1, int var2, int var3) 
@@ -74,7 +74,7 @@ public class GuiStoneCutter extends GuiContainer
 	}
 	
 	
-	// Executes something after a button press
+	// Executes something after a button press.
 	
 	protected void actionPerformed(GuiButton guiButton)
     {

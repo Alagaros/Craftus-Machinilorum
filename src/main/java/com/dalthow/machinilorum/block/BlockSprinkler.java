@@ -1,12 +1,3 @@
-/**
- * Craftus Machinilorum
- *
- * 
- * @Author Dalthow Game Studios 
- * @Class BlockSprinkler.java
- * 
- **/
-
 package com.dalthow.machinilorum.block;
 
 import com.dalthow.machinilorum.base.Main;
@@ -26,9 +17,18 @@ import net.minecraft.world.World;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
+/**
+ * Craftus Machinilorum
+ *
+ * 
+ * @author Dalthow Game Studios 
+ * @class BlockSprinkler.java
+ * 
+ **/
+
 public class BlockSprinkler extends Block implements ITileEntityProvider
 {
-	// Constructor
+	// Constructor that adds data to the block.
 	
 	public BlockSprinkler()
 	{
@@ -41,7 +41,7 @@ public class BlockSprinkler extends Block implements ITileEntityProvider
 	}
 	
 	
-	// Determines the textures displayed on the blocks based on the side and meta data also gets ignored by the server
+	// Determines the textures displayed on the blocks based on the side and meta data also gets ignored by the server.
 	
 	@SideOnly(Side.CLIENT)
 	public IIcon getIcon(int side, int meta)
@@ -50,7 +50,7 @@ public class BlockSprinkler extends Block implements ITileEntityProvider
 	}
 	
 	
-	// If a redstone wire is next to this block it connects
+	// If a redstone wire is next to this block it connects.
 	
 	@Override
 	public boolean canConnectRedstone(IBlockAccess access, int xPos, int yPos, int zPos, int par1)
@@ -59,7 +59,7 @@ public class BlockSprinkler extends Block implements ITileEntityProvider
 	}
 	
 	
-	// Creates a tile entity when you place it down
+	// Creates a TileEntity when you place it down.
 	
 	public TileEntity createNewTileEntity(World world, int par1) 
 	{
@@ -69,7 +69,7 @@ public class BlockSprinkler extends Block implements ITileEntityProvider
 	}
 	
 	
-	// Makes you not see trough the world because the block isn't full
+	// Makes you not see trough the world because the block isn't full.
 	
 	@Override
 	public boolean isOpaqueCube()
@@ -78,7 +78,7 @@ public class BlockSprinkler extends Block implements ITileEntityProvider
     }
 	
 	
-	// Makes the block render as a custom block
+	// Makes the block render as a custom block.
 	
 	@Override
     public int getRenderType()
@@ -93,7 +93,7 @@ public class BlockSprinkler extends Block implements ITileEntityProvider
     }
 	
 	
-	// Tells the game that a comparator can be used on this block
+	// Tells the game that a comparator can be used on this block.
 	
 	public boolean hasComparatorInputOverride()
     {
@@ -101,10 +101,12 @@ public class BlockSprinkler extends Block implements ITileEntityProvider
     }
 	
 	
-	// Tells the game how the comparator can be used on this block
+	// Tells the game how the comparator can be used on this block.
 	
     public int getComparatorInputOverride(World world, int xPos, int yPos, int zPos, int par1)
     {
+    	// Getting the TileEntity bound to this block.
+    	
     	TileEntity tile = world.getTileEntity(xPos, yPos, zPos);
     	
     	if(!((tile) instanceof TileEntitySprinkler))
@@ -118,20 +120,27 @@ public class BlockSprinkler extends Block implements ITileEntityProvider
     }
 	
 	
-	// Makes something happen when you click the block
+    // Makes something happen when you click the block.
 	
 	public boolean onBlockActivated(World world, int xPos, int yPos, int zPos, EntityPlayer player, int par1, float par2, float par3, float par4) 
     {  
-		if(world.getBlockMetadata(xPos, yPos, zPos) < 3)
-		{
-			world.setBlockMetadataWithNotify(xPos, yPos, zPos, (world.getBlockMetadata(xPos, yPos, zPos) + 1), 1);
-		}
+		// Rotating the block if its clicked with an empty hand.
+    	
+    	if(player.getHeldItem() == null) 
+        { 
+			if(world.getBlockMetadata(xPos, yPos, zPos) < 3)
+			{
+				world.setBlockMetadataWithNotify(xPos, yPos, zPos, (world.getBlockMetadata(xPos, yPos, zPos) + 1), 1);
+			}
+			
+			else
+			{
+				world.setBlockMetadataWithNotify(xPos, yPos, zPos, 0, 1);
+			}
+			
+			return true;
+        }
 		
-		else
-		{
-			world.setBlockMetadataWithNotify(xPos, yPos, zPos, 0, 1);
-		}
-		
-		return true;
+		return false;
     }
 }

@@ -24,7 +24,7 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 public class ItemChalkboard extends ItemBlock
 {
-	// Constructor
+	// Constructor that adds data to the item.
 	
 	public ItemChalkboard(Block block) 
 	{
@@ -32,7 +32,7 @@ public class ItemChalkboard extends ItemBlock
 	}
 	
 	
-	// Adds a tooltip to the item
+	// Adds a tool-tip to the item
 
 	@SideOnly(Side.CLIENT)
     public void addInformation(ItemStack item, EntityPlayer player, List list, boolean isValid)

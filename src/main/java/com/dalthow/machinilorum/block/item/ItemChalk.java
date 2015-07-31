@@ -1,3 +1,9 @@
+package com.dalthow.machinilorum.block.item;
+
+import net.minecraft.block.Block;
+import net.minecraft.item.ItemBlock;
+import net.minecraft.item.ItemStack;
+
 /**
  * Craftus Machinilorum
  *
@@ -7,20 +13,14 @@
  * 
  **/
 
-package com.dalthow.machinilorum.block.item;
-
-import net.minecraft.block.Block;
-import net.minecraft.item.ItemBlock;
-import net.minecraft.item.ItemStack;
-
 public class ItemChalk extends ItemBlock 
 {
-	// Declaration
+	// Declaration of all the sub blocks.
 	
 	final String[] subBlocks = new String[] {"raw", "bricks"};
 
 	
-	// Constructor
+	// Constructor that adds data to the item.
 	
 	public ItemChalk(Block block) 
 	{
@@ -30,7 +30,7 @@ public class ItemChalk extends ItemBlock
 	}
 	
 	
-	// Returns the names of the sub blocks
+	// Returns the names of the sub blocks.
 
 	public String getUnlocalizedName(ItemStack itemStack) 
 	{
@@ -45,7 +45,7 @@ public class ItemChalk extends ItemBlock
 	}
 
 	
-	// Returns the meta data from the sub blocks
+	// Returns the meta data from the sub blocks.
 	
 	public int getMetadata(int meta) 
 	{

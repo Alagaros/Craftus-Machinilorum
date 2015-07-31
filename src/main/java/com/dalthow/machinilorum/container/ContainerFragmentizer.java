@@ -1,12 +1,3 @@
-/**
- * Craftus Machinilorum
- *
- * 
- * @Author Dalthow Game Studios 
- * @Class ContainerFragmentizer.java
- * 
- **/
-
 package com.dalthow.machinilorum.container;
 
 import com.dalthow.machinilorum.block.fragmentizer.FragmentingHandler;
@@ -22,19 +13,31 @@ import net.minecraft.item.ItemStack;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
+/**
+ * Craftus Machinilorum
+ *
+ * 
+ * @author Dalthow Game Studios 
+ * @class ContainerFragmentizer.java
+ * 
+ **/
+
 public class ContainerFragmentizer extends Container
 {
-	// Declaration
+	// Declaration of the TileEntity.
 
 	private TileEntityFragmentizer tile;
 
+	
+	// Declaring some other variables.
+	
 	public int lastBurnTime;
 	public int lastCurrentItemBurnTime;
 	public int lastCookTime;
 	public int lastHeat;
 	
 	
-	// Constructor
+	// Constructor that sets the local TileEntity and InventoryPlayer to the one's that are provide in the parameters.
 	
 	public ContainerFragmentizer(InventoryPlayer inventory, TileEntityFragmentizer tile) 
 	{
@@ -44,6 +47,9 @@ public class ContainerFragmentizer extends Container
 		addSlotToContainer(new Slot(tile, 1, 56, 53));
 		addSlotToContainer(new SlotFurnace(inventory.player, tile, 2, 116, 35));
 		
+		
+		// Looping trough the inventory slots.
+		
 		for(int i = 0; i < 3; i++) 
 		{
 			for(int j = 0; j < 9; j++) 
@@ -51,7 +57,10 @@ public class ContainerFragmentizer extends Container
 				addSlotToContainer(new Slot(inventory, j + i * 9 + 9, 8 + j * 18, 84 + i * 18));
 			}
 		}
-
+		
+		
+		// Looping trough the hotbar.
+		
 		for(int i = 0; i < 9; i++) 
 		{
 			addSlotToContainer(new Slot(inventory, i, 8 + i * 18, 142));
@@ -59,7 +68,7 @@ public class ContainerFragmentizer extends Container
 	}
 
 	
-	// Tells the container to keep track of certain values in the tile entity
+	// Tells the container to keep track of certain values in the tile entity.
 	
 	public void addCraftingToCrafters (ICrafting iCrafting) 
 	{
@@ -71,7 +80,7 @@ public class ContainerFragmentizer extends Container
 	}
 
 	
-	// Detects and send changes to the gui from the tile entity
+	// Detects and send changes to the gui from the tile entity.
 	
 	public void detectAndSendChanges()
 	{
@@ -103,7 +112,7 @@ public class ContainerFragmentizer extends Container
 	}
 
 	
-	// Updates the progress bar in the interface
+	// Updates the progress bar in the interface.
 	
 	@SideOnly(Side.CLIENT)
     public void updateProgressBar(int par1, int par2)
@@ -125,7 +134,7 @@ public class ContainerFragmentizer extends Container
     }
 
 	
-	// Allows shift clicking from the players inventory into the other slots
+	// Allows shift clicking from the players inventory into the other slots.
 	
 	public ItemStack transferStackInSlot(EntityPlayer player, int par1)
     {
@@ -206,7 +215,7 @@ public class ContainerFragmentizer extends Container
     }
 
 	
-	// Makes the container able to interact with the player
+	// Makes the container able to interact with the player.
 	
 	public boolean canInteractWith(EntityPlayer player) 
 	{

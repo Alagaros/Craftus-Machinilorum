@@ -1,12 +1,3 @@
-/**
- * Craftus Machinilorum
- *
- * 
- * @Author Dalthow Game Studios 
- * @Class ItemConveyorBelt.java
- * 
- **/
-
 package com.dalthow.machinilorum.block.item;
 
 import java.util.List;
@@ -22,9 +13,18 @@ import org.lwjgl.input.Keyboard;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
+/**
+ * Craftus Machinilorum
+ *
+ * 
+ * @author Dalthow Game Studios 
+ * @class ItemConveyorBelt.java
+ * 
+ **/
+
 public class ItemConveyorBelt extends ItemBlock
 {
-	// Constructor
+	// Constructor.
 	
 	public ItemConveyorBelt(Block block) 
 	{
@@ -32,7 +32,7 @@ public class ItemConveyorBelt extends ItemBlock
 	}
 	
 	
-	// Adds a tooltip to the item
+	// Adds a tool-tip to the item.
 
 	@SideOnly(Side.CLIENT)
     public void addInformation(ItemStack item, EntityPlayer player, List list, boolean isValid)

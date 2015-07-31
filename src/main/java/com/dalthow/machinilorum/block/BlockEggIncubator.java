@@ -49,7 +49,7 @@ public class BlockEggIncubator extends Block implements ITileEntityProvider
 	}
 	
 	
-	// Creates a tile entity when you place it down.
+	// Creates a TileEntity when you place it down.
 	
 	public TileEntity createNewTileEntity(World world, int par1) 
 	{
@@ -88,6 +88,8 @@ public class BlockEggIncubator extends Block implements ITileEntityProvider
     @Override
     public boolean onBlockActivated(World world, int xPos, int yPos, int zPos, EntityPlayer player, int par1, float par2, float par3, float par4) 
     {  
+    	// Getting the TileEntity bound to this block.
+    	
         TileEntityEggIncubator tile = (TileEntityEggIncubator)world.getTileEntity(xPos, yPos, zPos); 
         
         

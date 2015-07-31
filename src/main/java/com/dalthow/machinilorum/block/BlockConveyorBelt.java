@@ -57,7 +57,7 @@ public class BlockConveyorBelt extends Block implements ITileEntityProvider
 	}
 	
 	
-	// Creates a tile entity when you place it down.
+	// Creates a TileEntity when you place it down.
 	
 	public TileEntity createNewTileEntity(World world, int par1) 
 	{
@@ -91,20 +91,27 @@ public class BlockConveyorBelt extends Block implements ITileEntityProvider
     }
 	
 	
-	// Rotating it if the user has an empty hand.
+	// Makes something happen when you click the block.
 	
 	public boolean onBlockActivated(World world, int xPos, int yPos, int zPos, EntityPlayer player, int par1, float par2, float par3, float par4) 
     {  
-		if(world.getBlockMetadata(xPos, yPos, zPos) < 3)
-		{
-			world.setBlockMetadataWithNotify(xPos, yPos, zPos, (world.getBlockMetadata(xPos, yPos, zPos) + 1), 1);
-		}
+		// Rotating the block if its clicked with an empty hand.
+    	
+    	if(player.getHeldItem() == null) 
+        { 
+			if(world.getBlockMetadata(xPos, yPos, zPos) < 5)
+			{
+				world.setBlockMetadataWithNotify(xPos, yPos, zPos, (world.getBlockMetadata(xPos, yPos, zPos) + 1), 1);
+			}
+			
+			else
+			{
+				world.setBlockMetadataWithNotify(xPos, yPos, zPos, 0, 1);
+			}
+			
+			return true;
+        }
 		
-		else
-		{
-			world.setBlockMetadataWithNotify(xPos, yPos, zPos, 0, 1);
-		}
-		
-		return true;
+		return false;
     }
 }

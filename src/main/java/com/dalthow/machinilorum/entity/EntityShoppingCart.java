@@ -1,12 +1,3 @@
-/**
-* Craftus Machinilorum
-*
-* 
-* @Author Dalthow Game Studios 
-* @Class EntityShoppingCart.java
-* 
-**/
-
 package com.dalthow.machinilorum.entity;
 
 import java.util.List;
@@ -29,13 +20,25 @@ import net.minecraft.world.World;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
+/**
+* Craftus Machinilorum
+*
+* 
+* @author Dalthow Game Studios 
+* @class EntityShoppingCart.java
+* 
+**/
+
 public class EntityShoppingCart extends Entity
 {
-    // Declaration
+    // Declaration of some variables
 	
     private boolean isCartEmpty;
   
     private int cartPosRotationIncrements;
+    
+    
+    // Declaration of the position and rotation.
     
     private double xCart;
     private double yCart;
@@ -43,6 +46,9 @@ public class EntityShoppingCart extends Entity
     
     private double cartYaw;
     private double cartPitch;
+    
+    
+    // Declaration of the velocities. This get's ignored on the server.
     
     @SideOnly(Side.CLIENT)
     private double velocityX;
@@ -52,11 +58,9 @@ public class EntityShoppingCart extends Entity
     
     @SideOnly(Side.CLIENT)
     private double velocityZ;
-
-    public EntityItem[] entityItem;
     
     
-    // Constructor
+    // Constructor that adds information to the entity.
     
     public EntityShoppingCart(World world)
     {
@@ -65,21 +69,21 @@ public class EntityShoppingCart extends Entity
         isCartEmpty = true;
         preventEntitySpawning = true;
         
-        // TODO Fix the bounding box.
+        // TODO: Fix the bounding box.
         
         setSize(1.3F, 1.3F);
     }
 
     
-    // Tells the entity class that it should make the walking noise and animation
+    // Tells the entity class that it should make the walking noise and animation.
     
     protected boolean canTriggerWalking()
     {
-        return true;
+        return false;
     }
 
     
-    // Gets called on creation
+    // Gets called on creation.
     
     protected void entityInit()
     {
@@ -97,7 +101,7 @@ public class EntityShoppingCart extends Entity
     }
 
     
-    // Returns the bounding box for this entity
+    // Returns the bounding box for this entity.
     
     public AxisAlignedBB getBoundingBox()
     {
@@ -113,7 +117,7 @@ public class EntityShoppingCart extends Entity
     }
 
     
-    // Puts the player further down
+    // Puts the player further down.
     
     public double getMountedYOffset()
     {
@@ -164,7 +168,7 @@ public class EntityShoppingCart extends Entity
     }
     
     
-    // Makes the player stand up instead of sit
+    // Makes the player stand up instead of sit.
     
     @SideOnly(Side.CLIENT)
     public boolean shouldRiderSit()
@@ -230,7 +234,7 @@ public class EntityShoppingCart extends Entity
     }
 
     
-    // Sets the velocity to the arguments
+    // Sets the velocity to the arguments.
     
     @SideOnly(Side.CLIENT)
     public void setVelocity(double par1, double par2, double par5)
@@ -437,7 +441,7 @@ public class EntityShoppingCart extends Entity
     }
 
     
-    // Updates where the player sits in the cart
+    // Updates where the player sits in the cart.
     
     public void updateRiderPosition()
     {
@@ -448,23 +452,23 @@ public class EntityShoppingCart extends Entity
     }
     
     
-    // Writing to the tag
+    // Writing to the tag.
     
     protected void writeEntityToNBT(NBTTagCompound tag) 
     {
-    	// TODO Add rotation.
+    	// TODO: Add cart rotation.
     }
 
     
-    // Reading from the tag
+    // Reading from the tag.
     
     protected void readEntityFromNBT(NBTTagCompound tag)
     {
-    	// TODO Add rotation.
+    	// TODO: Add cart rotation.
     }
 
     
-    // Puts down a shadow under the cart
+    // Puts down a shadow under the cart.
     
     @SideOnly(Side.CLIENT)
     public float getShadowSize()
@@ -473,7 +477,7 @@ public class EntityShoppingCart extends Entity
     }
 
     
-    // First layer of player interaction
+    // First layer of player interaction.
     
     public boolean interactFirst(EntityPlayer player)
     {
@@ -542,7 +546,7 @@ public class EntityShoppingCart extends Entity
     }
     
 
-    // True if the player is not in the cart
+    // True if the player is not in the cart.
     
     @SideOnly(Side.CLIENT)
     public void setIsCartEmpty(boolean par1)
@@ -551,7 +555,7 @@ public class EntityShoppingCart extends Entity
     }
     
 
-    // Checks if the user is triggering movement forwards or backwards
+    // Checks if the user is triggering movement forwards or backwards.
 
     public boolean isMoving()
     {

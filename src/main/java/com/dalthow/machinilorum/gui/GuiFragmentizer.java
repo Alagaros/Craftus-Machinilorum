@@ -1,12 +1,3 @@
-/**
-* Craftus Machinilorum
-*
-* 
-* @Author Dalthow Game Studios 
-* @Class GuiFragmentizer.java
-* 
-**/
-
 package com.dalthow.machinilorum.gui;
 
 import net.minecraft.client.Minecraft;
@@ -22,18 +13,30 @@ import com.dalthow.machinilorum.base.Reference;
 import com.dalthow.machinilorum.container.ContainerFragmentizer;
 import com.dalthow.machinilorum.tile.TileEntityFragmentizer;
 
+/**
+* Craftus Machinilorum
+*
+* 
+* @author Dalthow Game Studios 
+* @class GuiFragmentizer.java
+* 
+**/
+
 public class GuiFragmentizer extends GuiContainer
 {	
-	// Declaration
+	// Declaration of the TileEntity.
 	
 	private TileEntityFragmentizer tile;
+	
+	
+	// Declaration of the elements used in the gui.
 	
 	private GuiButton close;
 	
 	private final ResourceLocation background = new ResourceLocation(Reference.modId + ":" + "textures/gui/fragmentizer.png");
 	
 	
-	// Constructor
+	// Constructor that adds data to the gui.
 	
 	public GuiFragmentizer(InventoryPlayer inventoryPlayer, TileEntityFragmentizer tile) 
 	{
@@ -46,7 +49,7 @@ public class GuiFragmentizer extends GuiContainer
 	}
 	
 	
-	// Everything in front of the items
+	// Everything in front of the slots.
 	
 	@Override	
 	protected void drawGuiContainerForegroundLayer(int par1, int par2)
@@ -62,7 +65,7 @@ public class GuiFragmentizer extends GuiContainer
 	}
 	
 	
-	// Everything behind the items
+	// Everything behind the slots.
 		
 	@Override
 	protected void drawGuiContainerBackgroundLayer(float xPos, int yPos, int zPos) 
@@ -83,7 +86,7 @@ public class GuiFragmentizer extends GuiContainer
 	}
 	
 	
-	// Executes something after a button press
+	// Executes something after a button press.
 	
 	protected void actionPerformed(GuiButton guiButton)
     {

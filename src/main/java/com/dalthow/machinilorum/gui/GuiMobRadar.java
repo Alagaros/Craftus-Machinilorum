@@ -1,12 +1,3 @@
-/**
-* Craftus Machinilorum
-*
-* 
-* @Author Dalthow Game Studios 
-* @Class GuiMobRadar.java
-* 
-**/
-
 package com.dalthow.machinilorum.gui;
 
 import com.dalthow.machinilorum.base.Main;
@@ -24,11 +15,23 @@ import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.util.ResourceLocation;
 
+/**
+* Craftus Machinilorum
+*
+* 
+* @author Dalthow Game Studios 
+* @class GuiMobRadar.java
+* 
+**/
+
 public class GuiMobRadar extends GuiContainer
 {
-	// Declaration
+	// Declaration of the TileEntity.
 	
 	private TileEntityMobRadar tile;
+	
+	
+	// Declaration of the elements used in the gui.
 	
 	private GuiButton highSignal;
 	private GuiButton lowSignal;
@@ -38,14 +41,17 @@ public class GuiMobRadar extends GuiContainer
 	
 	private GuiTextField radius;
 
+	private final ResourceLocation background = new ResourceLocation(Reference.modId + ":" + "textures/gui/mob radar.png");
+	
+	
+	// Declaring some other variables.
+	
 	private int localMobId;
 	
 	private boolean errorNoNummer = false;
 	
-	private final ResourceLocation background = new ResourceLocation(Reference.modId + ":" + "textures/gui/mob radar.png");
 	
-	
-	// Constructor
+	// Constructor that adds data to the gui.
 	
 	public GuiMobRadar(TileEntityMobRadar tile) 
 	{
@@ -58,7 +64,7 @@ public class GuiMobRadar extends GuiContainer
 	}
 	
 	
-	// Everything in front of the items
+	// Everything in front of the slots.
 	
 	@Override	
 	protected void drawGuiContainerForegroundLayer(int par1, int par2)
@@ -116,7 +122,7 @@ public class GuiMobRadar extends GuiContainer
 	}
 	
 	
-	// Everything behind the items
+	// Everything behind the slots.
 
 	@Override
 	protected void drawGuiContainerBackgroundLayer(float var1, int var2, int var3) 
@@ -185,7 +191,7 @@ public class GuiMobRadar extends GuiContainer
 	}
 	
 	
-	// The first method that gets called once when the gui opens
+	// The first method that gets called once when the gui opens.
 
 	public void initGui()
 	{
@@ -200,7 +206,7 @@ public class GuiMobRadar extends GuiContainer
 	}
 	
 	
-	// Gets called when the player presses a key
+	// Gets called when the player presses a key.
 	
 	protected void keyTyped(char par1, int par2)
 	{
@@ -208,7 +214,7 @@ public class GuiMobRadar extends GuiContainer
 	}
 	
 	
-	// Executes something after a button press
+	// Executes something after a button press.
 	
 	protected void actionPerformed(GuiButton guiButton)
     {
