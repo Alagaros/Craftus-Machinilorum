@@ -1,12 +1,3 @@
-/**
- * Craftus Machinilorum
- *
- * 
- * @Author Dalthow Game Studios 
- * @Class PacketPipeline.java
- * 
- **/
-
 package com.dalthow.machinilorum.packet;
 
 import io.netty.buffer.ByteBuf;
@@ -38,10 +29,19 @@ import cpw.mods.fml.common.network.internal.FMLProxyPacket;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
+/**
+ * Craftus Machinilorum
+ *
+ * 
+ * @author Dalthow Game Studios 
+ * @class PacketPipeline.java
+ * 
+ **/
+
 @ChannelHandler.Sharable
 public class PacketPipeline extends MessageToMessageCodec <FMLProxyPacket, AbstractPacket> 
 {
-	// Declaration
+	// Declaration of the packets and channels.
 	
     private EnumMap <Side, FMLEmbeddedChannel> channels;
     private LinkedList <Class <? extends AbstractPacket>> packets = new LinkedList <Class <? extends AbstractPacket>>();
@@ -49,21 +49,21 @@ public class PacketPipeline extends MessageToMessageCodec <FMLProxyPacket, Abstr
     private boolean isPostInitialised = false;
 
     
-    // Adds a packet to the linked list if the size is smaller then 256
+    // Adds a packet to the linked list if the size is smaller then 256.
     
     public boolean registerPacket(Class <? extends AbstractPacket> abstractClass) 
     {
-        if (packets.size() > 256) 
+        if(packets.size() > 256) 
         {
             return false;
         }
 
-        if (packets.contains(abstractClass)) 
+        if(packets.contains(abstractClass)) 
         {
             return false;
         }
 
-        if (isPostInitialised) 
+        if(isPostInitialised) 
         {
             return false;
         }
@@ -74,7 +74,7 @@ public class PacketPipeline extends MessageToMessageCodec <FMLProxyPacket, Abstr
     }
 
     
-    // Encodes the packet
+    // Encodes the packet.
     
     @Override
     protected void encode(ChannelHandlerContext context, AbstractPacket message, List <Object> output) throws Exception 
@@ -98,7 +98,7 @@ public class PacketPipeline extends MessageToMessageCodec <FMLProxyPacket, Abstr
     }
 
     
-    // Decodes the packet
+    // Decodes the packet.
     
     @Override
     protected void decode(ChannelHandlerContext context, FMLProxyPacket message, List <Object> output) throws Exception
@@ -117,19 +117,19 @@ public class PacketPipeline extends MessageToMessageCodec <FMLProxyPacket, Abstr
         AbstractPacket packet = abstractClass.newInstance();
         packet.decodeInto(context, payLoad.slice());
 
-        EntityPlayer Player;
+        EntityPlayer player;
        
         switch (FMLCommonHandler.instance().getEffectiveSide()) 
         {
-        	case CLIENT: Player = getClientPlayer();
-			             packet.handleClientSide(Player);
+        	case CLIENT: player = getClientPlayer();
+			             packet.handleClientSide(player);
 			             
 			             break;
 
           
             case SERVER: INetHandler netHandler = context.channel().attr(NetworkRegistry.NET_HANDLER).get();
-		                 Player = ((NetHandlerPlayServer) netHandler).playerEntity;
-		                 packet.handleServerSide(Player);
+		                 player = ((NetHandlerPlayServer) netHandler).playerEntity;
+		                 packet.handleServerSide(player);
 		               
 		                 break;
 
@@ -140,9 +140,9 @@ public class PacketPipeline extends MessageToMessageCodec <FMLProxyPacket, Abstr
     }
 
     
-    // Registers all the packets and creates a new channel
+    // Registers all the packets and creates a new channel.
     
-    public void initialise() 
+    public void initialize() 
     {
         channels = NetworkRegistry.INSTANCE.newChannel(Reference.modId, this);
         
@@ -152,7 +152,7 @@ public class PacketPipeline extends MessageToMessageCodec <FMLProxyPacket, Abstr
     }
 
     
-    // Returns the player
+    // Returns the player.
     
     @SideOnly(Side.CLIENT)
     private EntityPlayer getClientPlayer() 
@@ -161,7 +161,7 @@ public class PacketPipeline extends MessageToMessageCodec <FMLProxyPacket, Abstr
     }
 
     
-    // Send methods
+    // Send packet methods.
     
     public void sendToAll(AbstractPacket message) 
     {

@@ -1,21 +1,21 @@
-/**
- * Craftus Machinilorum
- *
- * 
- * @Author Dalthow Game Studios 
- * @Class ModelBomb.java
- * 
- **/
-
 package com.dalthow.machinilorum.model;
 
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 
+/**
+ * Craftus Machinilorum
+ *
+ * 
+ * @author Dalthow Game Studios 
+ * @class ModelBomb.java
+ * 
+ **/
+
 public class ModelBomb extends ModelBase
 {
-	// Declarations
+	// Declaration of the model parts.
 	
 	public ModelRenderer round1;
 	public ModelRenderer round2;
@@ -25,7 +25,7 @@ public class ModelBomb extends ModelBase
 	public ModelRenderer defuser;
 	
 	
-	// Registering all the model parts
+	// Registering all the model parts.
 	
 	public ModelBomb()
 	{
@@ -48,7 +48,6 @@ public class ModelBomb extends ModelBase
 		
 		setRotation(round2, 0F, 0F, 0F);
 		
-	
 		round3 = new ModelRenderer(this, 50, 0);
 		round3.addBox(0F, 0F, 0F, 3, 3, 5);
 		round3.setRotationPoint(0F, -3F, -1F);
@@ -57,7 +56,6 @@ public class ModelBomb extends ModelBase
 		
 		setRotation(round3, 0F, 0F, 0F);
 		
-		
 		round4 = new ModelRenderer(this, 100, 0);
 		round4.addBox(0F, 0F, 0F, 3, 1, 3);
 		round4.setRotationPoint(0F, 0F, 0F);
@@ -65,7 +63,6 @@ public class ModelBomb extends ModelBase
 		round4.mirror = true;
 		
 		setRotation(round4, 0F, 0F, 0F);
-		
 		
 		defuser = new ModelRenderer(this, 75, 0);
 		defuser.addBox(0F, 0F, 0F, 1, 1, 1);
@@ -77,7 +74,7 @@ public class ModelBomb extends ModelBase
 	}
 	
 	
-	// Renders the model
+	// Renders the model.
 	
 	public void render(Entity entity, float par1, float par2, float par3, float par4, float par5, float par6)
 	{
@@ -93,7 +90,7 @@ public class ModelBomb extends ModelBase
 	}
 	
 	
-	// Sets the rotation of the model
+	// Sets the rotation of the model.
 	
 	private void setRotation(ModelRenderer renderer, float par1, float par2, float par3)
 	{
@@ -103,7 +100,7 @@ public class ModelBomb extends ModelBase
 	}
 	
 	
-	// Sets the rotation angles of the model
+	// Sets the rotation angles of the model.
 	
 	public void setRotationAngles(float par1, float par2, float par3, float par4, float par5, float par6, Entity entity)
     {

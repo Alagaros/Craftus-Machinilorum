@@ -1,12 +1,3 @@
-/**
- * Craftus Machinilorum
- *
- * 
- * @Author Dalthow Game Studios 
- * @Class RecipeHandler.java
- * 
- **/
-
 package com.dalthow.machinilorum.handler;
 
 import com.dalthow.machinilorum.base.Main;
@@ -18,9 +9,18 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import cpw.mods.fml.common.registry.GameRegistry;
 
+/**
+ * Craftus Machinilorum
+ *
+ * 
+ * @author Dalthow Game Studios 
+ * @class RecipeHandler.java
+ * 
+ **/
+
 public class RecipeHandler 
 {
-	// Is called during the initialisation of the game to load the modded recipes
+	// Is called during the initialization of the game to load the modded recipes.
 	
 	public static void loadRecipes()
 	{
@@ -209,7 +209,7 @@ public class RecipeHandler
 	}
 	
 	
-	// Is called during the initialisation of the game to remove vanilla recipes
+	// Is called during the initialization of the game to remove vanilla recipes.
 	
 	public static void removeRecipes()
 	{

@@ -1,12 +1,3 @@
-/**
- * Craftus Machinilorum
- *
- * 
- * @Author Dalthow Game Studios 
- * @Class ItemBomb.java
- * 
- **/
-
 package com.dalthow.machinilorum.item;
 
 import java.util.List;
@@ -26,9 +17,18 @@ import com.dalthow.machinilorum.entity.EntityBomb;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
+/**
+ * Craftus Machinilorum
+ *
+ * 
+ * @author Dalthow Game Studios 
+ * @class ItemBomb.java
+ * 
+ **/
+
 public class ItemBomb extends Item 
 {
-	// Constructor
+	// Constructor that adds data to the item.
 	
 	public ItemBomb()
 	{
@@ -40,7 +40,7 @@ public class ItemBomb extends Item
 	}
 	
 	
-	// Throws the entity on a right click event
+	// Throws a new entity on a right click event.
 	
 	@Override
 	public ItemStack onItemRightClick(ItemStack itemStack, World world, EntityPlayer player)
@@ -61,7 +61,7 @@ public class ItemBomb extends Item
 	}
 	
 	
-	// Adds a tooltip to the item
+	// Adds a tool-tip to the item.
 
 	@SideOnly(Side.CLIENT)
     public void addInformation(ItemStack itemStack, EntityPlayer player, List list, boolean isValid)

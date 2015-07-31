@@ -1,21 +1,21 @@
-/**
- * Craftus Machinilorum
- *
- * 
- * @Author Dalthow Game Studios 
- * @Class ModelFilter.java
- * 
- **/
-
 package com.dalthow.machinilorum.model;
 
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 
+/**
+ * Craftus Machinilorum
+ *
+ * 
+ * @author Dalthow Game Studios 
+ * @class ModelFilter.java
+ * 
+ **/
+
 public class ModelFilter extends ModelBase
 {
-	// Declarations
+	// Declaration of the model parts.
 	
 	public ModelRenderer handle;
 	
@@ -36,7 +36,7 @@ public class ModelFilter extends ModelBase
 	public ModelRenderer bottom;
 	
 	
-	// Registering all the model parts
+	// Registering all the model parts.
 	
 	public ModelFilter()
 	{
@@ -51,7 +51,6 @@ public class ModelFilter extends ModelBase
 		
 		setRotation(handle, 0F, 0F, -0.2974289F);
 		
-		
 		circle1 = new ModelRenderer(this, 50, 0);
 		circle1.addBox(-1F, 0F, -1F, 1, 1, 3);
 		circle1.setRotationPoint(0F, 0F, 0F);
@@ -59,7 +58,6 @@ public class ModelFilter extends ModelBase
 		circle1.mirror = true;
 		
 		setRotation(circle1, 0F, 0F, 0F);
-		
 		
 		circle2 = new ModelRenderer(this, 75, 0);
 		circle2.addBox(-2F, 0F, 0F, 1, 1, 1);
@@ -69,7 +67,6 @@ public class ModelFilter extends ModelBase
 		
 		setRotation(circle2, 0F, 0F, 0F);
 		
-		
 		circle3 = new ModelRenderer(this, 100, 0);
 		circle3.addBox(0F, 0F, 0F, 1, 1, 1);
 		circle3.setRotationPoint(-2F, 0F, -2F);
@@ -77,7 +74,6 @@ public class ModelFilter extends ModelBase
 		circle3.mirror = true;
 		
 		setRotation(circle3, 0F, 0F, 0F);
-		
 		
 		circle4 = new ModelRenderer(this, 125, 0);
 		circle4.addBox(0F, 0F, 0F, 3, 1, 1);
@@ -87,7 +83,6 @@ public class ModelFilter extends ModelBase
 		
 		setRotation(circle4, 0F, 0F, 0F);
 		
-		
 		circle5 = new ModelRenderer(this, 150, 0);
 		circle5.addBox(0F, 0F, -3F, 3, 1, 1);
 		circle5.setRotationPoint(-5F, 0F, 0F);
@@ -95,7 +90,6 @@ public class ModelFilter extends ModelBase
 		circle5.mirror = true;
 		
 		setRotation(circle5, 0F, 0F, 0F);
-		
 		
 		circle6 = new ModelRenderer(this, 175, 0);
 		circle6.addBox(0F, 0F, 2F, 1, 1, 1);
@@ -105,7 +99,6 @@ public class ModelFilter extends ModelBase
 		
 		setRotation(circle6, 0F, 0F, 0F);
 		
-		
 		circle7 = new ModelRenderer(this, 200, 0);
 		circle7.addBox(0F, 0F, 0F, 1, 1, 1);
 		circle7.setRotationPoint(-6F, 0F, -2F);
@@ -113,7 +106,6 @@ public class ModelFilter extends ModelBase
 		circle7.mirror = true;
 		
 		setRotation(circle7, 0F, 0F, 0F);
-		
 		
 		circle8 = new ModelRenderer(this, 200, 3);
 		circle8.addBox(0F, 0F, 0F, 1, 1, 3);
@@ -123,7 +115,6 @@ public class ModelFilter extends ModelBase
 		
 		setRotation(circle8, 0F, 0F, 0F);
 		
-		
 		filter2 = new ModelRenderer(this, 50, 25);
 		filter2.addBox(0F, 0F, 0F, 3, 1, 1);
 		filter2.setRotationPoint(-5F, 1F, 2F);
@@ -131,7 +122,6 @@ public class ModelFilter extends ModelBase
 		filter2.mirror = true;
 		
 		setRotation(filter2, 0F, 0F, 0F);
-		
 		
 		filter1 = new ModelRenderer(this, 25, 25);
 		filter1.addBox(0F, 0F, 0F, 3, 1, 1);
@@ -141,7 +131,6 @@ public class ModelFilter extends ModelBase
 		
 		setRotation(filter1, 0F, 0F, 0F);
 		
-		
 		filter3 = new ModelRenderer(this, 75, 25);
 		filter3.addBox(0F, 0F, 0F, 1, 1, 3);
 		filter3.setRotationPoint(-6F, 1F, -1F);
@@ -150,7 +139,6 @@ public class ModelFilter extends ModelBase
 		
 		setRotation(filter3, 0F, 0F, 0F);
 		
-		
 		filter4 = new ModelRenderer(this, 100, 25);
 		filter4.addBox(0F, 0F, 0F, 1, 1, 3);
 		filter4.setRotationPoint(-2F, 1F, -1F);
@@ -158,7 +146,6 @@ public class ModelFilter extends ModelBase
 		filter4.mirror = true;
 		
 		setRotation(filter4, 0F, 0F, 0F);
-		
 		
 		bottom = new ModelRenderer(this, 125, 25);
 		bottom.addBox(0F, 0F, 0F, 3, 1, 3);
@@ -170,7 +157,7 @@ public class ModelFilter extends ModelBase
 	}
 	
 	
-	// Renders the model
+	// Renders the model.
 	
 	public void render(Entity entity, float par1, float par2, float par3, float par4, float par5, float par6)
 	{
@@ -197,7 +184,7 @@ public class ModelFilter extends ModelBase
 	}
 	
 	
-	// Sets the rotation of the model
+	// Sets the rotation of the model.
 	
 	private void setRotation(ModelRenderer Renderer, float par1, float par2, float par3)
 	{
@@ -207,7 +194,7 @@ public class ModelFilter extends ModelBase
 	}
 	
 	
-	// Sets the rotation angles of the model
+	// Sets the rotation angles of the model.
 	
 	public void setRotationAngles(float par1, float par2, float par3, float par4, float par5, float par6, Entity entity)
 	{

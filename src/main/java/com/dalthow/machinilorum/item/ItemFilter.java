@@ -1,12 +1,3 @@
-/**
- * Craftus Machinilorum
- *
- * 
- * @Author Dalthow Game Studios 
- * @Class ItemFilter.java
- * 
- **/
-
 package com.dalthow.machinilorum.item;
 
 import java.util.List;
@@ -29,9 +20,18 @@ import com.dalthow.machinilorum.util.MathHelper;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
+/**
+ * Craftus Machinilorum
+ *
+ * 
+ * @author Dalthow Game Studios 
+ * @class ItemFilter.java
+ * 
+ **/
+
 public class ItemFilter extends Item 
 {
-	// Constructor 
+	// Constructor that adds data to the item.
 	
 	public ItemFilter()
 	{
@@ -44,20 +44,27 @@ public class ItemFilter extends Item
 	}
 	
 	
-	// Gets triggered when you use the item on a block
+	// Gets triggered when you use the item on a block.
 	
 	public boolean onItemUse(ItemStack itemStack, EntityPlayer player, World world, int xPos, int yPos, int zPos, int par1, float par2, float par3, float par4)
 	{
+		// Checking if we are on the client side.
+		
 		if(!world.isRemote)
 		{
+			// Checking if the block targeted is clay, if so there also needs to be water above it.
+			
 			if((world.getBlock(xPos, yPos, zPos) == Blocks.clay) && (world.getBlock(xPos, yPos + 1, zPos) == Blocks.water))
 			{
 				world.setBlock(xPos, yPos, zPos, Blocks.sand);
 				
-				int chance = MathHelper.randomNumber(1, 3);
 				
-				if(chance == 1)
+				// Checks if the user is lucky.
+				
+				if(MathHelper.randomNumber(1, 3) == 1)
 				{
+					// Create a gold nugget at the position the block is.
+					
 					EntityItem Reward = new EntityItem(world, xPos, yPos, zPos, new ItemStack(Items.gold_nugget, 1));
 					
 					world.spawnEntityInWorld(Reward);
@@ -66,6 +73,8 @@ public class ItemFilter extends Item
 			
 			else if(world.getBlock(xPos, yPos, zPos) == Blocks.gravel)
 			{
+				// Transform the gravel into sand and drop a piece of flint.
+				
 				world.setBlock(xPos, yPos, zPos, Blocks.sand);
 				
 				EntityItem Reward = new EntityItem(world, xPos, yPos, zPos, new ItemStack(Items.flint, 1));
@@ -80,7 +89,7 @@ public class ItemFilter extends Item
 	}
 	
 	
-   // Adds a tooltip to the item
+   // Adds a tool-tip to the item.
 
 	@SideOnly(Side.CLIENT)
     public void addInformation(ItemStack itemStack, EntityPlayer player, List list, boolean isValid)

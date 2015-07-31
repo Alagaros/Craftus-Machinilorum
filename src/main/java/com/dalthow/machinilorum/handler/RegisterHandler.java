@@ -1,12 +1,3 @@
-/**
- * Craftus Machinilorum
- *
- * 
- * @Author Dalthow Game Studios 
- * @Class RegisterHandler.java
- * 
- **/
-
 package com.dalthow.machinilorum.handler;
 
 import com.dalthow.machinilorum.base.Main;
@@ -18,9 +9,18 @@ import net.minecraft.item.ItemBlock;
 import cpw.mods.fml.common.registry.EntityRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 
+/**
+ * Craftus Machinilorum
+ *
+ * 
+ * @author Dalthow Game Studios 
+ * @class RegisterHandler.java
+ * 
+ **/
+
 public class RegisterHandler 
 {
-	// Registers a item so that it gets loaded in the game
+	// Registers a item so that it gets loaded in the game.
 	
 	public static void registerItem(Item item)
 	{
@@ -28,7 +28,7 @@ public class RegisterHandler
 	}
 	
 	
-	// Registers a block so that it gets loaded in the game
+	// Registers a block so that it gets loaded in the game.
 	
 	public static void registerBlock(Block block)
 	{
@@ -36,7 +36,7 @@ public class RegisterHandler
 	}
 	
 	
-	// Registers a block so that it gets loaded in the game
+	// Registers a block so that it gets loaded in the game.
 	
 	public static void registerBlockWithItem(Block block, Class<? extends ItemBlock> itemclass)
 	{
@@ -44,7 +44,7 @@ public class RegisterHandler
 	}
 	
 	
-	// Registers a tile entity so it gets loaded in the game
+	// Registers a tile entity so it gets loaded in the game.
 	
 	public static void registerTileEntity(Class title, String name)
 	{
@@ -52,7 +52,7 @@ public class RegisterHandler
 	}
 	
 	
-	// Registers a entity so it gets loaded in the game
+	// Registers a entity so it gets loaded in the game.
 	
 	public static void registerEntity(Class title, String name)
 	{

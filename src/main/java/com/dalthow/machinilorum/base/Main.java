@@ -270,6 +270,6 @@ public class Main
 	{
 		NetworkRegistry.INSTANCE.registerGuiHandler(this, new GuiHandler());
 		
-		packetPipeline.initialise();
+		packetPipeline.initialize();
 	}
 }
