@@ -49,8 +49,13 @@ public class PacketPipeline extends MessageToMessageCodec <FMLProxyPacket, Abstr
     private boolean isPostInitialised = false;
 
     
-    // Adds a packet to the linked list if the size is smaller then 256.
-    
+    /**
+     * registerPacket Adds a packet to the linked list if the size is smaller then 256.
+     * 
+     * @param  {Class}   The abstract class.
+     * 
+     * @return {boolean} If the packet was registered successfully or not.
+     */
     public boolean registerPacket(Class <? extends AbstractPacket> abstractClass) 
     {
         if(packets.size() > 256) 
@@ -140,8 +145,11 @@ public class PacketPipeline extends MessageToMessageCodec <FMLProxyPacket, Abstr
     }
 
     
-    // Registers all the packets and creates a new channel.
-    
+    /**
+     * initialize Registers all packets.
+     * 
+     * @return {void}
+     */
     public void initialize() 
     {
         channels = NetworkRegistry.INSTANCE.newChannel(Reference.modId, this);
@@ -152,8 +160,11 @@ public class PacketPipeline extends MessageToMessageCodec <FMLProxyPacket, Abstr
     }
 
     
-    // Returns the player.
-    
+    /**
+     * getClientPlayer Gets the current player.
+     * 
+     * @return {void}
+     */
     @SideOnly(Side.CLIENT)
     private EntityPlayer getClientPlayer() 
     {
@@ -161,38 +172,78 @@ public class PacketPipeline extends MessageToMessageCodec <FMLProxyPacket, Abstr
     }
 
     
-    // Send packet methods.
-    
-    public void sendToAll(AbstractPacket message) 
+    /**
+     * sendToAll Sends a packet to the server and all clients.
+     * 
+     * @param  {AbstractPacket} packet The packet that should be send.
+     * 
+     * @return {void}
+     */
+    public void sendToAll(AbstractPacket packet) 
     {
         channels.get(Side.SERVER).attr(FMLOutboundHandler.FML_MESSAGETARGET).set(FMLOutboundHandler.OutboundTarget.ALL);
-        channels.get(Side.SERVER).writeAndFlush(message);
+        channels.get(Side.SERVER).writeAndFlush(packet);
     }
 
-    public void sendTo(AbstractPacket message, EntityPlayerMP player) 
+    
+    /**
+     * sendToAll Sends a packet to a specific client.
+     * 
+     * @param  {AbstractPacket} packet The packet that should be send.
+     * @param  {EntityPlayerMP} player The player that should receive the packet.
+     * 
+     * @return {void}
+     */
+    public void sendTo(AbstractPacket packet, EntityPlayerMP player) 
     {
         channels.get(Side.SERVER).attr(FMLOutboundHandler.FML_MESSAGETARGET).set(FMLOutboundHandler.OutboundTarget.PLAYER);
         channels.get(Side.SERVER).attr(FMLOutboundHandler.FML_MESSAGETARGETARGS).set(player);
-        channels.get(Side.SERVER).writeAndFlush(message);
+        channels.get(Side.SERVER).writeAndFlush(packet);
     }
 
-    public void sendToAllAround(AbstractPacket message, TargetPoint point)
+    
+    /**
+     * sendToAllAround Sends a packet to nearby players.
+     * 
+     * @param  {AbstractPacket} packet The packet that should be send.
+     * @param  {TargetPoint} point     The location the packet should be send to.
+     * 
+     * @return {void}
+     */
+    public void sendToAllAround(AbstractPacket packet, TargetPoint point)
     {
         channels.get(Side.SERVER).attr(FMLOutboundHandler.FML_MESSAGETARGET).set(FMLOutboundHandler.OutboundTarget.ALLAROUNDPOINT);
         channels.get(Side.SERVER).attr(FMLOutboundHandler.FML_MESSAGETARGETARGS).set(point);
-        channels.get(Side.SERVER).writeAndFlush(message);
+        channels.get(Side.SERVER).writeAndFlush(packet);
     }
 
-    public void sendToDimension(AbstractPacket message, int dimensionId) 
+    
+    /**
+     * sendToDimension Sends a packet to everyone in a certain dimension.
+     * 
+     * @param  {AbstractPacket} packet The packet that should be send.
+     * @param  {int} dimensionId       The dimension Id.
+     * 
+     * @return {void}
+     */
+    public void sendToDimension(AbstractPacket packet, int dimensionId) 
     {
         channels.get(Side.SERVER).attr(FMLOutboundHandler.FML_MESSAGETARGET).set(FMLOutboundHandler.OutboundTarget.DIMENSION);
         channels.get(Side.SERVER).attr(FMLOutboundHandler.FML_MESSAGETARGETARGS).set(dimensionId);
-        channels.get(Side.SERVER).writeAndFlush(message);
+        channels.get(Side.SERVER).writeAndFlush(packet);
     }
 
-    public void sendToServer(AbstractPacket message) 
+    
+    /**
+     * sendToServer Sends a packet to the server.
+     * 
+     * @param  {AbstractPacket} packet The packet that should be send.
+     * 
+     * @return {void}
+     */
+    public void sendToServer(AbstractPacket packet) 
     {
         channels.get(Side.CLIENT).attr(FMLOutboundHandler.FML_MESSAGETARGET).set(FMLOutboundHandler.OutboundTarget.TOSERVER);
-        channels.get(Side.CLIENT).writeAndFlush(message);
+        channels.get(Side.CLIENT).writeAndFlush(packet);
     }
 }

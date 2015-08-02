@@ -122,8 +122,5 @@ public class EntityBomb extends EntityThrowable
 	} 
 		
 	@Override
-	protected void onImpact(MovingObjectPosition movingPosition) 
-	{
-		
-	} 
+	protected void onImpact(MovingObjectPosition movingPosition){} 
 }

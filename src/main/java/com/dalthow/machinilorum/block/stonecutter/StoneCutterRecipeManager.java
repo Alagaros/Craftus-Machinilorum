@@ -100,8 +100,14 @@ public class StoneCutterRecipeManager
     }
     
     
-    // Adds a shaped recipe to the recipe list.
-
+    /**
+     * addRecipe Adds a shaped recipe to the recipe list.
+     * 
+     * @param {ItemStack} itemStack  The item that should be crafted.
+     * @param {Object} arrayOfObject The crafting recipe.
+     * 
+     * @return {StoneCutterShapedRecipes}
+     */
     public StoneCutterShapedRecipes addRecipe(ItemStack itemStack, Object ... arrayOfObject)
     {
         String var1 = "";
@@ -183,8 +189,14 @@ public class StoneCutterRecipeManager
     }
     
     
-    // Adds a shapeless recipe to the recipe list.
-
+    /**
+     * addShapelessRecipe Adds a shapeless recipe to the recipe list.
+     * 
+     * @param {ItemStack} itemStack  The item that should be crafted.
+     * @param {Object} arrayOfObject The crafting recipe.
+     * 
+     * @return {void}
+     */
     public void addShapelessRecipe(ItemStack itemStack, Object ... arrayOfObject)
     {
         ArrayList<ItemStack> arraylist = new ArrayList<ItemStack>();
@@ -221,8 +233,14 @@ public class StoneCutterRecipeManager
     }
 
     
-    // Finds the correct recipe based on the container input.
-    
+    /**
+     * findMatchingRecipe Finds the correct recipe based on the container input.
+     * 
+     * @param {InventoryCrafting} inventoryCrafting Standard class for crafting recipe's.
+     * @param {World} world                         The world object.
+     * 
+     * @return {ItemStack} The correct item.
+     */
     public ItemStack findMatchingRecipe(InventoryCrafting inventoryCrafting, World world)
     {
         int var1 = 0;
@@ -285,8 +303,11 @@ public class StoneCutterRecipeManager
     }
 
     
-    // Returns a list of all the recipes.
-    
+    /**
+     * getRecipeList Returns a list of all the recipes.
+     * 
+     * @return {List<IRecipe>} A list of all the recipe's
+     */
     public List<IRecipe> getRecipeList()
     {
         return recipes;

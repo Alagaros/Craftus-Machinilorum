@@ -78,7 +78,7 @@ public class StoneCutterShapedRecipes implements IRecipe
     }
 
     
-    //Checks if the region of a crafting inventory is match for the recipe.
+    // Checks if the region of a crafting inventory is match for the recipe.
      
     private boolean checkMatch(InventoryCrafting inventoryCrafting, int par1, int par2, boolean par3)
     {

@@ -26,8 +26,18 @@ import cpw.mods.fml.common.network.IGuiHandler;
 
 public class GuiHandler implements IGuiHandler
 {
-	// Whenever a player opens a interface it opens the container on the server side.
-	
+	/**
+     * getServerGuiElement Gets the requested gui for the server.
+     * 
+     * @param  {int} id 			 The id of the gui that should be opened.
+     * @param  {EntityPlayer} player The player that is opening the gui.
+     * @param  {World} world 	     The world object.
+     * @param  {int} xPos  	         The x position.
+     * @param  {int} yPos  	         The y position.
+     * @param  {int} zPos  	         The z position.
+     * 
+     * @return {Object}
+     */
 	public Object getServerGuiElement(int id, EntityPlayer player, World world, int xPos, int yPos, int zPos) 
 	{	
 		TileEntity tile = world.getTileEntity(xPos, yPos, zPos);
@@ -67,8 +77,18 @@ public class GuiHandler implements IGuiHandler
 	}
 	
 	
-	// Whenever a player opens a interface it opens the user interface on the client side.
-	
+	/**
+     * getClientGuiElement Gets the requested gui for the client.
+     * 
+     * @param  {int} id 			 The id of the gui that should be opened.
+     * @param  {EntityPlayer} player The player that is opening the gui.
+     * @param  {World} world 	     The world object.
+     * @param  {int} xPos  	         The x position.
+     * @param  {int} yPos  	         The y position.
+     * @param  {int} zPos  	         The z position.
+     * 
+     * @return {Object}
+     */
 	public Object getClientGuiElement(int id, EntityPlayer player, World world, int xPos, int yPos, int zPos) 
 	{
 		TileEntity tile = world.getTileEntity(xPos, yPos, zPos);

@@ -1,12 +1,3 @@
-/**
- * Craftus Machinilorum
- *
- * 
- * @Author Dalthow Game Studios 
- * @Class CommonProxy.java
- * 
- **/
-
 package com.dalthow.machinilorum.proxy;
 
 import java.util.Iterator;
@@ -17,18 +8,35 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.CraftingManager;
 import net.minecraft.item.crafting.IRecipe;
 
+/**
+ * Craftus Machinilorum
+ *
+ * 
+ * @author Dalthow Game Studios 
+ * @class CommonProxy.java
+ * 
+ **/
+
 public class CommonProxy 
 {
-	// Binds and registers all the models to their items, blocks or entities 
-	
+	/**
+     * loadRenderers Gets extended in the ClientProxy.
+     * 
+     * @return {void}
+     */
 	public void loadRenderers() 
 	{
 		
 	}
 	
 	
-	// Is used to remove vanilla recipes
-	
+	/**
+     * removeRecipe Removes the crafting recipe of an item.
+     *
+     * @param  {Item} item The item that should have its recipe removed.
+     *
+     * @return {void}
+     */
 	public static void removeRecipe(Item item)
 	{
 	    List<IRecipe> recipesList = CraftingManager.getInstance().getRecipeList();

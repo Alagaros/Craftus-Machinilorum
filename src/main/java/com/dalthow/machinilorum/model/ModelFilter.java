@@ -184,13 +184,21 @@ public class ModelFilter extends ModelBase
 	}
 	
 	
-	// Sets the rotation of the model.
-	
-	private void setRotation(ModelRenderer Renderer, float par1, float par2, float par3)
+	/**
+     * setRotation Sets the rotation of the model.
+     * 
+     * @param  {ModelRenderer} renderer The model renderer.
+     * @param  {float} par1  	  	    X axis rotation.
+     * @param  {float} par2 	        Y axis rotation.
+     * @param  {float} par3  	        Z axis rotation.
+     * 
+     * @return {void}
+     */
+	private void setRotation(ModelRenderer renderer, float par1, float par2, float par3)
 	{
-		Renderer.rotateAngleX = par1;
-		Renderer.rotateAngleY = par2;
-		Renderer.rotateAngleZ = par3;
+		renderer.rotateAngleX = par1;
+		renderer.rotateAngleY = par2;
+		renderer.rotateAngleZ = par3;
 	}
 	
 	

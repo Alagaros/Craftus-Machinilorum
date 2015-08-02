@@ -1,12 +1,3 @@
-/**
- * Craftus Machinilorum
- *
- * 
- * @Author Dalthow Game Studios 
- * @Class ClientProxy.java
- * 
- **/
-
 package com.dalthow.machinilorum.proxy;
 
 import api.player.model.ModelPlayerAPI;
@@ -47,14 +38,30 @@ import cpw.mods.fml.client.registry.RenderingRegistry;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
+/**
+ * Craftus Machinilorum
+ *
+ * 
+ * @author Dalthow Game Studios 
+ * @class ClientProxy.java
+ * 
+ **/
+
 public class ClientProxy extends CommonProxy
 {
-	// Binds and registers all the models to their items, blocks or entities 
-	
+	/**
+     * loadRenderers Registers all custom renders in this mod.
+     * 
+     * @return {void}
+     */
 	@SideOnly(Side.CLIENT) 
 	@Override
 	public void loadRenderers() 
 	{ 
+	    super.loadRenderers();
+	    
+		// Registering the item renders.
+		
 		MinecraftForgeClient.registerItemRenderer(Main.itemFilter, new RenderFilter());
 		MinecraftForgeClient.registerItemRenderer(Main.itemBomb, new RenderBomb()); 
 		MinecraftForgeClient.registerItemRenderer(Main.itemShoppingCart, new RenderItemShoppingCart());
@@ -66,6 +73,9 @@ public class ClientProxy extends CommonProxy
 		MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(Main.blockSprinkler), new RenderItemSprinkler());
 		MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(Main.blockChalkboard), new RenderItemChalkboard());
 		
+		
+		//Registering the TileEntity renders.
+		
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityEggIncubator.class, new RenderEggIncubator());
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityWoodCutter.class, new RenderWoodCutter());
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityMobRadar.class, new RenderMobRadar());
@@ -73,12 +83,16 @@ public class ClientProxy extends CommonProxy
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntitySprinkler.class, new RenderSprinkler());
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityChalkboard.class, new RenderChalkboard());
 		
+		
+		// Registering the entity renders.
+		
 		RenderingRegistry.registerEntityRenderingHandler(EntityBomb.class, new RenderEntityBomb(Main.itemBomb));    
 		RenderingRegistry.registerEntityRenderingHandler(EntityShoppingCart.class, new RenderEntityShoppingCart());    
 
-		ModelPlayerAPI.register(Reference.modId, PlayerModelOverride.class);
 		
-	    super.loadRenderers();
+		// Registering the custom player render.
+		
+		ModelPlayerAPI.register(Reference.modId, PlayerModelOverride.class);
 	} 
 }
  

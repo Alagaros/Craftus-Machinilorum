@@ -1,12 +1,3 @@
-/**
- * Craftus Machinilorum
- *
- * 
- * @Author Dalthow Game Studios 
- * @Class PacketMobRadarId.java
- * 
- **/
-
 package com.dalthow.machinilorum.packet.mobradar;
 
 import com.dalthow.machinilorum.packet.AbstractPacket;
@@ -16,23 +7,32 @@ import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
 import net.minecraft.entity.player.EntityPlayer;
 
+/**
+ * Craftus Machinilorum
+ *
+ * 
+ * @author Dalthow Game Studios 
+ * @class PacketMobRadarId.java
+ * 
+ **/
+
 public class PacketMobRadarId extends AbstractPacket 
 {
-	// Declaration
+	// Declaration for the position of the block.
 	
 	int xPos;
 	int yPos;
 	int zPos;
 	
+	
+	// Declaring the kind of mob that is selected.
+	
 	int mobId;
 
 	
-	// Constructors
+	// For some reason packets need an empty constructor, don't ask me why.
 	
-	public PacketMobRadarId() 
-	{
-		
-	}
+	public PacketMobRadarId(){}
 	
 	public PacketMobRadarId(int xPos, int yPos, int zPos, int mobId) 
 	{
@@ -44,7 +44,7 @@ public class PacketMobRadarId extends AbstractPacket
 	}
 	
 	
-	// Encodes the packet
+	// Encodes the packet.
 	
 	@Override
 	public void encodeInto(ChannelHandlerContext context, ByteBuf buffer) 
@@ -57,7 +57,7 @@ public class PacketMobRadarId extends AbstractPacket
 	}
 	
 	
-	// Decodes the packet
+	// Decodes the packet.
 
 	@Override
 	public void decodeInto(ChannelHandlerContext context, ByteBuf buffer) 
@@ -70,7 +70,7 @@ public class PacketMobRadarId extends AbstractPacket
 	}
 
 	
-	// Handles the client side
+	// Handles the client side.
 	
 	@Override
 	public void handleClientSide(EntityPlayer player) 
@@ -81,7 +81,7 @@ public class PacketMobRadarId extends AbstractPacket
 	}
 
 	
-	// Handles the server side
+	// Handles the server side.
 	
 	@Override
 	public void handleServerSide(EntityPlayer player) 

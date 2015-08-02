@@ -90,8 +90,16 @@ public class ModelBomb extends ModelBase
 	}
 	
 	
-	// Sets the rotation of the model.
-	
+	/**
+     * setRotation Sets the rotation of the model.
+     * 
+     * @param  {ModelRenderer} renderer The model renderer.
+     * @param  {float} par1  	  	    X axis rotation.
+     * @param  {float} par2 	        Y axis rotation.
+     * @param  {float} par3  	        Z axis rotation.
+     * 
+     * @return {void}
+     */
 	private void setRotation(ModelRenderer renderer, float par1, float par2, float par3)
 	{
 		renderer.rotateAngleX = par1;

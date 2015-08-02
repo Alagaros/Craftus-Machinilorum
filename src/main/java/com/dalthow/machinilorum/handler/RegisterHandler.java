@@ -20,45 +20,73 @@ import cpw.mods.fml.common.registry.GameRegistry;
 
 public class RegisterHandler 
 {
-	// Registers a item so that it gets loaded in the game.
-	
+	/**
+     * registerItem Registers a item so that it gets loaded in the game.
+     * 
+     * @param  {Item} item The item that should get registered.
+     * 
+     * @return {void}
+     */
 	public static void registerItem(Item item)
 	{
 		GameRegistry.registerItem(item, Reference.modId + "_" + item.getUnlocalizedName().substring(5));
 	}
 	
 	
-	// Registers a block so that it gets loaded in the game.
-	
+	/**
+     * registerBlock Registers a block so that it gets loaded in the game.
+     * 
+     * @param  {Block} block The block that should get registered.
+     * 
+     * @return {void}
+     */
 	public static void registerBlock(Block block)
 	{
 		GameRegistry.registerBlock(block, Reference.modId + "_" + block.getUnlocalizedName().substring(5));
 	}
 	
 	
-	// Registers a block so that it gets loaded in the game.
-	
-	public static void registerBlockWithItem(Block block, Class<? extends ItemBlock> itemclass)
+	/**
+     * registerBlockWithItem Registers a block with an item, this is used for custom rendered blocks.
+     * 
+     * @param  {Block} block         The block that should get registered.
+     * @param  {ItemBlock} itemBlock The item that should get bound to the block.
+     * 
+     * @return {void}
+     */
+	public static void registerBlockWithItem(Block block, Class<? extends ItemBlock> itemBlock)
 	{
-		GameRegistry.registerBlock(block, itemclass, Reference.modId + "_" + block.getUnlocalizedName().substring(5));
+		GameRegistry.registerBlock(block, itemBlock, Reference.modId + "_" + block.getUnlocalizedName().substring(5));
 	}
 	
 	
-	// Registers a tile entity so it gets loaded in the game.
-	
-	public static void registerTileEntity(Class title, String name)
+	/**
+     * registerTileEntity Registers a TileEntity so it can tick in the game.
+     * 
+     * @param  {Class} tile  The class where the TileEntity is in.
+     * @param  {String} name The name of the TileEntity.
+     * 
+     * @return {void}
+     */
+	public static void registerTileEntity(Class tile, String name)
 	{
-		GameRegistry.registerTileEntity(title, name);
+		GameRegistry.registerTileEntity(tile, name);
 	}
 	
 	
-	// Registers a entity so it gets loaded in the game.
-	
-	public static void registerEntity(Class title, String name)
+	/**
+     * registerEntity Registers a Entity so it can tick in the game.
+     * 
+     * @param  {Class} entity  The class where the Entity is in.
+     * @param  {String} name   The name of the Entity.
+     * 
+     * @return {void}
+     */
+	public static void registerEntity(Class entity, String name)
 	{
 		int entityId = EntityRegistry.findGlobalUniqueEntityId();
 		
-		EntityRegistry.registerGlobalEntityID(title, name, entityId);
-		EntityRegistry.registerModEntity(title, name, entityId, Main.instance, 64, 1, true);
+		EntityRegistry.registerGlobalEntityID(entity, name, entityId);
+		EntityRegistry.registerModEntity(entity, name, entityId, Main.instance, 64, 1, true);
 	}
 }
