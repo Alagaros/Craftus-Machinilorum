@@ -46,16 +46,26 @@ public class StoneCutterShapedRecipes implements IRecipe
     }
 
     
-    // Returns a single recipe.
-    
+   
+    /**
+     * getRecipeOutput Returns the output of a recipe.
+     * 
+     * @return {ItemStack}
+     */
     public ItemStack getRecipeOutput()
     {
         return recipeOutput;
     }
 
     
-    // Used to check if a recipe matches current crafting inventory.
-     
+    /**
+     * matches Used to check if a recipe matches current crafting inventory.
+     * 
+     * @param {InventoryCrafting} inventoryCrafting The crafting recipe that has been used.
+     * @param {World} world							The world object.			
+     * 
+     * @return {ItemStack}
+     */
     public boolean matches(InventoryCrafting inventoryCrafting, World world)
     {
         for(int i = 0; i <= 5 - recipeWidth; ++i)
@@ -78,8 +88,16 @@ public class StoneCutterShapedRecipes implements IRecipe
     }
 
     
-    // Checks if the region of a crafting inventory is match for the recipe.
-     
+    /**
+     * checkMatch Checks if the region of a crafting inventory is match for the recipe.
+     * 
+     * @param {InventoryCrafting} inventoryCrafting The crafting recipe that has been used.
+     * @param {int}	par1							X position in crafting grid.
+     * @param {int} par2							Y position in crafting grid.
+     * @param {boolean} par3						?			
+     * 
+     * @return {ItemStack}
+     */
     private boolean checkMatch(InventoryCrafting inventoryCrafting, int par1, int par2, boolean par3)
     {
         for(int i = 0; i < 5; ++i)
@@ -130,8 +148,13 @@ public class StoneCutterShapedRecipes implements IRecipe
     }
 
     
-    // Returns an Item that is the result of this recipe.
-     
+    /**
+     * getCraftingResult Returns an ItemStack that is the result of this recipe.
+     * 
+     * @param {InventoryCrafting} inventoryCrafting The crafting recipe that has been used.
+     * 
+     * @return {ItemStack}
+     */
     public ItemStack getCraftingResult(InventoryCrafting inventoryCrafting)
     {
         ItemStack var1 = getRecipeOutput().copy();
@@ -153,8 +176,11 @@ public class StoneCutterShapedRecipes implements IRecipe
     }
 
     
-    // Returns the size of the recipes array-list.
-     
+    /**
+     * getRecipeSize Gets the size of a recipe.
+     * 
+     * @return {int}
+     */
     public int getRecipeSize()
     {
         return recipeWidth * recipeHeight;

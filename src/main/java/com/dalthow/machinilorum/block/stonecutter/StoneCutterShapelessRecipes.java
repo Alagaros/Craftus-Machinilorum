@@ -39,16 +39,25 @@ public class StoneCutterShapelessRecipes implements IRecipe
     }
     
     
-    // Returns a single recipe.
-    
+    /**
+     * getRecipeOutput Returns the output of a recipe.
+     * 
+     * @return {ItemStack}
+     */
     public ItemStack getRecipeOutput()
     {
         return recipeOutput;
     }
 
    
-    // Used to check if a recipe matches current crafting inventory.
-    
+    /**
+     * matches Used to check if a recipe matches current crafting inventory.
+     * 
+     * @param {InventoryCrafting} inventoryCrafting The crafting recipe that has been used.
+     * @param {World} world							The world object.			
+     * 
+     * @return {ItemStack}
+     */
     public boolean matches(InventoryCrafting inventoryCrafting, World world)
     {
         ArrayList<?> var1 = new ArrayList<Object>(recipeItems);
@@ -90,16 +99,24 @@ public class StoneCutterShapelessRecipes implements IRecipe
     }
 
     
-    // Returns an Item that is the result of this recipe.
-     
+    /**
+     * getCraftingResult Returns an ItemStack that is the result of this recipe.
+     * 
+     * @param {InventoryCrafting} inventoryCrafting The crafting recipe that has been used.
+     * 
+     * @return {ItemStack}
+     */
     public ItemStack getCraftingResult(InventoryCrafting inventoryCrafting)
     {
         return recipeOutput.copy();
     }
 
     
-    // Returns the size of the recipes array-list.
-     
+    /**
+     * getRecipeSize Gets the size of a recipe.
+     * 
+     * @return {int}
+     */
     public int getRecipeSize()
     {
         return recipeItems.size();

@@ -66,8 +66,15 @@ public class FragmentingHandler
     }
 
     
-    // Adds a block to the recipe list.
-    
+    /**
+     * addBlock Adds a block to the fragmentation list.
+     * 
+     * @param  {Block} block         The block that should get registered.
+     * @param  {ItemStack} itemStack The item the operation should return.
+     * @param  {float} experience	 How much experience should be given to the player for performing this action.
+     * 
+     * @return {void}
+     */
     public void addBlock(Block block, ItemStack itemStack, float experience)
     {
         addItem(Item.getItemFromBlock(block), itemStack, experience);
@@ -76,23 +83,29 @@ public class FragmentingHandler
     
     // Adds a item to the recipe list.
     
+    /**
+     * addBlock Adds a item to the fragmentation list.
+     * 
+     * @param  {Item} item           The item that should get registered.
+     * @param  {ItemStack} itemStack The item the operation should return.
+     * @param  {float} experience	 How much experience should be given to the player for performing this action.
+     * 
+     * @return {void}
+     */
     public void addItem(Item item, ItemStack itemStack, float experience)
     {
-        putItemInList(new ItemStack(item, 1, 32767), itemStack, experience);
+        fragmentingList.put(new ItemStack(item, 1, 32767), itemStack);
+        experienceList.put(new ItemStack(item, 1, 32767), Float.valueOf(experience));
     }
 
     
-    // The method used to put objects in the list.
-    
-    public void putItemInList(ItemStack inputStack, ItemStack outputStack, float experience)
-    {
-        fragmentingList.put(inputStack, outputStack);
-        experienceList.put(outputStack, Float.valueOf(experience));
-    }
-
-    
-    // Returns the recipes from the list.
-    
+    /**
+     * getFragmentingResult Returns the correct item output.
+     * 
+     * @param  {ItemStack} itemStack The item that is going to be fragmented.
+     * 
+     * @return {ItemStack} The correct item.
+     */
     public ItemStack getFragmentingResult(ItemStack itemStack)
     {
         Iterator<?> iterator = fragmentingList.entrySet().iterator();
@@ -114,24 +127,38 @@ public class FragmentingHandler
     }
     
     
-    // Checks if the input is equal to the output.
-
+    /**
+     * inputEqualToOutput Checks if the input is equal to the output.
+     * 
+     * @param  {ItemStack} inputStack  The input item.
+     * @param  {ItemStack} outputStack The output item.
+     * 
+     * @return {void}
+     */
     private boolean inputEqualToOutput(ItemStack inputStack, ItemStack outputStack)
     {
         return outputStack.getItem() == inputStack.getItem() && (outputStack.getItemDamage() == 32767 || outputStack.getItemDamage() == inputStack.getItemDamage());
     }
 
     
-    // Returns the fragmenting list.
-    
+    /**
+     * getFragmentingList Returns the all the fragmentation recipe's.
+     * 
+     * @return {Map<ItemStack, ItemStack>}
+     */
     public Map<ItemStack, ItemStack> getFragmentingList()
     {
         return fragmentingList;
     }
 
     
-    // Returns the amount you get from fragmenting something.
-    
+    /**
+     * getExperienceFromItemStack Returns the amount of experience you gain from fragmenting a certain item.
+     * 
+     * @param  {ItemStack} itemStack The item that should be checked.
+     * 
+     * @return {float}
+     */
     public float getExperienceFromItemStack(ItemStack itemStack)
     {
         float var1 = itemStack.getItem().getSmeltingExperience(itemStack);
