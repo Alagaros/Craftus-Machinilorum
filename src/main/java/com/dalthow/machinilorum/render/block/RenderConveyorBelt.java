@@ -1,12 +1,3 @@
-/**
- * Craftus Machinilorum
- *
- * 
- * @Author Dalthow Game Studios 
- * @Class RenderConveyorBelt.java
- * 
- **/
-
 package com.dalthow.machinilorum.render.block;
 
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
@@ -24,10 +15,19 @@ import cpw.mods.fml.client.FMLClientHandler;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
+/**
+ * Craftus Machinilorum
+ *
+ * 
+ * @author Dalthow Game Studios 
+ * @class RenderConveyorBelt.java
+ * 
+ **/
+
 @SideOnly(Side.CLIENT)
 public class RenderConveyorBelt extends TileEntitySpecialRenderer
 {
-	// Declaration
+	// Declaration of the model files.
 	
     private IModelCustom model;
 
@@ -35,7 +35,7 @@ public class RenderConveyorBelt extends TileEntitySpecialRenderer
     private final ResourceLocation offTexture = new ResourceLocation(Reference.modId, "textures/models/conveyor belt off.png");
     
     
-    // Constructor
+    // Constructor that obtains the model.
     
     public RenderConveyorBelt()
     {
@@ -43,7 +43,7 @@ public class RenderConveyorBelt extends TileEntitySpecialRenderer
     }
     
     
-    // Renders the tile at the entity
+    // Renders the TileEntity at a specific location.
 
 	@Override
 	public void renderTileEntityAt(TileEntity tile, double xPos, double yPos, double zPos, float par1)
@@ -76,6 +76,9 @@ public class RenderConveyorBelt extends TileEntitySpecialRenderer
         float scale = 0.5F;
              
         GL11.glScalef(scale, scale, scale);
+        
+        
+        // Switching the texture based on the active state.
         
         if(tileConveyorBelt.isActive)
         {

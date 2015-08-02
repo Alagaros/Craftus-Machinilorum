@@ -1,19 +1,19 @@
-/**
- * Craftus Machinilorum
- *
- * 
- * @Author Dalthow Game Studios 
- * @Class MathHelper.java
- * 
- **/
-
 package com.dalthow.machinilorum.util;
 
 import java.util.Random;
 
+/**
+ * Craftus Machinilorum
+ *
+ * 
+ * @author Dalthow Game Studios 
+ * @class MathHelper.java
+ * 
+ **/
+
 public class MathHelper
 {
-	// Math methods
+	// TODO: Properly document these.
 	
 	public static float approachLinear(float var1, float var2, float var3)
 	{

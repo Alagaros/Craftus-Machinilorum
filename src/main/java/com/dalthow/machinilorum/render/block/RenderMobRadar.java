@@ -1,12 +1,3 @@
-/**
- * Craftus Machinilorum
- *
- * 
- * @Author Dalthow Game Studios 
- * @Class RenderMobRadar.java
- * 
- **/
-
 package com.dalthow.machinilorum.render.block;
 
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
@@ -24,10 +15,19 @@ import cpw.mods.fml.client.FMLClientHandler;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
+/**
+ * Craftus Machinilorum
+ *
+ * 
+ * @author Dalthow Game Studios 
+ * @class RenderMobRadar.java
+ * 
+ **/
+
 @SideOnly(Side.CLIENT)
 public class RenderMobRadar extends TileEntitySpecialRenderer
 {
-	// Declaration
+	// Declaration of the model files.
 	
     private IModelCustom top;
     private IModelCustom bottom;
@@ -35,7 +35,7 @@ public class RenderMobRadar extends TileEntitySpecialRenderer
     private final ResourceLocation texture = new ResourceLocation(Reference.modId, "textures/models/mob radar.png");
  
     
-    // Constructor
+    // Constructor that obtains the models.
     
     public RenderMobRadar()
     {
@@ -44,7 +44,7 @@ public class RenderMobRadar extends TileEntitySpecialRenderer
     }
     
     
-    // Renders the tile at the entity
+    // Renders the TileEntity at a specific location.
 
 	@Override
 	public void renderTileEntityAt(TileEntity tile, double xPos, double yPos, double zPos, float par1)

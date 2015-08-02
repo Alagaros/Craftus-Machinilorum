@@ -1,12 +1,3 @@
-/**
- * Craftus Machinilorum
- *
- * 
- * @Author Dalthow Game Studios
- * @Class RenderChalkboard.java 
- * 
- **/
-
 package com.dalthow.machinilorum.render.block;
 
 import net.minecraft.block.Block;
@@ -27,17 +18,26 @@ import cpw.mods.fml.client.FMLClientHandler;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
+/**
+ * Craftus Machinilorum
+ *
+ * 
+ * @author Dalthow Game Studios
+ * @class RenderChalkboard.java 
+ * 
+ **/
+
 @SideOnly(Side.CLIENT)
 public class RenderChalkboard extends TileEntitySpecialRenderer
 {
-	// Declaration
+	// Declaration of the model files.
 	
     private IModelCustom model;
 
     private final ResourceLocation textures = new ResourceLocation(Reference.modId, "textures/models/chalkboard.png");
  
     
-    // Constructor
+    // Constructor that obtains the model.
     
     public RenderChalkboard()
     {
@@ -45,7 +45,7 @@ public class RenderChalkboard extends TileEntitySpecialRenderer
     }
     
     
-    // Renders the tile at the entity
+    // Renders the TileEntity at a specific location.
 
 	@Override
 	public void renderTileEntityAt(TileEntity tile, double xPos, double yPos, double zPos, float par1)

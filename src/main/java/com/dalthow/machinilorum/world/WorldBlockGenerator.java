@@ -1,12 +1,3 @@
-/**
- * Craftus Machinilorum
- *
- * 
- * @Author Dalthow Game Studios
- * @Class WorldBlockGenerator.java 
- * 
- **/
-
 package com.dalthow.machinilorum.world;
 
 import java.util.Random;
@@ -19,9 +10,18 @@ import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.feature.WorldGenMinable;
 import cpw.mods.fml.common.IWorldGenerator;
 
+/**
+ * Craftus Machinilorum
+ *
+ * 
+ * @author Dalthow Game Studios
+ * @class WorldBlockGenerator.java 
+ * 
+ **/
+
 public class WorldBlockGenerator implements IWorldGenerator
 {
-	// Specifies in which dimension the ore should spawn
+	// Specifies in which dimension the "ore" should spawn.
 	
 	public void generate(Random random, int xChunk, int zChunk, World world, IChunkProvider chunkGenerator, IChunkProvider chunkProvider)
 	{
@@ -32,7 +32,7 @@ public class WorldBlockGenerator implements IWorldGenerator
 	}
 	
 	
-	// Generates the ore in the world
+	// Generates chalk in the world.
 	
 	private void generateSurface(World world, Random random, int xChunk, int zChunk)
 	{
