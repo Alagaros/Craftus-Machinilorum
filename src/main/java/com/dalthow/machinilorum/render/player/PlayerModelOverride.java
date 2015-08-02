@@ -1,12 +1,3 @@
-/**
- * Craftus Machinilorum
- *
- * 
- * @Author Dalthow Game Studios 
- * @Class PlayerModelOverride.java
- * 
- **/
-
 package com.dalthow.machinilorum.render.player;
 
 import com.dalthow.machinilorum.entity.EntityShoppingCart;
@@ -15,9 +6,18 @@ import net.minecraft.entity.Entity;
 import api.player.model.ModelPlayerAPI;
 import api.player.model.ModelPlayerBase;
 
+/**
+ * Craftus Machinilorum
+ *
+ * 
+ * @author Dalthow Game Studios 
+ * @class PlayerModelOverride.java
+ * 
+ **/
+
 public class PlayerModelOverride extends ModelPlayerBase
 {
-	// Constructor
+	// Constructor.
 	
 	public PlayerModelOverride(ModelPlayerAPI modelPlayerAPI)
 	{
@@ -25,13 +25,13 @@ public class PlayerModelOverride extends ModelPlayerBase
 	}
 	  
 	
-	// Gets triggered after the player model's initial rotations are set
+	// Gets triggered after the player model's initial rotations are set.
 	
-	public void afterSetRotationAngles(float paramFloat1, float paramFloat2, float paramFloat3, float paramFloat4, float paramFloat5, float paramFloat6, Entity paramEntity)
+	public void afterSetRotationAngles(float par1, float par2, float par3, float par4, float par5, float par6, Entity entity)
 	{
-		if((paramEntity.ridingEntity != null) && ((paramEntity.ridingEntity instanceof EntityShoppingCart)))
+		if((entity.ridingEntity != null) && ((entity.ridingEntity instanceof EntityShoppingCart)))
 		{
-			EntityShoppingCart cart = (EntityShoppingCart) paramEntity.ridingEntity;
+			EntityShoppingCart cart = (EntityShoppingCart) entity.ridingEntity;
 			
 			modelPlayer.bipedLeftLeg.rotateAngleY = -0.1F;
 			modelPlayer.bipedRightLeg.rotateAngleY = 0.1F;

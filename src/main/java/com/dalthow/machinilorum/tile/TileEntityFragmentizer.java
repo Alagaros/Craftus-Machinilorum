@@ -1,12 +1,3 @@
-/**
- * Craftus Machinilorum
- *
- * 
- * @Author Dalthow Game Studios 
- * @Class TileEntityFragmentizer.java
- * 
- **/
-
 package com.dalthow.machinilorum.tile;
 
 import com.dalthow.machinilorum.block.fragmentizer.FragmentingHandler;
@@ -25,26 +16,41 @@ import net.minecraft.nbt.NBTTagList;
 import net.minecraft.tileentity.TileEntity;
 import cpw.mods.fml.common.registry.GameRegistry;
 
+/**
+ * Craftus Machinilorum
+ *
+ * 
+ * @author Dalthow Game Studios 
+ * @class TileEntityFragmentizer.java
+ * 
+ **/
+
 public class TileEntityFragmentizer extends TileEntity implements ISidedInventory 
 {
-	// Declaration
+	// Declaration of some other variables.
 	
 	private String localizedName;
 
+	public int burnTime;
+	public int currentItemBurnTime;
+	public int cookTime;
+	
+	
+	// Declaration of the slots.
+	
 	private final int[] slotsTop = new int[]{0};
 	private final int[] slotsBottom = new int[]{2, 1};
 	private final int[] slotsSide = new int[]{1};
 
 	private ItemStack[] slots = new ItemStack [3];
 
-	public int burnTime;
-	public int currentItemBurnTime;
-	public int cookTime;
-
+	
+	// Declaration of the furnace speed.
+	
 	public int furnaceSpeed = 100;
 	
 	
-	// Sets the display name of the gui
+	// Sets the display name of the gui.
 	
 	public void setGuiDisplayName(String displayName) 
 	{
@@ -52,7 +58,7 @@ public class TileEntityFragmentizer extends TileEntity implements ISidedInventor
 	}
 	
 	
-	// Gets the display name of the gui
+	// Gets the display name of the gui.
 	
 	public String getInventoryName() 
 	{
@@ -60,7 +66,7 @@ public class TileEntityFragmentizer extends TileEntity implements ISidedInventor
 	}
 
 	
-	// Checks if the display name of the gui is custom
+	// Checks if the display name of the gui is custom.
 	
 	public boolean hasCustomInventoryName() 
 	{
@@ -68,7 +74,7 @@ public class TileEntityFragmentizer extends TileEntity implements ISidedInventor
 	}
 
 	
-	// Returns the amount of slots in the container
+	// Returns the amount of slots in the container.
 	
 	public int getSizeInventory() 
 	{
@@ -76,7 +82,7 @@ public class TileEntityFragmentizer extends TileEntity implements ISidedInventor
 	}
 
 	
-	// Returns the current item in a slot
+	// Returns the current item in a slot.
 	
 	public ItemStack getStackInSlot(int par1) 
 	{
@@ -84,7 +90,7 @@ public class TileEntityFragmentizer extends TileEntity implements ISidedInventor
 	}
 
 	
-	// Decreases the stack size
+	// Decreases the stack size.
 	
 	public ItemStack decrStackSize(int par1, int par2) 
 	{
@@ -120,7 +126,7 @@ public class TileEntityFragmentizer extends TileEntity implements ISidedInventor
 	}
 
 	
-	// When some containers are closed they call this on each slot, then drop whatever it returns 
+	// When some containers are closed they call this on each slot, then drop whatever it returns .
 	
 	public ItemStack getStackInSlotOnClosing(int par1) 
 	{
@@ -149,7 +155,7 @@ public class TileEntityFragmentizer extends TileEntity implements ISidedInventor
 	}
 
 	
-	// Gets how many items are allowed in the custom slots
+	// Gets how many items are allowed in the custom slots.
 	
 	public int getInventoryStackLimit() 
 	{
@@ -157,7 +163,7 @@ public class TileEntityFragmentizer extends TileEntity implements ISidedInventor
 	}
 	
 	
-	// Checks if the player is in range of the container
+	// Checks if the player is in range of the container.
 
 	public boolean isUseableByPlayer(EntityPlayer player) 
 	{
@@ -165,7 +171,7 @@ public class TileEntityFragmentizer extends TileEntity implements ISidedInventor
 	}
 
 	
-	// Gets called when the inventory gets opened
+	// Gets called when the inventory gets opened.
 	
 	public void openInventory()
 	{
@@ -173,7 +179,7 @@ public class TileEntityFragmentizer extends TileEntity implements ISidedInventor
 	}
 	
 	
-	// Gets called when the inventory gets closed
+	// Gets called when the inventory gets closed.
 	
 	public void closeInventory() 
 	{
@@ -181,7 +187,7 @@ public class TileEntityFragmentizer extends TileEntity implements ISidedInventor
 	}
 
 	
-	// Checks if the item can fit in the slot with a use
+	// Checks if the item can fit in the slot with a use.
 	
 	public boolean isItemValidForSlot(int var1, ItemStack itemStack) 
 	{
@@ -189,7 +195,7 @@ public class TileEntityFragmentizer extends TileEntity implements ISidedInventor
 	}
 
 	
-	// Checks if the item is a fuel
+	// Checks if the item is a fuel.
 	
 	public static boolean isItemFuel(ItemStack itemStack) 
 	{
@@ -197,7 +203,7 @@ public class TileEntityFragmentizer extends TileEntity implements ISidedInventor
 	}
 
 	
-	// Returns the burn time from a certain item
+	// Returns the burn time from a certain item.
 	
 	private static int getItemBurnTime(ItemStack itemStack) 
 	{
@@ -260,7 +266,7 @@ public class TileEntityFragmentizer extends TileEntity implements ISidedInventor
 	}
 
 	
-	// Checks if the block is fragmenting
+	// Checks if the block is fragmenting.
 	
 	public boolean isFragmenting() 
 	{
@@ -268,7 +274,7 @@ public class TileEntityFragmentizer extends TileEntity implements ISidedInventor
 	}
 	
 	
-	// Gets triggered 20 times every second
+	// Gets triggered 20 times every second.
 	
 	public void updateEntity() 
 	{
@@ -329,7 +335,7 @@ public class TileEntityFragmentizer extends TileEntity implements ISidedInventor
 	}
 
 	
-	// Checks if with the current input something can be processed
+	// Checks if with the current input something can be processed.
 	
 	public boolean canFragment() 
 	{
@@ -364,7 +370,7 @@ public class TileEntityFragmentizer extends TileEntity implements ISidedInventor
 	}
 
 	
-	// Fragments the input item
+	// Fragments the input item.
 	
 	public void fragmentItem() 
 	{
@@ -392,7 +398,7 @@ public class TileEntityFragmentizer extends TileEntity implements ISidedInventor
 	}
 	
 	
-	// Methods used for automatic importing and exporting with hoppers or pipes
+	// Methods used for automatic importing and exporting with hoppers or pipes.
 
 	public int[] getAccessibleSlotsFromSide(int par1) 
 	{
@@ -410,7 +416,7 @@ public class TileEntityFragmentizer extends TileEntity implements ISidedInventor
 	}
 
 	
-	// Methods used to get the correct values in the gui
+	// Methods used to get the correct values in the gui.
 	
 	public int getBurnTimeRemainingScaled(int par1) 
 	{
@@ -428,7 +434,7 @@ public class TileEntityFragmentizer extends TileEntity implements ISidedInventor
 	}
 
 	
-	// Reading from the tag
+	// Reading from the tag compound.
     
 	public void readFromNBT(NBTTagCompound tag) 
 	{
@@ -461,7 +467,7 @@ public class TileEntityFragmentizer extends TileEntity implements ISidedInventor
 	}
 	
 	
-	// Writing to the tag
+	// Writing to the tag compound.
     
 	public void writeToNBT(NBTTagCompound tag) 
 	{

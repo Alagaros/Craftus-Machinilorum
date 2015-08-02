@@ -1,12 +1,3 @@
-/**
- * Craftus Machinilorum
- *
- * 
- * @Author Dalthow Game Studios 
- * @Class TileEntityChalkboard.java
- * 
- **/
-
 package com.dalthow.machinilorum.tile;
 
 import net.minecraft.nbt.NBTTagCompound;
@@ -15,9 +6,20 @@ import net.minecraft.network.Packet;
 import net.minecraft.network.play.server.S35PacketUpdateTileEntity;
 import net.minecraft.tileentity.TileEntity;
 
+/**
+ * Craftus Machinilorum
+ *
+ * 
+ * @author Dalthow Game Studios 
+ * @class TileEntityChalkboard.java
+ * 
+ **/
+
+// TODO: Add support for multiple lines.
+
 public class TileEntityChalkboard extends TileEntity
 {
-	// Declaration
+	// Declaration of some positional variables.
 	
 	public float startPosX = 0;
 	public float startPosY = 0;
@@ -30,7 +32,7 @@ public class TileEntityChalkboard extends TileEntity
 	public boolean startDefined = false;
 	
 	
-    // Reading from the tag
+    // Reading from the tag compound.
     
     public void readFromNBT(NBTTagCompound tag) 
     { 
@@ -48,7 +50,7 @@ public class TileEntityChalkboard extends TileEntity
     } 
       
       
-    // Writing to the tag
+    // Writing to the tag compound.
        
     public void writeToNBT(NBTTagCompound tag) 
     { 
@@ -66,7 +68,7 @@ public class TileEntityChalkboard extends TileEntity
     } 
     
     
- 	// Tells the game that the tile can update
+ 	// Tells the game that the tile can update.
  	
  	@Override
  	public boolean canUpdate()
@@ -75,7 +77,7 @@ public class TileEntityChalkboard extends TileEntity
     }
  	
  	
- 	// Used for reading packets
+ 	// Used for reading packets.
  	
  	@Override
  	public Packet getDescriptionPacket() 

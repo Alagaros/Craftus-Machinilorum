@@ -1,12 +1,3 @@
-/**
- * Craftus Machinilorum
- *
- * 
- * @Author Dalthow Game Studios 
- * @Class TileEntityMobRadar.java
- * 
- **/
-
 package com.dalthow.machinilorum.tile;
 
 import java.util.List;
@@ -30,9 +21,18 @@ import net.minecraft.network.play.server.S35PacketUpdateTileEntity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.AxisAlignedBB;
 
+/**
+ * Craftus Machinilorum
+ *
+ * 
+ * @author Dalthow Game Studios 
+ * @class TileEntityMobRadar.java
+ * 
+ **/
+
 public class TileEntityMobRadar extends TileEntity 
 {
-	// Declaration
+	// Declaration of TileEntity config.
 	
 	public int mobId;
 	public int radius;
@@ -43,7 +43,7 @@ public class TileEntityMobRadar extends TileEntity
 	public int rotationAngle;
 	
 	
-	// Constructor
+	// Constructor that sets the declared variables.
 	
 	public TileEntityMobRadar()
 	{
@@ -57,7 +57,7 @@ public class TileEntityMobRadar extends TileEntity
 	}
 	
 	
-	// Gets triggered 20 times every second
+	// Gets triggered 20 times every second.
 	
 	public void updateEntity() 
 	{
@@ -211,7 +211,7 @@ public class TileEntityMobRadar extends TileEntity
 	}
 	
 	
-    // Reading from the tag
+    // Reading from the tag compound.
     
     public void readFromNBT(NBTTagCompound tag) 
     { 
@@ -224,7 +224,7 @@ public class TileEntityMobRadar extends TileEntity
     } 
       
       
-    // Writing to the tag
+    // Writing to the tag compound.
        
     public void writeToNBT(NBTTagCompound tag) 
     { 
@@ -237,7 +237,7 @@ public class TileEntityMobRadar extends TileEntity
     } 
     
     
- 	// Tells the game that the tile can update
+ 	// Tells the game that the tile can update.
  	
  	@Override
  	public boolean canUpdate()
@@ -246,7 +246,7 @@ public class TileEntityMobRadar extends TileEntity
     }
  	
  	
- 	// Makes it so it always renders
+ 	// Makes it so it always renders.
  	
  	@Override
  	public Block getBlockType()
@@ -255,7 +255,7 @@ public class TileEntityMobRadar extends TileEntity
  	}
  	
  	
- 	// Used for reading packets
+ 	// Used for reading packets.
  	
  	@Override
  	public Packet getDescriptionPacket() 

@@ -1,12 +1,3 @@
-/**
- * Craftus Machinilorum
- *
- * 
- * @Author Dalthow Game Studios 
- * @Class TileEntityEggIncubator.java
- * 
- **/
-
 package com.dalthow.machinilorum.tile;
 
 import com.dalthow.machinilorum.base.Main;
@@ -19,16 +10,25 @@ import net.minecraft.network.play.server.S35PacketUpdateTileEntity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 
+/**
+ * Craftus Machinilorum
+ *
+ * 
+ * @author Dalthow Game Studios 
+ * @class TileEntityEggIncubator.java
+ * 
+ **/
+
 public class TileEntityEggIncubator extends TileEntity
 {
-	// Declaration
+	// Declaration of the tickToHatch counter and canPutEgg in flag.
 	
     public int tickToHatch; 
     
     public boolean canPutEggIn; 
     
 	
-	// Constructor
+	// Constructor that sets the declared variables.
 	
 	public TileEntityEggIncubator()
 	{
@@ -37,7 +37,7 @@ public class TileEntityEggIncubator extends TileEntity
 	}
 
 
-	// Validates the tile entity
+	// Validates the tile entity.
 	
 	@Override
 	public void validate()
@@ -46,16 +46,22 @@ public class TileEntityEggIncubator extends TileEntity
 	}
 	
 	
-	// Gets triggered 20 times every second
+	// Gets triggered 20 times every second.
 	
     public void updateEntity()  
     { 
+    	// Checks if we are not on a server.
+    	
         if(!worldObj.isRemote) 
         {
+        	// Checks if its time to hatch.
+        	
             if(tickToHatch <= 0) 
             { 
                 if(canPutEggIn == false) 
                 { 
+                	// Spawns a baby chicken on the correct position, based on the rotation.
+                	
                 	switch(getBlockMetadata())
                     {
             	        case 0: spawnBabyChicken(worldObj, xCoord + 0.5F, yCoord + 1F, zCoord + 0.5F); 
@@ -95,8 +101,16 @@ public class TileEntityEggIncubator extends TileEntity
     } 
      
    
-    // Spawns a chicken at the block location and setting his age to a baby
-    
+    /**
+     * spawnBabyChicken Spawns a chicken at the block location and setting his age to a baby.
+     * 
+     * @param  {World} world The world object.
+     * @param  {float} xPos  The x position of the desired spawn location.
+     * @param  {float} yPos  The y position of the desired spawn location.
+     * @param  {float} zPos  The z position of the desired spawn location.
+     * 
+     * @return {void}
+     */
     public static void spawnBabyChicken(World world, float xPos, float yPos, float zPos) 
     { 
         EntityChicken chicken = new EntityChicken(world); 
@@ -109,7 +123,7 @@ public class TileEntityEggIncubator extends TileEntity
     } 
       
       
-    // Reading from the tag
+    // Reading from the tag compound.
       
     public void readFromNBT(NBTTagCompound tag) 
     { 
@@ -120,7 +134,7 @@ public class TileEntityEggIncubator extends TileEntity
     } 
       
       
-    // Writing to the tag
+    // Writing to the tag compound.
        
     public void writeToNBT(NBTTagCompound tag) 
     { 
@@ -131,7 +145,7 @@ public class TileEntityEggIncubator extends TileEntity
     } 
       
    
-	// Tells the game that the tile can update
+	// Tells the game that the tile can update.
 	
 	@Override
 	public boolean canUpdate()
@@ -140,7 +154,7 @@ public class TileEntityEggIncubator extends TileEntity
     }
 	
 	
-	// Used for reading packets
+	// Used for reading packets.
 	
 	@Override
 	public Packet getDescriptionPacket() 
