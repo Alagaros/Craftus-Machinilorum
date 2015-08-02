@@ -1,12 +1,3 @@
-/**
- * Craftus Machinilorum
- *
- * 
- * @Author Dalthow Game Studios 
- * @Class RenderEntityBomb.java
- * 
- **/
-
 package com.dalthow.machinilorum.render.entity;
 
 import net.minecraft.client.renderer.Tessellator;
@@ -23,17 +14,26 @@ import org.lwjgl.opengl.GL12;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
+/**
+ * Craftus Machinilorum
+ *
+ * 
+ * @author Dalthow Game Studios 
+ * @class RenderEntityBomb.java
+ * 
+ **/
+
 @SideOnly(Side.CLIENT)
 public class RenderEntityBomb extends Render
 {
-	// Declaration
+	// Declaration of the bomb item and metadata.
 	
     private Item item;
     
     private int metadata;
   
     
-    // Constructor 
+    // Constructor that sets the declared variables.
     
     public RenderEntityBomb(Item item, int metadata)
     {
@@ -47,7 +47,7 @@ public class RenderEntityBomb extends Render
     }
 
     
-    // Draws the bomb icon on the entity
+    // Draws the bomb icon on the entity.
     
     public void doRender(Entity entity, double par1, double par2, double par3, float par4, float par5)
     {
@@ -72,16 +72,27 @@ public class RenderEntityBomb extends Render
     }
 
 
-    // Returns the location of the icon
-    
+    /**
+     * getEntityTexture Gets the texture of a certain entity.
+     * 
+     * @param  {Entity} entity The entity.
+     * 
+     * @return {ResourceLocation} The texture.
+     */
     protected ResourceLocation getEntityTexture(Entity entity)
     {
         return TextureMap.locationItemsTexture;
     }
     
     
-    // Turns the icon based on the point of view
-
+    /**
+     * doTurn Turns the icon based on the point of view.
+     * 
+     * @param  {Tessellator} tessellator The tessellator.
+     * @param  {IIcon} The icon.
+     * 
+     * @return {void}
+     */
     private void doTurn(Tessellator tessellator, IIcon icon)
     {
         float par1 = icon.getMinU();

@@ -1,12 +1,3 @@
-/**
- * Craftus Machinilorum
- *
- * 
- * @Author Dalthow Game Studios 
- * @Class RenderEntityShoppingCart.java
- * 
- **/
-
 package com.dalthow.machinilorum.render.entity;
 
 import net.minecraft.client.renderer.entity.Render;
@@ -23,16 +14,25 @@ import com.dalthow.machinilorum.entity.EntityShoppingCart;
 
 import cpw.mods.fml.client.FMLClientHandler;
 
+/**
+ * Craftus Machinilorum
+ *
+ * 
+ * @author Dalthow Game Studios 
+ * @class RenderEntityShoppingCart.java
+ * 
+ **/
+
 public class RenderEntityShoppingCart extends Render 
 {
-	// Declaration
+	// Declaration of the model files.
 	
 	private IModelCustom model;
 
 	private final ResourceLocation texture = new ResourceLocation(Reference.modId, "textures/models/shopping cart.png");
 	 
 	
-	// Constructor 
+	// Constructor that obtains the model.
     
 	public RenderEntityShoppingCart()
 	{
@@ -40,8 +40,8 @@ public class RenderEntityShoppingCart extends Render
 	}
 	
 	
-	// Loads and renders the shopping cart model on the entity
-	
+	// Renders the shopping cart model on the entity.
+
 	public void doRender(EntityShoppingCart entity, double par1, double par2, double par3, float par4, float par5)
 	{
         GL11.glPushMatrix();
@@ -90,7 +90,7 @@ public class RenderEntityShoppingCart extends Render
     }
 	
 	
-	// Returns the location of the image
+	// Returns the location of the image.
     
 	@Override
 	protected ResourceLocation getEntityTexture(Entity entity) 

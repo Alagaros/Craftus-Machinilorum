@@ -1,12 +1,3 @@
-/**
-* Craftus Machinilorum
-*
-* 
-* @Author Dalthow Game Studios
-* @Class RenderFilter.java 
-* 
-**/
-
 package com.dalthow.machinilorum.render.item;
 
 import net.minecraft.client.Minecraft;
@@ -20,23 +11,32 @@ import org.lwjgl.opengl.GL11;
 import com.dalthow.machinilorum.base.Reference;
 import com.dalthow.machinilorum.model.ModelFilter;
 
+/**
+* Craftus Machinilorum
+*
+* 
+* @author Dalthow Game Studios
+* @class RenderFilter.java 
+* 
+**/
+
 public class RenderFilter implements IItemRenderer
 {
-	// Declaration
+	// Declaration of the model files.
 	
 	private ModelFilter model;
 	private ResourceLocation texture = new ResourceLocation(Reference.modId, "textures/models/filter.png");
 	
 	
-	// Constructor
-	
+	// Constructor that obtains the model.
+    
 	public RenderFilter()
 	{
 		this.model = new ModelFilter();
 	}
 	
 	
-	// Tells the game when to render the model
+	// Tells the game when to render the model.
 	
 	public boolean handleRenderType(ItemStack item, ItemRenderType type) 
 	{
@@ -50,7 +50,7 @@ public class RenderFilter implements IItemRenderer
 	}
 	
 	
-	// Tells the game if it needs to use the render helper
+	// Tells the game if it needs to use the render helper.
 	
 	public boolean shouldUseRenderHelper(ItemRenderType type, ItemStack item, ItemRendererHelper helper)
 	{		
@@ -58,10 +58,12 @@ public class RenderFilter implements IItemRenderer
 	}
 	
 	
-	// Renders the actual model
+	// Renders the actual model.
 	
 	public void renderItem(ItemRenderType type, ItemStack item, Object... data) 
 	{
+		// Switching the render between first and third person. 
+		
 		switch(type) 
 		{ 
 			case EQUIPPED:  
