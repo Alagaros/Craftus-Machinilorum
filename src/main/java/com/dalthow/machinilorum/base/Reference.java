@@ -16,5 +16,5 @@ public class Reference
 	public final static String name = "Craftus Machinilorum";
 	public final static String version = "0.2.2.3";
 	
-	public final static String modId = "machinilorum";
+	public final static String modId = "craftus-machinilorum";
 }
