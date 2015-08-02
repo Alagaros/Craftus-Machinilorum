@@ -1,12 +1,3 @@
-/**
- * Craftus Machinilorum
- *
- * 
- * @Author Dalthow Game Studios 
- * @Class TileEntityWoodCutter.java
- * 
- **/
-
 package com.dalthow.machinilorum.tile;
 
 import java.util.List;
@@ -24,9 +15,18 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.DamageSource;
 
+/**
+ * Craftus Machinilorum
+ *
+ * 
+ * @author Dalthow Game Studios 
+ * @class TileEntityWoodCutter.java
+ * 
+ **/
+
 public class TileEntityWoodCutter extends TileEntity
 {
-	// Declaration
+	// Declaration of TileEntity config.
 
 	private int xTarget;
 	private int yTarget;
@@ -39,7 +39,7 @@ public class TileEntityWoodCutter extends TileEntity
 	public boolean hasCutted;
 
 	
-	// Constructor
+	// Constructor that sets the declared variables.
 	
 	public TileEntityWoodCutter()
 	{
@@ -50,7 +50,7 @@ public class TileEntityWoodCutter extends TileEntity
 	}
 
 
-	// Validates the tile entity
+	// Validates the tile entity.
 	
 	@Override
 	public void validate()
@@ -59,7 +59,7 @@ public class TileEntityWoodCutter extends TileEntity
 	}
 	
 	
-	// Gets triggered 20 times every second
+	// Gets triggered 20 times every second.
 	
     public void updateEntity()  
     { 
@@ -126,8 +126,15 @@ public class TileEntityWoodCutter extends TileEntity
     }
     
     
-    // Sets the target 
-    
+    /**
+     * setTarget Sets the target for the Wood Cutter.
+     * 
+     * @param  {int} xTarget the targets x position.
+     * @param  {int} yTarget the targets y position.
+     * @param  {int} zTarget the targets z position.
+     * 
+     * @return {void}
+     */
     public void setTarget(int xTarget, int yTarget, int zTarget)
     {
     	switch(getBlockMetadata())
@@ -165,7 +172,7 @@ public class TileEntityWoodCutter extends TileEntity
     }
     
     
-    // Reading from the tag
+    // Reading from the tag compound.
     
     public void readFromNBT(NBTTagCompound tag) 
     { 
@@ -176,7 +183,7 @@ public class TileEntityWoodCutter extends TileEntity
     } 
       
       
-    // Writing to the tag
+    // Writing to the tag compound.
        
     public void writeToNBT(NBTTagCompound tag) 
     { 
@@ -187,7 +194,7 @@ public class TileEntityWoodCutter extends TileEntity
     } 
       
 	
-	// Tells the game that the tile can update
+	// Tells the game that the tile can update.
 	
 	@Override
 	public boolean canUpdate()
@@ -196,7 +203,7 @@ public class TileEntityWoodCutter extends TileEntity
     }
 	
 	
-	// Used for reading packets
+	// Used for reading packets.
 	
 	@Override
 	public Packet getDescriptionPacket() 

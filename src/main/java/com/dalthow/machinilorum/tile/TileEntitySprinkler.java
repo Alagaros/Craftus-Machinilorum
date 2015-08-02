@@ -1,12 +1,3 @@
-/**
- * Craftus Machinilorum
- *
- * 
- * @Author Dalthow Game Studios 
- * @Class TileEntitySprinkler.java
- * 
- **/
-
 package com.dalthow.machinilorum.tile;
 
 import com.dalthow.machinilorum.base.Main;
@@ -14,14 +5,23 @@ import com.dalthow.machinilorum.base.Main;
 import net.minecraft.init.Blocks;
 import net.minecraft.tileentity.TileEntity;
 
+/**
+ * Craftus Machinilorum
+ *
+ * 
+ * @author Dalthow Game Studios 
+ * @class TileEntitySprinkler.java
+ * 
+ **/
+
 public class TileEntitySprinkler extends TileEntity
 {
-	// Declaration
+	// Declaration of hasPulsed flag.
 	
 	private boolean hasPulsed;
 	
 	
-	// Validates the tile entity
+	// Validates the tile entity.
 	
 	@Override
 	public void validate()
@@ -30,7 +30,7 @@ public class TileEntitySprinkler extends TileEntity
 	}
 	
 	
-	// Gets triggered 20 times every second
+	// Gets triggered 20 times every second.
 	
 	public void updateEntity() 
 	{
