@@ -1,12 +1,3 @@
-/**
- * Craftus Machinilorum
- *
- * 
- * @Author Dalthow Game Studios 
- * @Class RenderItemEggIncubator.java
- * 
- **/
-
 package com.dalthow.machinilorum.render.item.inventory;
 
 import cpw.mods.fml.client.FMLClientHandler;
@@ -22,17 +13,26 @@ import org.lwjgl.opengl.GL11;
 
 import com.dalthow.machinilorum.base.Reference;
 
+/**
+ * Craftus Machinilorum
+ *
+ * 
+ * @author Dalthow Game Studios 
+ * @class RenderItemEggIncubator.java
+ * 
+ **/
+
 @SideOnly(Side.CLIENT)
 public class RenderItemEggIncubator implements IItemRenderer
 {
-	// Declaration
+	// Declaration of the model files.
 	
     private IModelCustom model;
 
 	private final ResourceLocation texture = new ResourceLocation(Reference.modId, "textures/models/egg incubator.png");
 	 
 	
-	// Constructor
+	// Constructor that obtains the model.
     
     public RenderItemEggIncubator()
     {
@@ -40,7 +40,7 @@ public class RenderItemEggIncubator implements IItemRenderer
     }
 
     
-    // Render settings
+    // Render settings.
     
     public boolean handleRenderType(ItemStack itemStack, ItemRenderType itemRenderType)
     {
@@ -53,7 +53,7 @@ public class RenderItemEggIncubator implements IItemRenderer
     }
 
     
-    // All the different cases where it can be rendered in
+    // All the different cases where it can be rendered in.
     
     public void renderItem(ItemRenderType itemRenderType, ItemStack itemStack, Object... data)
     {
@@ -95,7 +95,7 @@ public class RenderItemEggIncubator implements IItemRenderer
     }
 
     
-    // The actual render method
+    // The actual render method.
     
     private void render(float xPos, float yPos, float zPos)
     {	

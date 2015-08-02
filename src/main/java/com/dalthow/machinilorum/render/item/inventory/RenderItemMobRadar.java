@@ -1,12 +1,3 @@
-/**
- * Craftus Machinilorum
- *
- * 
- * @Author Dalthow Game Studios 
- * @Class RenderItemMobRadar.java
- * 
- **/
-
 package com.dalthow.machinilorum.render.item.inventory;
 
 import cpw.mods.fml.client.FMLClientHandler;
@@ -22,25 +13,34 @@ import org.lwjgl.opengl.GL11;
 
 import com.dalthow.machinilorum.base.Reference;
 
+/**
+ * Craftus Machinilorum
+ *
+ * 
+ * @author Dalthow Game Studios 
+ * @class RenderItemMobRadar.java
+ * 
+ **/
+
 @SideOnly(Side.CLIENT)
 public class RenderItemMobRadar implements IItemRenderer
 {
-	// Declaration
+	// Declaration of the model files.
 	
     private IModelCustom model;
 
 	private final ResourceLocation texture = new ResourceLocation(Reference.modId, "textures/models/mob radar.png");
 	 
 	
-	// Constructor
-	
+	// Constructor that obtains the model.
+    
     public RenderItemMobRadar()
     {
     	model = AdvancedModelLoader.loadModel(new ResourceLocation(Reference.modId, "models/mob radar.obj"));
     }
 
     
-    // Render settings
+    // Render settings.
     
     public boolean handleRenderType(ItemStack itemStack, ItemRenderType itemRenderType)
     {
@@ -53,7 +53,7 @@ public class RenderItemMobRadar implements IItemRenderer
     }
     
     
-    // All the different cases where it can be rendered in
+    // All the different cases where it can be rendered in.
     
     public void renderItem(ItemRenderType itemRenderType, ItemStack itemStack, Object... data)
     {
@@ -95,7 +95,7 @@ public class RenderItemMobRadar implements IItemRenderer
     } 
     
     
-    // All the different cases where it can be rendered in
+    // All the different cases where it can be rendered in.
     
     private void render(float xPos, float yPos, float zPos, float scale)
     {
