@@ -66,7 +66,7 @@ import cpw.mods.fml.common.registry.GameRegistry;
  * 
  **/
 
-@Mod(modid = Reference.modId, name = Reference.name, version = Reference.version, dependencies="required-after:RenderPlayerAPI")
+@Mod(modid = Reference.modId, name = Reference.name, version = Reference.version)
 public class Main 
 {
 	// Declaration for the configuration file variables.

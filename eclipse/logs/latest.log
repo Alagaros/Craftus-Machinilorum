@@ -1,0 +1,36 @@
+[22:51:28] [main/INFO]: Setting user: Player202
+[22:51:31] [Client thread/INFO]: LWJGL Version: 2.9.1
+[22:51:41] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Craftus Machinilorum
+[22:51:42] [Sound Library Loader/INFO]: Sound engine started
+[22:51:42] [Client thread/INFO]: Created: 16x16 textures/blocks-atlas
+[22:51:42] [Client thread/INFO]: Created: 16x16 textures/items-atlas
+[22:51:44] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Craftus Machinilorum
+[22:51:44] [Client thread/INFO]: Created: 512x256 textures/blocks-atlas
+[22:51:44] [Client thread/INFO]: Created: 256x256 textures/items-atlas
+[22:51:45] [Sound Library Loader/INFO]: Sound engine started
+[22:51:51] [Server thread/INFO]: Starting integrated minecraft server version 1.7.10
+[22:51:51] [Server thread/INFO]: Generating keypair
+[22:51:52] [Server thread/INFO]: Converting map!
+[22:51:52] [Server thread/INFO]: Scanning folders...
+[22:51:52] [Server thread/INFO]: Total conversion count is 0
+[22:51:52] [Server thread/INFO]: Preparing start region for level 0
+[22:51:53] [Server thread/INFO]: Preparing spawn area: 8%
+[22:51:54] [Server thread/INFO]: Preparing spawn area: 24%
+[22:51:55] [Server thread/INFO]: Preparing spawn area: 40%
+[22:51:56] [Server thread/INFO]: Preparing spawn area: 61%
+[22:51:57] [Server thread/INFO]: Preparing spawn area: 79%
+[22:51:58] [Server thread/INFO]: Changing view distance to 12, from 10
+[22:51:59] [Server thread/INFO]: Player202[local:E:cbde4d51] logged in with entity id 68 at (-244.5, 63.0, -28.5)
+[22:51:59] [Server thread/INFO]: Player202 joined the game
+[22:52:02] [Server thread/INFO]: Player202 has just earned the achievement [Taking Inventory]
+[22:52:02] [Client thread/INFO]: [CHAT] Player202 has just earned the achievement [Taking Inventory]
+[22:52:04] [Client thread/INFO]: Warning: Clientside chunk ticking took 110 ms
+[22:52:23] [Client thread/INFO]: Stopping!
+[22:52:23] [Server thread/INFO]: Stopping server
+[22:52:23] [Server thread/INFO]: Saving players
+[22:52:23] [Server thread/INFO]: Saving worlds
+[22:52:23] [Server thread/INFO]: Saving chunks for level 'New World'/Overworld
+[22:52:24] [Server thread/INFO]: Saving chunks for level 'New World'/Nether
+[22:52:24] [Server thread/INFO]: Saving chunks for level 'New World'/The End
+[22:52:24] [Client Shutdown Thread/INFO]: Stopping server
+[22:52:24] [Client Shutdown Thread/INFO]: Saving players

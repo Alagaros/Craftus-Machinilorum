@@ -1,7 +1,5 @@
 package com.dalthow.machinilorum.proxy;
 
-import api.player.model.ModelPlayerAPI;
-
 import com.dalthow.machinilorum.base.Main;
 import com.dalthow.machinilorum.base.Reference;
 import com.dalthow.machinilorum.entity.EntityBomb;
@@ -23,7 +21,6 @@ import com.dalthow.machinilorum.render.item.inventory.RenderItemMobRadar;
 import com.dalthow.machinilorum.render.item.inventory.RenderItemShoppingCart;
 import com.dalthow.machinilorum.render.item.inventory.RenderItemSprinkler;
 import com.dalthow.machinilorum.render.item.inventory.RenderItemWoodCutter;
-import com.dalthow.machinilorum.render.player.PlayerModelOverride;
 import com.dalthow.machinilorum.tile.TileEntityChalkboard;
 import com.dalthow.machinilorum.tile.TileEntityConveyorBelt;
 import com.dalthow.machinilorum.tile.TileEntityEggIncubator;
@@ -75,7 +72,7 @@ public class ClientProxy extends CommonProxy
 		
 		
 		//Registering the TileEntity renders.
-		
+
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityEggIncubator.class, new RenderEggIncubator());
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityWoodCutter.class, new RenderWoodCutter());
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityMobRadar.class, new RenderMobRadar());
@@ -87,12 +84,7 @@ public class ClientProxy extends CommonProxy
 		// Registering the entity renders.
 		
 		RenderingRegistry.registerEntityRenderingHandler(EntityBomb.class, new RenderEntityBomb(Main.itemBomb));    
-		RenderingRegistry.registerEntityRenderingHandler(EntityShoppingCart.class, new RenderEntityShoppingCart());    
-
-		
-		// Registering the custom player render.
-		
-		ModelPlayerAPI.register(Reference.modId, PlayerModelOverride.class);
+		RenderingRegistry.registerEntityRenderingHandler(EntityShoppingCart.class, new RenderEntityShoppingCart());
 	} 
 }
  
