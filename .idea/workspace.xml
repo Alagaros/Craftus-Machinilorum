@@ -2,26 +2,47 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ae10d535-5bff-4cc9-b5ad-0707d817bdbf" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.classpath" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.gitignore" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.gradle/.gitignore" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/render player api 1.2.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/render/player/PlayerModelOverride.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/craftus-machinilorum/lang/hr_HR.lang" afterPath="$PROJECT_DIR$/src/main/resources/assets/craftus-machinilorum/lang/hr_HR.lang" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.gradle" afterPath="$PROJECT_DIR$/build.gradle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gradlew" afterPath="$PROJECT_DIR$/gradlew" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CREDITS-fml.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/LICENSE-fml.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/MinecraftForge-Credits.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/MinecraftForge-License.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/README.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/eclipse/config/craftus-machinilorum.cfg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/eclipse/config/forge.cfg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/eclipse/config/forgeChunkLoading.cfg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/eclipse/config/splash.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/eclipse/logs/2015-11-25-1.log.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/eclipse/logs/fml-client-1.log" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/eclipse/logs/fml-client-latest.log" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/eclipse/logs/fml-junk-earlystartup.log" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/eclipse/logs/latest.log" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/eclipse/options.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/eclipse/saves/New World/DIM-1/data/villages.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/eclipse/saves/New World/DIM-1/forcedchunks.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/eclipse/saves/New World/DIM1/data/villages.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/eclipse/saves/New World/DIM1/forcedchunks.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/eclipse/saves/New World/data/Mineshaft.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/eclipse/saves/New World/data/villages.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/eclipse/saves/New World/forcedchunks.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/eclipse/saves/New World/level.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/eclipse/saves/New World/level.dat_mcr" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/eclipse/saves/New World/level.dat_old" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/eclipse/saves/New World/playerdata/dbc69dc4-5cc0-3e17-977d-029c3370c88b.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/eclipse/saves/New World/region/r.-1.-1.mca" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/eclipse/saves/New World/region/r.-1.0.mca" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/eclipse/saves/New World/session.lock" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/eclipse/saves/New World/stats/dbc69dc4-5cc0-3e17-977d-029c3370c88b.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/eclipse/usernamecache.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/forge-1.7.10-10.13.4.1558-1.7.10-changelog.txt" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.0/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/.gradle/2.0/taskArtifacts/cache.properties.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.0/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/2.0/taskArtifacts/fileHashes.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.0/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/2.0/taskArtifacts/fileSnapshots.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.0/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/2.0/taskArtifacts/taskArtifacts.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/gradle.log" afterPath="$PROJECT_DIR$/.gradle/gradle.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/base/Main.java" afterPath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/base/Main.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/base/Reference.java" afterPath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/base/Reference.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/block/BlockChalk.java" afterPath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/block/BlockChalk.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/block/BlockChalkboard.java" afterPath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/block/BlockChalkboard.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/block/BlockConveyorBelt.java" afterPath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/block/BlockConveyorBelt.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/block/BlockEggIncubator.java" afterPath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/block/BlockEggIncubator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/block/BlockFragmentizer.java" afterPath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/block/BlockFragmentizer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/block/BlockMobRadar.java" afterPath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/block/BlockMobRadar.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/block/BlockSprinkler.java" afterPath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/block/BlockSprinkler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/block/BlockStoneCutter.java" afterPath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/block/BlockStoneCutter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/block/BlockWoodCutter.java" afterPath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/block/BlockWoodCutter.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/block/fragmentizer/FragmentingHandler.java" afterPath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/block/fragmentizer/FragmentingHandler.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/block/item/ItemChalk.java" afterPath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/block/item/ItemChalk.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/block/item/ItemChalkboard.java" afterPath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/block/item/ItemChalkboard.java" />
@@ -34,74 +55,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/block/stonecutter/StoneCutterRecipeSorter.java" afterPath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/block/stonecutter/StoneCutterRecipeSorter.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/block/stonecutter/StoneCutterShapedRecipes.java" afterPath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/block/stonecutter/StoneCutterShapedRecipes.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/block/stonecutter/StoneCutterShapelessRecipes.java" afterPath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/block/stonecutter/StoneCutterShapelessRecipes.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/container/ContainerFragmentizer.java" afterPath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/container/ContainerFragmentizer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/container/ContainerMobRadar.java" afterPath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/container/ContainerMobRadar.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/container/ContainerStoneCutter.java" afterPath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/container/ContainerStoneCutter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/entity/EntityBomb.java" afterPath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/entity/EntityBomb.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/entity/EntityShoppingCart.java" afterPath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/entity/EntityShoppingCart.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/entity/item/ItemShoppingCart.java" afterPath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/entity/item/ItemShoppingCart.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/gui/GuiFragmentizer.java" afterPath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/gui/GuiFragmentizer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/gui/GuiMobRadar.java" afterPath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/gui/GuiMobRadar.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/gui/GuiStoneCutter.java" afterPath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/gui/GuiStoneCutter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/handler/GuiHandler.java" afterPath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/handler/GuiHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/handler/RecipeHandler.java" afterPath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/handler/RecipeHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/handler/RegisterHandler.java" afterPath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/handler/RegisterHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/item/ItemBomb.java" afterPath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/item/ItemBomb.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/item/ItemChecker.java" afterPath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/item/ItemChecker.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/item/ItemFilter.java" afterPath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/item/ItemFilter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/model/ModelBomb.java" afterPath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/model/ModelBomb.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/model/ModelFilter.java" afterPath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/model/ModelFilter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/packet/AbstractPacket.java" afterPath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/packet/AbstractPacket.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/packet/PacketPipeline.java" afterPath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/packet/PacketPipeline.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/packet/mobradar/PacketMobRadarId.java" afterPath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/packet/mobradar/PacketMobRadarId.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/packet/mobradar/PacketMobRadarRadius.java" afterPath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/packet/mobradar/PacketMobRadarRadius.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/packet/mobradar/PacketMobRadarSignal.java" afterPath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/packet/mobradar/PacketMobRadarSignal.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/proxy/ClientProxy.java" afterPath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/proxy/ClientProxy.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/proxy/CommonProxy.java" afterPath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/proxy/CommonProxy.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/render/block/RenderChalkboard.java" afterPath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/render/block/RenderChalkboard.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/render/block/RenderConveyorBelt.java" afterPath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/render/block/RenderConveyorBelt.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/render/block/RenderEggIncubator.java" afterPath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/render/block/RenderEggIncubator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/render/block/RenderMobRadar.java" afterPath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/render/block/RenderMobRadar.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/render/block/RenderSprinkler.java" afterPath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/render/block/RenderSprinkler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/render/block/RenderWoodCutter.java" afterPath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/render/block/RenderWoodCutter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/render/entity/RenderEntityBomb.java" afterPath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/render/entity/RenderEntityBomb.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/render/entity/RenderEntityShoppingCart.java" afterPath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/render/entity/RenderEntityShoppingCart.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/render/item/RenderBomb.java" afterPath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/render/item/RenderBomb.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/render/item/RenderFilter.java" afterPath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/render/item/RenderFilter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/render/item/inventory/RenderItemChalkboard.java" afterPath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/render/item/inventory/RenderItemChalkboard.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/render/item/inventory/RenderItemConveyorBelt.java" afterPath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/render/item/inventory/RenderItemConveyorBelt.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/render/item/inventory/RenderItemEggIncubator.java" afterPath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/render/item/inventory/RenderItemEggIncubator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/render/item/inventory/RenderItemMobRadar.java" afterPath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/render/item/inventory/RenderItemMobRadar.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/render/item/inventory/RenderItemShoppingCart.java" afterPath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/render/item/inventory/RenderItemShoppingCart.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/render/item/inventory/RenderItemSprinkler.java" afterPath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/render/item/inventory/RenderItemSprinkler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/render/item/inventory/RenderItemWoodCutter.java" afterPath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/render/item/inventory/RenderItemWoodCutter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/tab/TabMachines.java" afterPath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/tab/TabMachines.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/tab/TabTools.java" afterPath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/tab/TabTools.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/tile/TileEntityChalkboard.java" afterPath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/tile/TileEntityChalkboard.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/tile/TileEntityConveyorBelt.java" afterPath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/tile/TileEntityConveyorBelt.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/tile/TileEntityEggIncubator.java" afterPath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/tile/TileEntityEggIncubator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/tile/TileEntityFragmentizer.java" afterPath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/tile/TileEntityFragmentizer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/tile/TileEntityMobRadar.java" afterPath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/tile/TileEntityMobRadar.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/tile/TileEntitySprinkler.java" afterPath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/tile/TileEntitySprinkler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/tile/TileEntityWoodCutter.java" afterPath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/tile/TileEntityWoodCutter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/util/MathHelper.java" afterPath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/util/MathHelper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/world/WorldBlockGenerator.java" afterPath="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/world/WorldBlockGenerator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/craftus-machinilorum/lang/en_US.lang" afterPath="$PROJECT_DIR$/src/main/resources/assets/craftus-machinilorum/lang/en_US.lang" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/craftus-machinilorum/lang/nl_NL.lang" afterPath="$PROJECT_DIR$/src/main/resources/assets/craftus-machinilorum/lang/nl_NL.lang" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/craftus-machinilorum/models/chalkboard.obj" afterPath="$PROJECT_DIR$/src/main/resources/assets/craftus-machinilorum/models/chalkboard.obj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/craftus-machinilorum/models/conveyor belt.obj" afterPath="$PROJECT_DIR$/src/main/resources/assets/craftus-machinilorum/models/conveyor belt.obj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/craftus-machinilorum/models/egg incubator.obj" afterPath="$PROJECT_DIR$/src/main/resources/assets/craftus-machinilorum/models/egg incubator.obj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/craftus-machinilorum/models/mob radar.obj" afterPath="$PROJECT_DIR$/src/main/resources/assets/craftus-machinilorum/models/mob radar.obj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/craftus-machinilorum/models/mobradar/bottom.obj" afterPath="$PROJECT_DIR$/src/main/resources/assets/craftus-machinilorum/models/mobradar/bottom.obj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/craftus-machinilorum/models/mobradar/top.obj" afterPath="$PROJECT_DIR$/src/main/resources/assets/craftus-machinilorum/models/mobradar/top.obj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/craftus-machinilorum/models/shopping cart.obj" afterPath="$PROJECT_DIR$/src/main/resources/assets/craftus-machinilorum/models/shopping cart.obj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/craftus-machinilorum/models/sprinkler.obj" afterPath="$PROJECT_DIR$/src/main/resources/assets/craftus-machinilorum/models/sprinkler.obj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/craftus-machinilorum/models/sprinkler/engine.obj" afterPath="$PROJECT_DIR$/src/main/resources/assets/craftus-machinilorum/models/sprinkler/engine.obj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/craftus-machinilorum/models/sprinkler/top.obj" afterPath="$PROJECT_DIR$/src/main/resources/assets/craftus-machinilorum/models/sprinkler/top.obj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/craftus-machinilorum/models/wood cutter.obj" afterPath="$PROJECT_DIR$/src/main/resources/assets/craftus-machinilorum/models/wood cutter.obj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/craftus-machinilorum/models/woodcutter/blades.obj" afterPath="$PROJECT_DIR$/src/main/resources/assets/craftus-machinilorum/models/woodcutter/blades.obj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/craftus-machinilorum/models/woodcutter/engine.obj" afterPath="$PROJECT_DIR$/src/main/resources/assets/craftus-machinilorum/models/woodcutter/engine.obj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/mcmod.info" afterPath="$PROJECT_DIR$/src/main/resources/mcmod.info" />
     </list>
     <ignored path="craftus-machinilorum.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -139,23 +92,104 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ClientProxy.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/proxy/ClientProxy.java">
+      <file leaf-file-name="ItemEggIncubator.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/block/item/ItemEggIncubator.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+              <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="19" selection-end-column="4" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ItemMobRadar.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/block/item/ItemMobRadar.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="38" column="53" selection-start-line="38" selection-start-column="53" selection-end-line="38" selection-end-column="53" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ItemSprinkler.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/block/item/ItemSprinkler.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="38" column="54" selection-start-line="38" selection-start-column="54" selection-end-line="38" selection-end-column="54" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ItemWoodCutter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/block/item/ItemWoodCutter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-7.5555553">
+              <caret line="23" column="19" selection-start-line="23" selection-start-column="19" selection-end-line="23" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="StoneCutterRecipeManager.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/block/stonecutter/StoneCutterRecipeManager.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="23" selection-end-column="4" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#947#948#0" expanded="true" />
+                <element signature="e#978#979#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/base/Main.java">
+      <file leaf-file-name="StoneCutterRecipeSorter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/block/stonecutter/StoneCutterRecipeSorter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.30858806">
-              <caret line="68" column="80" selection-start-line="68" selection-start-column="80" selection-end-line="68" selection-end-column="80" />
+            <state vertical-scroll-proportion="-23.925926">
+              <caret line="40" column="20" selection-start-line="40" selection-start-column="20" selection-end-line="40" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="StoneCutterShapedRecipes.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/block/stonecutter/StoneCutterShapedRecipes.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="167" column="18" selection-start-line="167" selection-start-column="18" selection-end-line="167" selection-end-column="18" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="StoneCutterShapelessRecipes.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/block/stonecutter/StoneCutterShapelessRecipes.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="107" column="18" selection-start-line="107" selection-start-column="18" selection-end-line="107" selection-end-column="18" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BlockChalk.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/block/BlockChalk.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.43355703">
+              <caret line="55" column="5" selection-start-line="55" selection-start-column="5" selection-end-line="55" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Reference.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/base/Reference.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="6" selection-end-column="4" />
               <folding />
             </state>
           </provider>
@@ -719,6 +753,20 @@
         <option value="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/render/player/PlayerModelOverride.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/proxy/ClientProxy.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/base/Main.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/base/Reference.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/block/fragmentizer/FragmentingHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/block/item/ItemChalk.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/block/item/ItemChalkboard.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/block/item/ItemConveyorBelt.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/block/item/ItemEggIncubator.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/block/item/ItemMobRadar.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/block/item/ItemSprinkler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/block/item/ItemWoodCutter.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/block/stonecutter/StoneCutterRecipeManager.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/block/stonecutter/StoneCutterRecipeSorter.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/block/stonecutter/StoneCutterShapedRecipes.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/block/stonecutter/StoneCutterShapelessRecipes.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/block/BlockChalk.java" />
       </list>
     </option>
   </component>
@@ -760,7 +808,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -769,10 +816,125 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="craftus-machinilorum" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="craftus-machinilorum" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="craftus-machinilorum" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="craftus-machinilorum" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="craftus-machinilorum" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="craftus-machinilorum" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="machinilorum" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="craftus-machinilorum" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="craftus-machinilorum" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="machinilorum" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="block" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="craftus-machinilorum" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="craftus-machinilorum" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="machinilorum" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="base" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1088,20 +1250,19 @@
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
-    <editor active="false" />
+    <frame x="-8" y="-8" width="1936" height="1176" extended-state="7" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3292683" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3292683" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24953096" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1109,6 +1270,7 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3292683" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1139,6 +1301,42 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/proxy/ClientProxy.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/base/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/proxy/ClientProxy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/base/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/proxy/ClientProxy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1160,9 +1358,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/base/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7543353">
+          <caret line="223" column="4" selection-start-line="223" selection-start-column="4" selection-end-line="223" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/proxy/ClientProxy.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="0.01637765">
           <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1170,10 +1376,117 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/base/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/block/item/ItemChalk.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.30858806">
-          <caret line="68" column="80" selection-start-line="68" selection-start-column="80" selection-end-line="68" selection-end-column="80" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="10" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/block/item/ItemChalkboard.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.6666665">
+          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/block/fragmentizer/FragmentingHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="109" column="2" selection-start-line="109" selection-start-column="2" selection-end-line="116" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/block/item/ItemConveyorBelt.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.5185184">
+          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="19" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/block/item/ItemEggIncubator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="19" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/block/item/ItemMobRadar.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="38" column="53" selection-start-line="38" selection-start-column="53" selection-end-line="38" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/block/item/ItemSprinkler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="38" column="54" selection-start-line="38" selection-start-column="54" selection-end-line="38" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/block/item/ItemWoodCutter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.5555553">
+          <caret line="23" column="19" selection-start-line="23" selection-start-column="19" selection-end-line="23" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/block/stonecutter/StoneCutterRecipeManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="23" selection-end-column="4" />
+          <folding>
+            <element signature="e#947#948#0" expanded="true" />
+            <element signature="e#978#979#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/block/stonecutter/StoneCutterRecipeSorter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-23.925926">
+          <caret line="40" column="20" selection-start-line="40" selection-start-column="20" selection-end-line="40" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/block/stonecutter/StoneCutterShapedRecipes.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="167" column="18" selection-start-line="167" selection-start-column="18" selection-end-line="167" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/block/stonecutter/StoneCutterShapelessRecipes.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="107" column="18" selection-start-line="107" selection-start-column="18" selection-end-line="107" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/base/Reference.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="6" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dalthow/machinilorum/block/BlockChalk.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.43355703">
+          <caret line="55" column="5" selection-start-line="55" selection-start-column="5" selection-end-line="55" selection-end-column="5" />
           <folding />
         </state>
       </provider>

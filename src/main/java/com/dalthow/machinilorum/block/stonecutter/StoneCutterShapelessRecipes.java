@@ -12,26 +12,19 @@ import net.minecraft.world.World;
 /**
  * Craftus Machinilorum
  *
- * 
- * @author Dalthow Game Studios 
- * @class StoneCutterShapelessRecipes.java
- * 
+ * @author Trevi Awater
  **/
 
 public class StoneCutterShapelessRecipes implements IRecipe
 {
 	// Declaration of the crafting output.
-
     private final ItemStack recipeOutput;
-    
-    
+
     // Declaring the items that can now be crafted.
-    
     public final List<?> recipeItems;
   
     
     // Constructor that sets the local variables based on its parameters.
-    
     public StoneCutterShapelessRecipes(ItemStack recipeOutput, List<?> recipeItems)
     {
         this.recipeOutput = recipeOutput;
@@ -40,23 +33,22 @@ public class StoneCutterShapelessRecipes implements IRecipe
     
     
     /**
-     * getRecipeOutput Returns the output of a recipe.
+     * Returns the output of a recipe.
      * 
-     * @return {ItemStack}
+     * @return ItemStack
      */
     public ItemStack getRecipeOutput()
     {
         return recipeOutput;
     }
 
-   
     /**
-     * matches Used to check if a recipe matches current crafting inventory.
+     * Used to check if a recipe matches current crafting inventory.
      * 
-     * @param {InventoryCrafting} inventoryCrafting The crafting recipe that has been used.
-     * @param {World} world							The world object.			
+     * @param inventoryCrafting The crafting recipe that has been used.
+     * @param world				The world object.
      * 
-     * @return {ItemStack}
+     * @return ItemStack
      */
     public boolean matches(InventoryCrafting inventoryCrafting, World world)
     {
@@ -71,7 +63,7 @@ public class StoneCutterShapelessRecipes implements IRecipe
                 if(var2 != null)
                 {
                     boolean flag = false;
-                    
+
                     Iterator<?> var3 = var1.iterator();
 
                     while(var3.hasNext())
@@ -82,7 +74,7 @@ public class StoneCutterShapelessRecipes implements IRecipe
                         {
                             flag = true;
                             var1.remove(var4);
-                            
+
                             break;
                         }
                     }
@@ -98,24 +90,22 @@ public class StoneCutterShapelessRecipes implements IRecipe
         return var1.isEmpty();
     }
 
-    
     /**
-     * getCraftingResult Returns an ItemStack that is the result of this recipe.
+     * Returns an ItemStack that is the result of this recipe.
      * 
-     * @param {InventoryCrafting} inventoryCrafting The crafting recipe that has been used.
+     * @param inventoryCrafting The crafting recipe that has been used.
      * 
-     * @return {ItemStack}
+     * @return ItemStack
      */
     public ItemStack getCraftingResult(InventoryCrafting inventoryCrafting)
     {
         return recipeOutput.copy();
     }
 
-    
     /**
-     * getRecipeSize Gets the size of a recipe.
+     * Gets the size of a recipe.
      * 
-     * @return {int}
+     * @return int
      */
     public int getRecipeSize()
     {

@@ -7,31 +7,30 @@ import net.minecraft.item.ItemStack;
 /**
  * Craftus Machinilorum
  *
- * 
- * @Author Dalthow Game Studios 
- * @Class ItemChalk.java
- * 
+ * @author Trevi Awater
  **/
 
 public class ItemChalk extends ItemBlock 
 {
 	// Declaration of all the sub blocks.
-	
 	final String[] subBlocks = new String[] {"raw", "bricks"};
 
-	
 	// Constructor that adds data to the item.
-	
 	public ItemChalk(Block block) 
 	{
 		super(block);
 		
 		setHasSubtypes(true);
 	}
-	
-	
-	// Returns the names of the sub blocks.
 
+
+	/**
+	 * Returns the names of the sub blocks.
+	 *
+	 * @param itemStack The item you want the correct name from.
+	 *
+	 * @return String
+	 */
 	public String getUnlocalizedName(ItemStack itemStack) 
 	{
 		int i = itemStack.getItemDamage();
@@ -42,13 +41,5 @@ public class ItemChalk extends ItemBlock
 		}
 
 		return super.getUnlocalizedName() + "." + subBlocks[i];
-	}
-
-	
-	// Returns the meta data from the sub blocks.
-	
-	public int getMetadata(int meta) 
-	{
-		return meta;
 	}
 }

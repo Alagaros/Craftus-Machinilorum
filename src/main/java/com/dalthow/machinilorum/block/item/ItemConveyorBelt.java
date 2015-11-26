@@ -16,16 +16,12 @@ import cpw.mods.fml.relauncher.SideOnly;
 /**
  * Craftus Machinilorum
  *
- * 
- * @author Dalthow Game Studios 
- * @class ItemConveyorBelt.java
- * 
+ * @author Trevi Awater
  **/
 
 public class ItemConveyorBelt extends ItemBlock
 {
 	// Constructor.
-	
 	public ItemConveyorBelt(Block block) 
 	{
 		super(block);
@@ -33,7 +29,6 @@ public class ItemConveyorBelt extends ItemBlock
 	
 	
 	// Adds a tool-tip to the item.
-
 	@SideOnly(Side.CLIENT)
     public void addInformation(ItemStack item, EntityPlayer player, List list, boolean isValid)
     {
@@ -41,7 +36,7 @@ public class ItemConveyorBelt extends ItemBlock
 		{
 			list.clear();
 		
-			list.add(I18n.format("tile.conveyorBelt.name", new Object[0]));
+			list.add(I18n.format("tile.conveyorBelt.name"));
 			list.add("Used to transfer entities");
 	    	list.add("around the world. When provided");
 	    	list.add("a redstone signal the Conveyor");

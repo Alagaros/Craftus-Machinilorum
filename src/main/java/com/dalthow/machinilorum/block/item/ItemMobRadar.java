@@ -16,16 +16,12 @@ import cpw.mods.fml.relauncher.SideOnly;
 /**
  * Craftus Machinilorum
  *
- * 
- * @author Dalthow Game Studios 
- * @class ItemMobRadar.java
- * 
+ * @author Trevi Awater
  **/
 
 public class ItemMobRadar extends ItemBlock
 {
 	// Constructor.
-	
 	public ItemMobRadar(Block block) 
 	{
 		super(block);
@@ -33,7 +29,6 @@ public class ItemMobRadar extends ItemBlock
 	
 	
 	// Adds a tool-tip to the item.
-
 	@SideOnly(Side.CLIENT)
     public void addInformation(ItemStack item, EntityPlayer player, List list, boolean isValid)
     {
@@ -41,7 +36,7 @@ public class ItemMobRadar extends ItemBlock
 		{
 			list.clear();
 		
-			list.add(I18n.format("tile.mobRadar.name", new Object[0]));
+			list.add(I18n.format("tile.mobRadar.name"));
 			list.add("Used to detect mobs in a");
 	    	list.add("certain radius.");
 		}

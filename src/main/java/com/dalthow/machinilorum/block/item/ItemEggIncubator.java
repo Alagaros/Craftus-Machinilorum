@@ -16,16 +16,12 @@ import cpw.mods.fml.relauncher.SideOnly;
 /**
  * Craftus Machinilorum
  *
- * 
- * @author Dalthow Game Studios 
- * @class ItemEggIncubator.java
- * 
+ * @author Trevi Awater
  **/
 
 public class ItemEggIncubator extends ItemBlock
 {
 	// Constructor.
-	
 	public ItemEggIncubator(Block block) 
 	{
 		super(block);
@@ -33,7 +29,6 @@ public class ItemEggIncubator extends ItemBlock
 	
 	
 	// Adds a tool-tip to the item
-
 	@SideOnly(Side.CLIENT)
     public void addInformation(ItemStack item, EntityPlayer player, List list, boolean isValid)
     {
@@ -41,7 +36,7 @@ public class ItemEggIncubator extends ItemBlock
 		{
 			list.clear();
 		
-			list.add(I18n.format("tile.eggIncubator.name", new Object[0]));
+			list.add(I18n.format("tile.eggIncubator.name"));
 			list.add("Used to incubate eggs.");
 	    	list.add("Put a egg in here and wait.");
 	    	list.add("If you wish to accelerate");

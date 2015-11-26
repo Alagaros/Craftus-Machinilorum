@@ -16,16 +16,12 @@ import cpw.mods.fml.relauncher.SideOnly;
 /**
  * Craftus Machinilorum
  *
- * 
- * @author Dalthow Game Studios 
- * @class ItemSprinkler.java
- * 
+ * @author Trevi Awater
  **/
 
 public class ItemSprinkler extends ItemBlock
 {
 	// Constructor.
-	
 	public ItemSprinkler(Block block) 
 	{
 		super(block);
@@ -33,7 +29,6 @@ public class ItemSprinkler extends ItemBlock
 	
 	
 	// Adds a tool-tip to the item.
-
 	@SideOnly(Side.CLIENT)
     public void addInformation(ItemStack item, EntityPlayer player, List list, boolean isValid)
     {
@@ -41,7 +36,7 @@ public class ItemSprinkler extends ItemBlock
 		{
 			list.clear();
 		
-			list.add(I18n.format("tile.sprinkler.name", new Object[0]));
+			list.add(I18n.format("tile.sprinkler.name"));
 			list.add("Used to give water to");
 	    	list.add("your crops.");
 		}

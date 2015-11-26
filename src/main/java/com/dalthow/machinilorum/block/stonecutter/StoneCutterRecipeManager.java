@@ -20,37 +20,27 @@ import net.minecraft.world.World;
 /**
  * Craftus Machinilorum
  *
- * 
- * @author Dalthow Game Studios 
- * @class StoneCutterRecipeManager.java
- * 
+ * @author Trevi Awater
  **/
 
 public class StoneCutterRecipeManager
 {
 	// Declaration for recipe list.
-
     private List<IRecipe> recipes = new ArrayList<IRecipe>();
- 
-    
+
     // Creating a new instance.
-    	
     private static final StoneCutterRecipeManager instance = new StoneCutterRecipeManager();
 
-    
-    // Constructors.
-    
     public static final StoneCutterRecipeManager getInstance()
     {
-    	// Returning the new instance.
-    	
         return instance;
     }
 
+
+    // Constructor.
     private StoneCutterRecipeManager()
     {
         // Adding the block recipe's.
-        
         addRecipe(new ItemStack(Blocks.cobblestone, 1), new Object[] {"#", "#", '#', new ItemStack(Blocks.stone_slab, 1, 3)});
         addRecipe(new ItemStack(Blocks.stone, 1), new Object[] {"#", "#", '#', new ItemStack(Blocks.stone_slab, 1, 0)});
         addRecipe(new ItemStack(Blocks.sandstone, 1), new Object[] {"#", "#", '#', new ItemStack(Blocks.stone_slab, 1, 1)});
@@ -65,10 +55,8 @@ public class StoneCutterRecipeManager
         addRecipe(new ItemStack(Blocks.sandstone, 4, 2), new Object[] {"##", "##", '#', new ItemStack(Blocks.sandstone, 1, 1)});
         addRecipe(new ItemStack(Main.blockChalk, 4, 1), new Object[] {"##", "##", '#', new ItemStack(Main.blockChalk, 1, 0)});
         addRecipe(new ItemStack(Blocks.nether_brick, 1), new Object[] {"##", "##", '#', new ItemStack(Items.netherbrick)});
-        
-        
+
         // Adding the slab recipe's.
-        
         addRecipe(new ItemStack(Blocks.stone_slab, 6, 3), new Object[] {"###", '#', Blocks.cobblestone});
         addRecipe(new ItemStack(Blocks.stone_slab, 6, 0), new Object[] {"###", '#', Blocks.stone});
         addRecipe(new ItemStack(Blocks.stone_slab, 6, 1), new Object[] {"###", '#', Blocks.sandstone});
@@ -76,37 +64,31 @@ public class StoneCutterRecipeManager
         addRecipe(new ItemStack(Blocks.stone_slab, 6, 5), new Object[] {"###", '#', Blocks.stonebrick});
         addRecipe(new ItemStack(Blocks.stone_slab, 6, 6), new Object[] {"###", '#', Blocks.nether_brick});
         addRecipe(new ItemStack(Blocks.stone_slab, 6, 7), new Object[] {"###", '#', Blocks.quartz_block});
-        
-        
+
         // Adding the stair recipe's.
-        
         addRecipe(new ItemStack(Blocks.stone_stairs, 4), new Object[] {"#  ", "## ", "###", '#', Blocks.cobblestone});
         addRecipe(new ItemStack(Blocks.brick_stairs, 4), new Object[] {"#  ", "## ", "###", '#', Blocks.brick_block});
         addRecipe(new ItemStack(Blocks.stone_brick_stairs, 4), new Object[] {"#  ", "## ", "###", '#', Blocks.stonebrick});
         addRecipe(new ItemStack(Blocks.nether_brick_stairs, 4), new Object[] {"#  ", "## ", "###", '#', Blocks.nether_brick});
         addRecipe(new ItemStack(Blocks.sandstone_stairs, 4), new Object[] {"#  ", "## ", "###", '#', Blocks.sandstone});
         addRecipe(new ItemStack(Blocks.quartz_stairs, 4), new Object[] {"#  ", "## ", "###", '#', Blocks.quartz_block});
-        
-        
+
         // Adding the wall recipe's.
-        
         addRecipe(new ItemStack(Blocks.cobblestone_wall, 6, 0), new Object[] {"###", "###", '#', Blocks.cobblestone});
         addRecipe(new ItemStack(Blocks.cobblestone_wall, 6, 1), new Object[] {"###", "###", '#', Blocks.mossy_cobblestone});
-        
-        
+
         // Giving the sorter the recipe list.
-        
         Collections.sort(recipes, new StoneCutterRecipeSorter(this));
     }
     
     
     /**
-     * addRecipe Adds a shaped recipe to the recipe list.
+     * Adds a shaped recipe to the recipe list.
      * 
-     * @param {ItemStack} itemStack  The item that should be crafted.
-     * @param {Object} arrayOfObject The crafting recipe.
+     * @param itemStack     The item that should be crafted.
+     * @param arrayOfObject The crafting recipe.
      * 
-     * @return {StoneCutterShapedRecipes}
+     * @return StoneCutterShapedRecipes
      */
     public StoneCutterShapedRecipes addRecipe(ItemStack itemStack, Object ... arrayOfObject)
     {
@@ -187,15 +169,12 @@ public class StoneCutterRecipeManager
       
         return shapedrecipes;
     }
-    
-    
+
     /**
-     * addShapelessRecipe Adds a shapeless recipe to the recipe list.
+     * Adds a shapeless recipe to the recipe list.
      * 
-     * @param {ItemStack} itemStack  The item that should be crafted.
-     * @param {Object} arrayOfObject The crafting recipe.
-     * 
-     * @return {void}
+     * @param itemStack     The item that should be crafted.
+     * @param arrayOfObject The crafting recipe.
      */
     public void addShapelessRecipe(ItemStack itemStack, Object ... arrayOfObject)
     {
@@ -231,15 +210,14 @@ public class StoneCutterRecipeManager
 
         recipes.add(new ShapelessRecipes(itemStack, arraylist));
     }
-
     
     /**
-     * findMatchingRecipe Finds the correct recipe based on the container input.
+     * Finds the correct recipe based on the container input.
      * 
-     * @param {InventoryCrafting} inventoryCrafting Standard class for crafting recipe's.
-     * @param {World} world                         The world object.
+     * @param inventoryCrafting Standard class for crafting recipe's.
+     * @param world             The world object.
      * 
-     * @return {ItemStack} The correct item.
+     * @return ItemStack
      */
     public ItemStack findMatchingRecipe(InventoryCrafting inventoryCrafting, World world)
     {
@@ -302,11 +280,10 @@ public class StoneCutterRecipeManager
         }
     }
 
-    
     /**
-     * getRecipeList Returns a list of all the recipes.
+     * Returns a list of all the recipes.
      * 
-     * @return {List<IRecipe>} A list of all the recipe's
+     * @return List<IRecipe>
      */
     public List<IRecipe> getRecipeList()
     {

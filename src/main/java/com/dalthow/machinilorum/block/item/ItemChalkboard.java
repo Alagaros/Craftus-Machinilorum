@@ -1,12 +1,3 @@
-/**
- * Craftus Machinilorum
- *
- * 
- * @Author Dalthow Game Studios 
- * @Class ItemChalkboard.java
- * 
- **/
-
 package com.dalthow.machinilorum.block.item;
 
 import java.util.List;
@@ -22,18 +13,21 @@ import org.lwjgl.input.Keyboard;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
+/**
+ * Craftus Machinilorum
+ *
+ * @author Trevi Awater
+ **/
+
 public class ItemChalkboard extends ItemBlock
 {
 	// Constructor that adds data to the item.
-	
 	public ItemChalkboard(Block block) 
 	{
 		super(block);
 	}
-	
-	
-	// Adds a tool-tip to the item
 
+	// Adds a tool-tip to the item
 	@SideOnly(Side.CLIENT)
     public void addInformation(ItemStack item, EntityPlayer player, List list, boolean isValid)
     {

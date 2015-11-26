@@ -18,21 +18,20 @@ import cpw.mods.fml.relauncher.SideOnly;
 /**
  * Craftus Machinilorum
  *
- * 
- * @author Dalthow Game Studios 
- * @class BlockChalk.java
- * 
+ * @author Trevi Awater
  **/
 
 public class BlockChalk extends Block
 {
 	// Declaration of all the sub blocks.
-	
 	final String[] subBlocks = new String[] {"raw", "bricks"};
-	
-	
+
+	// Only make the texture variable on the client side so the server ignores this.
+	@SideOnly(Side.CLIENT)
+	private IIcon[] texture;
+
+
 	// Constructor that adds data to the block.
-	
 	public BlockChalk()
 	{
 		super(Material.rock);
@@ -41,33 +40,22 @@ public class BlockChalk extends Block
 		setBlockTextureName(Reference.modId + ":" + "chalk/");
 		setHardness(0.50F);
 	}
-	
-	
-	// Only make the texture variable on the client side so the server ignores this.
-	
-	@SideOnly(Side.CLIENT)
-	private IIcon[] texture;
 
 	
 	// Loads the different textures also gets ignored by the server.
-	
 	@SideOnly(Side.CLIENT)
 	public void registerBlockIcons(IIconRegister registry) 
 	{
 		texture = new IIcon[subBlocks.length];
 
-		
-		// Looping trough all the sub blocks and giving them their appropriate texture. 
-		
+		// Looping trough all the sub blocks and giving them their appropriate texture.
 		for(int i = 0; i < subBlocks.length; i++) 
 		{
 			texture[i] = registry.registerIcon(getTextureName() + subBlocks[i]);
 		}
 	}
 
-	
 	// Returns a list of blocks with different meta data.
-	
 	@SideOnly(Side.CLIENT)
 	public void getSubBlocks(Item item, CreativeTabs tabs, List list) 
 	{
@@ -76,19 +64,15 @@ public class BlockChalk extends Block
 			list.add(new ItemStack(item, 1, i));
 		}
 	}
-	
 
 	// Determines the textures displayed on the blocks based on the side and metadata also gets ignored by the server.
-	
 	@SideOnly(Side.CLIENT)
 	public IIcon getIcon(int side, int meta) 
 	{
 		return texture[meta];
 	}
-
 	
 	// Makes sure that if the players breaks one of the blocks they get the right one.
-	
 	public int damageDropped(int meta) 
 	{
 		return meta;

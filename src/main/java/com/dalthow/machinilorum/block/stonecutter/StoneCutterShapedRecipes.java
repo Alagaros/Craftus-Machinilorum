@@ -9,34 +9,25 @@ import net.minecraft.world.World;
 /**
  * Craftus Machinilorum
  *
- * 
- * @author Dalthow Game Studios 
- * @class StoneCutterShapedRecipes.java
- * 
+ * @author Trevi Awater
  **/
 
 public class StoneCutterShapedRecipes implements IRecipe
 { 
 	// Declaration of the crafting output.
-	
 	private ItemStack recipeOutput;
-	
-	
+
 	// Declaring some other value's
-	
 	private boolean flag;
 
     public final int recipeWidth;
     public final int recipeHeight;
-    
-    
+
     // Declaring the items that can now be crafted.
-    
     public final ItemStack[] recipeItems;
-   
-    
+
+
     // Constructor that sets the local variables based on its parameters.
-    
     public StoneCutterShapedRecipes(int recipeWidth, int recipeHeight, ItemStack[] recipeItems, ItemStack recipeOutput)
     {
         this.recipeWidth = recipeWidth;
@@ -45,26 +36,24 @@ public class StoneCutterShapedRecipes implements IRecipe
         this.recipeOutput = recipeOutput;
     }
 
-    
-   
+
     /**
-     * getRecipeOutput Returns the output of a recipe.
+     * Returns the output of a recipe.
      * 
-     * @return {ItemStack}
+     * @return ItemStack
      */
     public ItemStack getRecipeOutput()
     {
         return recipeOutput;
     }
 
-    
     /**
-     * matches Used to check if a recipe matches current crafting inventory.
+     * Used to check if a recipe matches current crafting inventory.
      * 
-     * @param {InventoryCrafting} inventoryCrafting The crafting recipe that has been used.
-     * @param {World} world							The world object.			
+     * @param inventoryCrafting The crafting recipe that has been used.
+     * @param world				The world object.
      * 
-     * @return {ItemStack}
+     * @return ItemStack
      */
     public boolean matches(InventoryCrafting inventoryCrafting, World world)
     {
@@ -86,15 +75,14 @@ public class StoneCutterShapedRecipes implements IRecipe
 
         return false;
     }
-
     
     /**
-     * checkMatch Checks if the region of a crafting inventory is match for the recipe.
+     * Checks if the region of a crafting inventory is match for the recipe.
      * 
-     * @param {InventoryCrafting} inventoryCrafting The crafting recipe that has been used.
-     * @param {int}	par1							X position in crafting grid.
-     * @param {int} par2							Y position in crafting grid.
-     * @param {boolean} par3						?			
+     * @param inventoryCrafting The crafting recipe that has been used.
+     * @param par1				X position in crafting grid.
+     * @param par2				Y position in crafting grid.
+     * @param par3				?
      * 
      * @return {ItemStack}
      */
@@ -146,14 +134,13 @@ public class StoneCutterShapedRecipes implements IRecipe
 
         return true;
     }
-
     
     /**
-     * getCraftingResult Returns an ItemStack that is the result of this recipe.
+     * Returns an ItemStack that is the result of this recipe.
      * 
-     * @param {InventoryCrafting} inventoryCrafting The crafting recipe that has been used.
+     * @param inventoryCrafting The crafting recipe that has been used.
      * 
-     * @return {ItemStack}
+     * @return ItemStack
      */
     public ItemStack getCraftingResult(InventoryCrafting inventoryCrafting)
     {
@@ -175,11 +162,10 @@ public class StoneCutterShapedRecipes implements IRecipe
         return var1;
     }
 
-    
     /**
-     * getRecipeSize Gets the size of a recipe.
+     * Gets the size of a recipe.
      * 
-     * @return {int}
+     * @return int
      */
     public int getRecipeSize()
     {

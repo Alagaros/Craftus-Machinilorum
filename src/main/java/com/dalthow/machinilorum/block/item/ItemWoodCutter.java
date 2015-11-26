@@ -16,16 +16,12 @@ import cpw.mods.fml.relauncher.SideOnly;
 /**
  * Craftus Machinilorum
  *
- * 
- * @author Dalthow Game Studios 
- * @class ItemWoodCutter.java
- * 
+ * @author Trevi Awater
  **/
 
 public class ItemWoodCutter extends ItemBlock
 {
 	// Constructor.
-	
 	public ItemWoodCutter(Block block) 
 	{
 		super(block);
@@ -33,7 +29,6 @@ public class ItemWoodCutter extends ItemBlock
 	
 	
 	// Adds a tool-tip to the item.
-
 	@SideOnly(Side.CLIENT)
     public void addInformation(ItemStack item, EntityPlayer player, List list, boolean isValid)
     {
@@ -41,7 +36,7 @@ public class ItemWoodCutter extends ItemBlock
 		{
 			list.clear();
 		
-			list.add(I18n.format("tile.woodCutter.name", new Object[0]));
+			list.add(I18n.format("tile.woodCutter.name"));
 			list.add("Used to break blocks made from");
 	    	list.add("wood. Requires a redstone");
 	    	list.add("signal to be active. Can be");
