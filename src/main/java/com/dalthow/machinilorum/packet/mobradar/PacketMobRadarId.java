@@ -10,28 +10,21 @@ import net.minecraft.entity.player.EntityPlayer;
 /**
  * Craftus Machinilorum
  *
- * 
- * @author Dalthow Game Studios 
- * @class PacketMobRadarId.java
- * 
+ * @author Trevi Awater
  **/
 
 public class PacketMobRadarId extends AbstractPacket 
 {
 	// Declaration for the position of the block.
-	
 	int xPos;
 	int yPos;
 	int zPos;
-	
-	
+
 	// Declaring the kind of mob that is selected.
-	
 	int mobId;
 
-	
-	// For some reason packets need an empty constructor, don't ask me why.
-	
+
+	// Constructors.
 	public PacketMobRadarId(){}
 	
 	public PacketMobRadarId(int xPos, int yPos, int zPos, int mobId) 
@@ -45,7 +38,6 @@ public class PacketMobRadarId extends AbstractPacket
 	
 	
 	// Encodes the packet.
-	
 	@Override
 	public void encodeInto(ChannelHandlerContext context, ByteBuf buffer) 
 	{
@@ -55,10 +47,8 @@ public class PacketMobRadarId extends AbstractPacket
 		
 		buffer.writeInt(mobId);
 	}
-	
-	
-	// Decodes the packet.
 
+	// Decodes the packet.
 	@Override
 	public void decodeInto(ChannelHandlerContext context, ByteBuf buffer) 
 	{
@@ -69,9 +59,6 @@ public class PacketMobRadarId extends AbstractPacket
 		this.mobId = buffer.readInt();
 	}
 
-	
-	// Handles the client side.
-	
 	@Override
 	public void handleClientSide(EntityPlayer player) 
 	{
@@ -80,9 +67,6 @@ public class PacketMobRadarId extends AbstractPacket
 		tile.mobId = mobId;
 	}
 
-	
-	// Handles the server side.
-	
 	@Override
 	public void handleServerSide(EntityPlayer player) 
 	{

@@ -10,28 +10,21 @@ import net.minecraft.entity.player.EntityPlayer;
 /**
  * Craftus Machinilorum
  *
- * 
- * @author Dalthow Game Studios 
- * @class PacketMobRadarRadius.java
- * 
+ * @author Trevi Awater
  **/
 
 public class PacketMobRadarRadius extends AbstractPacket 
 {
 	// Declaration for the position of the block.
-	
 	int xPos;
 	int yPos;
 	int zPos;
-	
-	
+
 	// Declaring radius that is entered.
-	
 	int radius;
 
-	
-	// For some reason packets need an empty constructor, don't ask me why.
-	
+
+	// Constructors.
 	public PacketMobRadarRadius(){}
 	
 	public PacketMobRadarRadius(int xPos, int yPos, int zPos, int radius) 
@@ -42,10 +35,9 @@ public class PacketMobRadarRadius extends AbstractPacket
 		
 		this.radius = radius;
 	}
-	
-	
+
+
 	// Encodes the packet.
-	
 	@Override
 	public void encodeInto(ChannelHandlerContext context, ByteBuf buffer) 
 	{
@@ -55,10 +47,8 @@ public class PacketMobRadarRadius extends AbstractPacket
 		
 		buffer.writeInt(radius);
 	}
-	
-	
-	// Decodes the packet.
 
+	// Decodes the packet.
 	@Override
 	public void decodeInto(ChannelHandlerContext context, ByteBuf buffer) 
 	{
@@ -69,9 +59,6 @@ public class PacketMobRadarRadius extends AbstractPacket
 		this.radius = buffer.readInt();
 	}
 
-	
-	// Handles the client side.
-	
 	@Override
 	public void handleClientSide(EntityPlayer player) 
 	{
@@ -80,9 +67,6 @@ public class PacketMobRadarRadius extends AbstractPacket
 		tile.radius = radius;
 	}
 
-	
-	// Handles the server side.
-	
 	@Override
 	public void handleServerSide(EntityPlayer player) 
 	{

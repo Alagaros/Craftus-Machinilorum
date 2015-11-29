@@ -8,30 +8,20 @@ import net.minecraft.tileentity.TileEntity;
 /**
  * Craftus Machinilorum
  *
- * 
- * @author Dalthow Game Studios 
- * @class TileEntitySprinkler.java
- * 
+ * @author Trevi Awater
  **/
 
 public class TileEntitySprinkler extends TileEntity
 {
-	// Declaration of hasPulsed flag.
-	
 	private boolean hasPulsed;
-	
-	
-	// Validates the tile entity.
-	
+
+
 	@Override
 	public void validate()
 	{
 		worldObj.addBlockEvent(xCoord, yCoord, zCoord, Main.blockSprinkler, 0, 0);
 	}
-	
-	
-	// Gets triggered 20 times every second.
-	
+
 	public void updateEntity() 
 	{
 		if(worldObj.isBlockIndirectlyGettingPowered(xCoord, yCoord, zCoord))

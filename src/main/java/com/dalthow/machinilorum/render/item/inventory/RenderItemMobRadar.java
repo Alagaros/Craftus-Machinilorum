@@ -16,24 +16,19 @@ import com.dalthow.machinilorum.base.Reference;
 /**
  * Craftus Machinilorum
  *
- * 
- * @author Dalthow Game Studios 
- * @class RenderItemMobRadar.java
- * 
+ * @author Trevi Awater
  **/
 
 @SideOnly(Side.CLIENT)
 public class RenderItemMobRadar implements IItemRenderer
 {
 	// Declaration of the model files.
-	
     private IModelCustom model;
 
 	private final ResourceLocation texture = new ResourceLocation(Reference.modId, "textures/models/mob radar.png");
 	 
 	
-	// Constructor that obtains the model.
-    
+	// Constructor.
     public RenderItemMobRadar()
     {
     	model = AdvancedModelLoader.loadModel(new ResourceLocation(Reference.modId, "models/mob radar.obj"));
@@ -41,7 +36,6 @@ public class RenderItemMobRadar implements IItemRenderer
 
     
     // Render settings.
-    
     public boolean handleRenderType(ItemStack itemStack, ItemRenderType itemRenderType)
     {
         return true;
@@ -51,10 +45,8 @@ public class RenderItemMobRadar implements IItemRenderer
     {
         return true;
     }
-    
-    
+
     // All the different cases where it can be rendered in.
-    
     public void renderItem(ItemRenderType itemRenderType, ItemStack itemStack, Object... data)
     {
         switch (itemRenderType)
@@ -93,10 +85,8 @@ public class RenderItemMobRadar implements IItemRenderer
             }
         }
     } 
-    
-    
+
     // All the different cases where it can be rendered in.
-    
     private void render(float xPos, float yPos, float zPos, float scale)
     {
         GL11.glPushMatrix();

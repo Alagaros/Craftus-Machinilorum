@@ -15,27 +15,22 @@ import cpw.mods.fml.client.FMLClientHandler;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-/**
+ /**
  * Craftus Machinilorum
  *
- * 
- * @author Dalthow Game Studios
- * @class RenderEggIncubator.java 
- * 
+ * @author Trevi Awater
  **/
 
 @SideOnly(Side.CLIENT)
 public class RenderEggIncubator extends TileEntitySpecialRenderer
 {
 	// Declaration of the model files.
-	
     private IModelCustom model;
 
     private final ResourceLocation textures = new ResourceLocation(Reference.modId, "textures/models/egg incubator.png");
  
     
-    // Constructor that obtains the model.
-    
+    // Constructor.
     public RenderEggIncubator()
     {
     	model = AdvancedModelLoader.loadModel(new ResourceLocation(Reference.modId, "models/egg incubator.obj"));
@@ -43,7 +38,6 @@ public class RenderEggIncubator extends TileEntitySpecialRenderer
     
     
     // Renders the TileEntity at a specific location.
-
 	@Override
 	public void renderTileEntityAt(TileEntity tile, double xPos, double yPos, double zPos, float par1)
     {

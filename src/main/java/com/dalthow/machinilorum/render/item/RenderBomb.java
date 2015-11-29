@@ -14,22 +14,17 @@ import com.dalthow.machinilorum.model.ModelBomb;
 /**
  * Craftus Machinilorum
  *
- * 
- * @author Dalthow Game Studios 
- * @class RenderBomb.java
- * 
+ * @author Trevi Awater
  **/
 
 public class RenderBomb implements IItemRenderer
 {
 	// Declaration of the model files.
-	
 	private ModelBomb model;
 	private ResourceLocation texture = new ResourceLocation(Reference.modId, "textures/models/bomb.png");
 	
 	
-	// Constructor that obtains the model.
-    
+	// Constructor.
 	public RenderBomb()
 	{
 		model = new ModelBomb();
@@ -37,7 +32,6 @@ public class RenderBomb implements IItemRenderer
 	
 	
 	// Tells the game when to render the model.
-	
 	public boolean handleRenderType(ItemStack item, ItemRenderType type) 
 	{
 		switch(type) 
@@ -48,22 +42,17 @@ public class RenderBomb implements IItemRenderer
 			default: return false; 
 		} 
 	}
-	
-	
+
 	// Tells the game if it needs to use the render helper.
-	
 	public boolean shouldUseRenderHelper(ItemRenderType type, ItemStack item, ItemRendererHelper helper)
 	{		
 		return false;
 	}
-	
-	
+
 	// Renders the actual model.
-	
 	public void renderItem(ItemRenderType type, ItemStack item, Object... data) 
 	{
-		// Switching the render between first and third person. 
-		
+		// Switching the render between first and third person.
 		switch(type) 
 		{ 
 			case EQUIPPED:  

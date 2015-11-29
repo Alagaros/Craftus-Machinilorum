@@ -18,25 +18,20 @@ import cpw.mods.fml.relauncher.SideOnly;
 /**
  * Craftus Machinilorum
  *
- * 
- * @author Dalthow Game Studios 
- * @class RenderMobRadar.java
- * 
+ * @author Trevi Awater
  **/
 
 @SideOnly(Side.CLIENT)
 public class RenderMobRadar extends TileEntitySpecialRenderer
 {
 	// Declaration of the model files.
-	
     private IModelCustom top;
     private IModelCustom bottom;
 
     private final ResourceLocation texture = new ResourceLocation(Reference.modId, "textures/models/mob radar.png");
- 
-    
-    // Constructor that obtains the models.
-    
+
+
+    // Constructor.
     public RenderMobRadar()
     {
     	top = AdvancedModelLoader.loadModel(new ResourceLocation(Reference.modId, "models/mobradar/top.obj"));
@@ -45,7 +40,6 @@ public class RenderMobRadar extends TileEntitySpecialRenderer
     
     
     // Renders the TileEntity at a specific location.
-
 	@Override
 	public void renderTileEntityAt(TileEntity tile, double xPos, double yPos, double zPos, float par1)
     {

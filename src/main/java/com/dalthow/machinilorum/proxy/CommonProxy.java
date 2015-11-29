@@ -11,31 +11,21 @@ import net.minecraft.item.crafting.IRecipe;
 /**
  * Craftus Machinilorum
  *
- * 
- * @author Dalthow Game Studios 
- * @class CommonProxy.java
- * 
+ * @author Trevi Awater
  **/
 
 public class CommonProxy 
 {
 	/**
-     * loadRenderers Gets extended in the ClientProxy.
-     * 
-     * @return {void}
+     * Gets extended in the ClientProxy.
      */
-	public void loadRenderers() 
-	{
-		
-	}
+	public void loadRenderers() {}
 	
 	
 	/**
-     * removeRecipe Removes the crafting recipe of an item.
+     * Removes the crafting recipe of an item.
      *
-     * @param  {Item} item The item that should have its recipe removed.
-     *
-     * @return {void}
+     * @param item The item that should have its recipe removed.
      */
 	public static void removeRecipe(Item item)
 	{

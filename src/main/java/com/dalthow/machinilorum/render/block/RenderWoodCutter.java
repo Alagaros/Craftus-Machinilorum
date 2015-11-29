@@ -18,25 +18,20 @@ import cpw.mods.fml.relauncher.SideOnly;
 /**
  * Craftus Machinilorum
  *
- * 
- * @author Dalthow Game Studios 
- * @class RenderWoodCutter.java
- * 
+ * @author Trevi Awater
  **/
 
 @SideOnly(Side.CLIENT)
 public class RenderWoodCutter extends TileEntitySpecialRenderer
 {
 	// Declaration of the model files.
-	
     private IModelCustom engine;
     private IModelCustom blades;
 
     private final ResourceLocation texture = new ResourceLocation(Reference.modId, "textures/models/wood cutter.png");
  
     
-    // Constructor that obtains the models.
-    
+    // Constructor.
     public RenderWoodCutter()
     {
     	engine = AdvancedModelLoader.loadModel(new ResourceLocation(Reference.modId, "models/woodcutter/engine.obj"));
@@ -45,7 +40,6 @@ public class RenderWoodCutter extends TileEntitySpecialRenderer
     
     
     // Renders the TileEntity at a specific location.
-
 	@Override
 	public void renderTileEntityAt(TileEntity tile, double xPos, double yPos, double zPos, float par1)
     {

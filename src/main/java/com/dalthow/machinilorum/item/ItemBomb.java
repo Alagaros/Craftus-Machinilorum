@@ -20,16 +20,12 @@ import cpw.mods.fml.relauncher.SideOnly;
 /**
  * Craftus Machinilorum
  *
- * 
- * @author Dalthow Game Studios 
- * @class ItemBomb.java
- * 
+ * @author Trevi Awater
  **/
 
 public class ItemBomb extends Item 
 {
-	// Constructor that adds data to the item.
-	
+	// Constructor.
 	public ItemBomb()
 	{
 		super();
@@ -41,7 +37,6 @@ public class ItemBomb extends Item
 	
 	
 	// Throws a new entity on a right click event.
-	
 	@Override
 	public ItemStack onItemRightClick(ItemStack itemStack, World world, EntityPlayer player)
 	{
@@ -59,10 +54,8 @@ public class ItemBomb extends Item
 		
 		return itemStack;
 	}
-	
-	
-	// Adds a tool-tip to the item.
 
+	// Adds a tool-tip to the item.
 	@SideOnly(Side.CLIENT)
     public void addInformation(ItemStack itemStack, EntityPlayer player, List list, boolean isValid)
     {
@@ -72,7 +65,7 @@ public class ItemBomb extends Item
 		{
 			list.clear();
 		
-			list.add(I18n.format("item.bomb.name", new Object[0]));
+			list.add(I18n.format("item.bomb.name"));
 			list.add("Used to throw and blow things up.");
 		}
     }

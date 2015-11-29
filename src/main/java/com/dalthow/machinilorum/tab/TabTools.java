@@ -8,16 +8,12 @@ import net.minecraft.item.Item;
 /**
  * Craftus Machinilorum
  *
- * 
- * @author Dalthow Game Studios 
- * @class TabItems.java
- * 
+ * @author Trevi Awater
  **/
 
 public class TabTools extends CreativeTabs 
 {
 	// Constructor that adds data to the tab.
-	
 	public TabTools(int identifier, String name) 
 	{
 		super(identifier, name);
@@ -25,7 +21,6 @@ public class TabTools extends CreativeTabs
 	
 	
 	// Sets the icon for the creative tab.
-	
 	@Override
 	public Item getTabIconItem() 
 	{

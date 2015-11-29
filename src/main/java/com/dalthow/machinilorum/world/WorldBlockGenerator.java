@@ -13,16 +13,12 @@ import cpw.mods.fml.common.IWorldGenerator;
 /**
  * Craftus Machinilorum
  *
- * 
- * @author Dalthow Game Studios
- * @class WorldBlockGenerator.java 
- * 
+ * @author Trevi Awater
  **/
 
 public class WorldBlockGenerator implements IWorldGenerator
 {
 	// Specifies in which dimension the "ore" should spawn.
-	
 	public void generate(Random random, int xChunk, int zChunk, World world, IChunkProvider chunkGenerator, IChunkProvider chunkProvider)
 	{
 		switch(world.provider.dimensionId)
@@ -30,10 +26,8 @@ public class WorldBlockGenerator implements IWorldGenerator
 			case 0: generateSurface(world, random, xChunk * 16, zChunk * 16);
 		}
 	}
-	
-	
+
 	// Generates chalk in the world.
-	
 	private void generateSurface(World world, Random random, int xChunk, int zChunk)
 	{
 		if(world.provider.getBiomeGenForCoords(xChunk, zChunk) instanceof BiomeGenOcean)

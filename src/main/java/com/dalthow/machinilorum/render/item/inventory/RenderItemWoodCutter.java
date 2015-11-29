@@ -16,24 +16,19 @@ import com.dalthow.machinilorum.base.Reference;
 /**
  * Craftus Machinilorum
  *
- * 
- * @author Dalthow Game Studios 
- * @class RenderItemWoodCutter.java
- * 
+ * @author Trevi Awater
  **/
 
 @SideOnly(Side.CLIENT)
 public class RenderItemWoodCutter implements IItemRenderer
 {
 	// Declaration of the model files.
-	
     private IModelCustom model;
 
 	private final ResourceLocation texture = new ResourceLocation(Reference.modId, "textures/models/wood cutter.png");
 	 
 	
-	// Constructor that obtains the model.
-    
+	// Constructor.
     public RenderItemWoodCutter()
     {
     	model = AdvancedModelLoader.loadModel(new ResourceLocation(Reference.modId, "models/wood cutter.obj"));
@@ -41,7 +36,6 @@ public class RenderItemWoodCutter implements IItemRenderer
 
     
     // Render settings.
-    
     public boolean handleRenderType(ItemStack itemStack, ItemRenderType itemRenderType)
     {
         return true;
@@ -52,9 +46,7 @@ public class RenderItemWoodCutter implements IItemRenderer
         return true;
     }
 
-    
     // All the different cases where it can be rendered in.
-    
     public void renderItem(ItemRenderType itemRenderType, ItemStack itemStack, Object... data)
     {
         switch (itemRenderType)
@@ -94,9 +86,7 @@ public class RenderItemWoodCutter implements IItemRenderer
         }
     }
 
-    
     // The actual render method.
-    
     private void render(float xPos, float yPos, float zPos)
     {
         GL11.glPushMatrix();

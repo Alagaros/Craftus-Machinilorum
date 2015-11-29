@@ -21,24 +21,19 @@ import cpw.mods.fml.relauncher.SideOnly;
 /**
  * Craftus Machinilorum
  *
- * 
- * @author Dalthow Game Studios
- * @class RenderChalkboard.java 
- * 
+ * @author Trevi Awater
  **/
 
 @SideOnly(Side.CLIENT)
 public class RenderChalkboard extends TileEntitySpecialRenderer
 {
 	// Declaration of the model files.
-	
     private IModelCustom model;
 
     private final ResourceLocation textures = new ResourceLocation(Reference.modId, "textures/models/chalkboard.png");
- 
-    
-    // Constructor that obtains the model.
-    
+
+
+    // Constructor.
     public RenderChalkboard()
     {
     	model = AdvancedModelLoader.loadModel(new ResourceLocation(Reference.modId, "models/chalkboard.obj"));
@@ -46,7 +41,6 @@ public class RenderChalkboard extends TileEntitySpecialRenderer
     
     
     // Renders the TileEntity at a specific location.
-
 	@Override
 	public void renderTileEntityAt(TileEntity tile, double xPos, double yPos, double zPos, float par1)
     {
@@ -94,7 +88,7 @@ public class RenderChalkboard extends TileEntitySpecialRenderer
 
         GL11.glPushMatrix();
         
-        if(tileChalkboard.startDefined == false)
+        if(!tileChalkboard.startDefined)
         {
         	Tessellator tessellator = Tessellator.instance;
 	                	

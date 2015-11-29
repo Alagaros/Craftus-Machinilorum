@@ -7,16 +7,12 @@ import net.minecraft.entity.Entity;
 /**
  * Craftus Machinilorum
  *
- * 
- * @author Dalthow Game Studios 
- * @class ModelFilter.java
- * 
+ * @author Trevi Awater
  **/
 
 public class ModelFilter extends ModelBase
 {
 	// Declaration of the model parts.
-	
 	public ModelRenderer handle;
 	
 	public ModelRenderer circle1;
@@ -37,7 +33,6 @@ public class ModelFilter extends ModelBase
 	
 	
 	// Registering all the model parts.
-	
 	public ModelFilter()
 	{
 		textureWidth = 256;
@@ -155,10 +150,9 @@ public class ModelFilter extends ModelBase
 		
 		setRotation(bottom, 0F, 0F, 0F);
 	}
-	
-	
+
+
 	// Renders the model.
-	
 	public void render(Entity entity, float par1, float par2, float par3, float par4, float par5, float par6)
 	{
 		super.render(entity, par1, par2, par3, par4, par5, par6);
@@ -182,28 +176,35 @@ public class ModelFilter extends ModelBase
 		
 		bottom.render(par6);
 	}
-	
-	
+
+
 	/**
-     * setRotation Sets the rotation of the model.
-     * 
-     * @param  {ModelRenderer} renderer The model renderer.
-     * @param  {float} par1  	  	    X axis rotation.
-     * @param  {float} par2 	        Y axis rotation.
-     * @param  {float} par3  	        Z axis rotation.
-     * 
-     * @return {void}
-     */
+	 * Sets the rotation of the model.
+	 *
+	 * @param renderer The model renderer.
+	 * @param par1     X axis rotation.
+	 * @param par2 	   Y axis rotation.
+	 * @param par3     Z axis rotation.
+	 */
 	private void setRotation(ModelRenderer renderer, float par1, float par2, float par3)
 	{
 		renderer.rotateAngleX = par1;
 		renderer.rotateAngleY = par2;
 		renderer.rotateAngleZ = par3;
 	}
-	
-	
-	// Sets the rotation angles of the model.
-	
+
+
+	/**
+	 * Sets the rotation angles of the model.
+	 *
+	 * @param par1
+	 * @param par2
+	 * @param par3
+	 * @param par4
+	 * @param par5
+	 * @param par6
+	 * @param entity
+	 */
 	public void setRotationAngles(float par1, float par2, float par3, float par4, float par5, float par6, Entity entity)
 	{
 		super.setRotationAngles(par6, par1, par2, par3, par4, par5, entity);

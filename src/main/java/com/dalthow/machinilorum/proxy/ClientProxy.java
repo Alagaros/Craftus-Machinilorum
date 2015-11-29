@@ -38,18 +38,13 @@ import cpw.mods.fml.relauncher.SideOnly;
 /**
  * Craftus Machinilorum
  *
- * 
- * @author Dalthow Game Studios 
- * @class ClientProxy.java
- * 
+ * @author Trevi Awater
  **/
 
 public class ClientProxy extends CommonProxy
 {
 	/**
-     * loadRenderers Registers all custom renders in this mod.
-     * 
-     * @return {void}
+     * Registers all custom renders in this mod.
      */
 	@SideOnly(Side.CLIENT) 
 	@Override
@@ -58,7 +53,6 @@ public class ClientProxy extends CommonProxy
 	    super.loadRenderers();
 	    
 		// Registering the item renders.
-		
 		MinecraftForgeClient.registerItemRenderer(Main.itemFilter, new RenderFilter());
 		MinecraftForgeClient.registerItemRenderer(Main.itemBomb, new RenderBomb()); 
 		MinecraftForgeClient.registerItemRenderer(Main.itemShoppingCart, new RenderItemShoppingCart());
@@ -70,9 +64,7 @@ public class ClientProxy extends CommonProxy
 		MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(Main.blockSprinkler), new RenderItemSprinkler());
 		MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(Main.blockChalkboard), new RenderItemChalkboard());
 		
-		
-		//Registering the TileEntity renders.
-
+		// Registering the TileEntity renders.
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityEggIncubator.class, new RenderEggIncubator());
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityWoodCutter.class, new RenderWoodCutter());
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityMobRadar.class, new RenderMobRadar());
@@ -80,9 +72,7 @@ public class ClientProxy extends CommonProxy
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntitySprinkler.class, new RenderSprinkler());
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityChalkboard.class, new RenderChalkboard());
 		
-		
 		// Registering the entity renders.
-		
 		RenderingRegistry.registerEntityRenderingHandler(EntityBomb.class, new RenderEntityBomb(Main.itemBomb));    
 		RenderingRegistry.registerEntityRenderingHandler(EntityShoppingCart.class, new RenderEntityShoppingCart());
 	} 

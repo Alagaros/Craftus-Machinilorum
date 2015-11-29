@@ -24,16 +24,11 @@ import net.minecraft.util.AxisAlignedBB;
 /**
  * Craftus Machinilorum
  *
- * 
- * @author Dalthow Game Studios 
- * @class TileEntityMobRadar.java
- * 
+ * @author Trevi Awater
  **/
 
 public class TileEntityMobRadar extends TileEntity 
 {
-	// Declaration of TileEntity config.
-	
 	public int mobId;
 	public int radius;
 	public int signal;
@@ -43,8 +38,7 @@ public class TileEntityMobRadar extends TileEntity
 	public int rotationAngle;
 	
 	
-	// Constructor that sets the declared variables.
-	
+	// Constructor.
 	public TileEntityMobRadar()
 	{
 		mobId = 0;
@@ -56,9 +50,7 @@ public class TileEntityMobRadar extends TileEntity
 		rotationAngle = 0;
 	}
 	
-	
-	// Gets triggered 20 times every second.
-	
+
 	public void updateEntity() 
 	{
 		AxisAlignedBB axis = AxisAlignedBB.getBoundingBox((xCoord - radius), (yCoord - 3), (zCoord - radius), (xCoord + 1 + radius), (yCoord + 4), (zCoord + 1 + radius)); 
@@ -209,10 +201,7 @@ public class TileEntityMobRadar extends TileEntity
 		
 		worldObj.notifyBlocksOfNeighborChange(xCoord, yCoord, zCoord, worldObj.getBlock(xCoord, yCoord, zCoord));
 	}
-	
-	
-    // Reading from the tag compound.
-    
+
     public void readFromNBT(NBTTagCompound tag) 
     { 
     	mobId = tag.getInteger("mobId"); 
@@ -222,10 +211,7 @@ public class TileEntityMobRadar extends TileEntity
     	
         super.readFromNBT(tag);     
     } 
-      
-      
-    // Writing to the tag compound.
-       
+
     public void writeToNBT(NBTTagCompound tag) 
     { 
     	tag.setInteger("mobId", mobId); 
@@ -235,28 +221,19 @@ public class TileEntityMobRadar extends TileEntity
     	
         super.writeToNBT(tag); 
     } 
-    
-    
- 	// Tells the game that the tile can update.
- 	
+
  	@Override
  	public boolean canUpdate()
     {
          return true;
     }
- 	
- 	
- 	// Makes it so it always renders.
- 	
+
  	@Override
  	public Block getBlockType()
  	{
 		return Blocks.beacon;
  	}
- 	
- 	
- 	// Used for reading packets.
- 	
+
  	@Override
  	public Packet getDescriptionPacket() 
  	{

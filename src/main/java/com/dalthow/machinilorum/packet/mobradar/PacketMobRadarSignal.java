@@ -10,28 +10,21 @@ import net.minecraft.entity.player.EntityPlayer;
 /**
  * Craftus Machinilorum
  *
- * 
- * @author Dalthow Game Studios 
- * @class PacketMobRadarSignal.java
- * 
+ * @author Trevi Awater
  **/
 
 public class PacketMobRadarSignal extends AbstractPacket 
 {
 	// Declaration for the position of the block.
-	
 	int xPos;
 	int yPos;
 	int zPos;
-	
-	
+
 	// Declaring signal that is set.
-	
 	int signal;
 
-	
-	// For some reason packets need an empty constructor, don't ask me why.
-	
+
+	// Constructors.
 	public PacketMobRadarSignal(){}
 	
 	public PacketMobRadarSignal(int xPos, int yPos, int zPos, int signal) 
@@ -45,7 +38,6 @@ public class PacketMobRadarSignal extends AbstractPacket
 	
 	
 	// Encodes the packet.
-	
 	@Override
 	public void encodeInto(ChannelHandlerContext context, ByteBuf buffer) 
 	{
@@ -55,10 +47,8 @@ public class PacketMobRadarSignal extends AbstractPacket
 		
 		buffer.writeInt(signal);
 	}
-	
-	
-	// Decodes the packet.
 
+	// Decodes the packet.
 	@Override
 	public void decodeInto(ChannelHandlerContext context, ByteBuf buffer) 
 	{
@@ -69,9 +59,6 @@ public class PacketMobRadarSignal extends AbstractPacket
 		this.signal = buffer.readInt();
 	}
 
-	
-	// Handles the client side.
-	
 	@Override
 	public void handleClientSide(EntityPlayer player) 
 	{
@@ -80,9 +67,6 @@ public class PacketMobRadarSignal extends AbstractPacket
 		tile.signal = signal;
 	}
 
-	
-	// Handles the server side.
-	
 	@Override
 	public void handleServerSide(EntityPlayer player) 
 	{

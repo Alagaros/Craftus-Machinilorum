@@ -17,23 +17,18 @@ import cpw.mods.fml.client.FMLClientHandler;
 /**
  * Craftus Machinilorum
  *
- * 
- * @author Dalthow Game Studios 
- * @class RenderEntityShoppingCart.java
- * 
+ * @author Trevi Awater
  **/
 
 public class RenderEntityShoppingCart extends Render 
 {
 	// Declaration of the model files.
-	
 	private IModelCustom model;
 
 	private final ResourceLocation texture = new ResourceLocation(Reference.modId, "textures/models/shopping cart.png");
 	 
 	
-	// Constructor that obtains the model.
-    
+	// Constructor.
 	public RenderEntityShoppingCart()
 	{
 		model = AdvancedModelLoader.loadModel(new ResourceLocation(Reference.modId, "models/shopping cart.obj"));
@@ -41,7 +36,6 @@ public class RenderEntityShoppingCart extends Render
 	
 	
 	// Renders the shopping cart model on the entity.
-
 	public void doRender(EntityShoppingCart entity, double par1, double par2, double par3, float par4, float par5)
 	{
         GL11.glPushMatrix();
@@ -89,9 +83,7 @@ public class RenderEntityShoppingCart extends Render
 		doRender((EntityShoppingCart)entity, par1, par2, par3, par4, par5);
     }
 	
-	
 	// Returns the location of the image.
-    
 	@Override
 	protected ResourceLocation getEntityTexture(Entity entity) 
 	{

@@ -18,16 +18,11 @@ import net.minecraft.util.DamageSource;
 /**
  * Craftus Machinilorum
  *
- * 
- * @author Dalthow Game Studios 
- * @class TileEntityWoodCutter.java
- * 
+ * @author Trevi Awater
  **/
 
 public class TileEntityWoodCutter extends TileEntity
 {
-	// Declaration of TileEntity config.
-
 	private int xTarget;
 	private int yTarget;
 	private int zTarget;
@@ -39,8 +34,7 @@ public class TileEntityWoodCutter extends TileEntity
 	public boolean hasCutted;
 
 	
-	// Constructor that sets the declared variables.
-	
+	// Constructor.
 	public TileEntityWoodCutter()
 	{
 		tickToCut = 36;
@@ -50,17 +44,12 @@ public class TileEntityWoodCutter extends TileEntity
 	}
 
 
-	// Validates the tile entity.
-	
 	@Override
 	public void validate()
 	{
 		worldObj.addBlockEvent(xCoord, yCoord, zCoord, Main.blockWoodCutter, 0, 0);
 	}
-	
-	
-	// Gets triggered 20 times every second.
-	
+
     public void updateEntity()  
     { 
     	if(worldObj.isBlockIndirectlyGettingPowered(xCoord, yCoord, zCoord))
@@ -124,56 +113,7 @@ public class TileEntityWoodCutter extends TileEntity
     		}
     	}
     }
-    
-    
-    /**
-     * setTarget Sets the target for the Wood Cutter.
-     * 
-     * @param  {int} xTarget the targets x position.
-     * @param  {int} yTarget the targets y position.
-     * @param  {int} zTarget the targets z position.
-     * 
-     * @return {void}
-     */
-    public void setTarget(int xTarget, int yTarget, int zTarget)
-    {
-    	switch(getBlockMetadata())
-		{
-			case 0: this.xTarget = xTarget;
-					this.yTarget = yTarget + 1;
-					this.zTarget = zTarget;
-			break;
-					
-			case 1: this.xTarget = xTarget;
-					this.yTarget = yTarget - 1;
-					this.zTarget = zTarget;
-			break;
-					
-			case 2: this.xTarget = xTarget - 1;
-					this.yTarget = yTarget;
-					this.zTarget = zTarget;
-			break;
-					
-			case 3: this.xTarget = xTarget + 1;
-					this.yTarget = yTarget;
-					this.zTarget = zTarget;
-			break;
-					
-			case 4: this.xTarget = xTarget;
-					this.yTarget = yTarget;
-					this.zTarget = zTarget + 1;
-			break;
-					
-			case 5: this.xTarget = xTarget;
-					this.yTarget = yTarget;
-					this.zTarget = zTarget - 1;
-			break;
-		}
-    }
-    
-    
-    // Reading from the tag compound.
-    
+
     public void readFromNBT(NBTTagCompound tag) 
     { 
         tickToCut = tag.getInteger("tickToCut");
@@ -181,10 +121,7 @@ public class TileEntityWoodCutter extends TileEntity
        
         super.readFromNBT(tag);     
     } 
-      
-      
-    // Writing to the tag compound.
-       
+
     public void writeToNBT(NBTTagCompound tag) 
     { 
     	tag.setInteger("tickToCut", tickToCut);
@@ -192,19 +129,13 @@ public class TileEntityWoodCutter extends TileEntity
     	
         super.writeToNBT(tag); 
     } 
-      
-	
-	// Tells the game that the tile can update.
-	
+
 	@Override
 	public boolean canUpdate()
     {
         return true;
     }
-	
-	
-	// Used for reading packets.
-	
+
 	@Override
 	public Packet getDescriptionPacket() 
 	{
@@ -220,4 +151,48 @@ public class TileEntityWoodCutter extends TileEntity
     {	
 		this.readFromNBT(packet.func_148857_g());
     }
+
+
+	/**
+	 * Sets the target for the Wood Cutter.
+	 *
+	 * @param xTarget the targets x position.
+	 * @param yTarget the targets y position.
+	 * @param zTarget the targets z position.
+	 */
+	public void setTarget(int xTarget, int yTarget, int zTarget)
+	{
+		switch(getBlockMetadata())
+		{
+			case 0: this.xTarget = xTarget;
+					this.yTarget = yTarget + 1;
+					this.zTarget = zTarget;
+			break;
+
+			case 1: this.xTarget = xTarget;
+					this.yTarget = yTarget - 1;
+					this.zTarget = zTarget;
+			break;
+
+			case 2: this.xTarget = xTarget - 1;
+					this.yTarget = yTarget;
+					this.zTarget = zTarget;
+			break;
+
+			case 3: this.xTarget = xTarget + 1;
+					this.yTarget = yTarget;
+					this.zTarget = zTarget;
+			break;
+
+			case 4: this.xTarget = xTarget;
+					this.yTarget = yTarget;
+					this.zTarget = zTarget + 1;
+			break;
+
+			case 5: this.xTarget = xTarget;
+					this.yTarget = yTarget;
+					this.zTarget = zTarget - 1;
+			break;
+		}
+	}
 }

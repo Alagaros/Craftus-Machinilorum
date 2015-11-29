@@ -18,25 +18,20 @@ import cpw.mods.fml.relauncher.SideOnly;
 /**
  * Craftus Machinilorum
  *
- * 
- * @author Dalthow Game Studios 
- * @class RenderConveyorBelt.java
- * 
+ * @author Trevi Awater
  **/
 
 @SideOnly(Side.CLIENT)
 public class RenderConveyorBelt extends TileEntitySpecialRenderer
 {
 	// Declaration of the model files.
-	
     private IModelCustom model;
 
     private final ResourceLocation activeTexture = new ResourceLocation(Reference.modId, "textures/models/conveyor belt active.png");
     private final ResourceLocation offTexture = new ResourceLocation(Reference.modId, "textures/models/conveyor belt off.png");
     
     
-    // Constructor that obtains the model.
-    
+    // Constructor.
     public RenderConveyorBelt()
     {
     	model = AdvancedModelLoader.loadModel(new ResourceLocation(Reference.modId, "models/conveyor belt.obj"));
@@ -44,7 +39,6 @@ public class RenderConveyorBelt extends TileEntitySpecialRenderer
     
     
     // Renders the TileEntity at a specific location.
-
 	@Override
 	public void renderTileEntityAt(TileEntity tile, double xPos, double yPos, double zPos, float par1)
     {
@@ -76,10 +70,8 @@ public class RenderConveyorBelt extends TileEntitySpecialRenderer
         float scale = 0.5F;
              
         GL11.glScalef(scale, scale, scale);
-        
-        
+
         // Switching the texture based on the active state.
-        
         if(tileConveyorBelt.isActive)
         {
         	FMLClientHandler.instance().getClient().getTextureManager().bindTexture(activeTexture);

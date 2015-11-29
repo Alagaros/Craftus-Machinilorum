@@ -18,25 +18,20 @@ import cpw.mods.fml.relauncher.SideOnly;
 /**
  * Craftus Machinilorum
  *
- * 
- * @author Dalthow Game Studios 
- * @class RenderSprinkler.java
- * 
+ * @author Trevi Awater
  **/
 
 @SideOnly(Side.CLIENT)
 public class RenderSprinkler extends TileEntitySpecialRenderer
 {
 	// Declaration of the model files.
-	
     private IModelCustom engine;
     private IModelCustom top;
 
     private final ResourceLocation texture = new ResourceLocation(Reference.modId, "textures/models/sprinkler.png");
    
     
-    // Constructor that obtains the models.
-    
+    // Constructor.
     public RenderSprinkler()
     {
     	top = AdvancedModelLoader.loadModel(new ResourceLocation(Reference.modId, "models/sprinkler/top.obj"));
@@ -45,7 +40,6 @@ public class RenderSprinkler extends TileEntitySpecialRenderer
     
     
     // Renders the TileEntity at a specific location.
-
 	@Override
 	public void renderTileEntityAt(TileEntity tile, double xPos, double yPos, double zPos, float par1)
     {

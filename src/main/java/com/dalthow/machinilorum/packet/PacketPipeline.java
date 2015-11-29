@@ -32,55 +32,20 @@ import cpw.mods.fml.relauncher.SideOnly;
 /**
  * Craftus Machinilorum
  *
- * 
- * @author Dalthow Game Studios 
- * @class PacketPipeline.java
- * 
+ * @author Trevi Awater
  **/
 
 @ChannelHandler.Sharable
 public class PacketPipeline extends MessageToMessageCodec <FMLProxyPacket, AbstractPacket> 
 {
 	// Declaration of the packets and channels.
-	
     private EnumMap <Side, FMLEmbeddedChannel> channels;
     private LinkedList <Class <? extends AbstractPacket>> packets = new LinkedList <Class <? extends AbstractPacket>>();
   
     private boolean isPostInitialised = false;
 
-    
-    /**
-     * registerPacket Adds a packet to the linked list if the size is smaller then 256.
-     * 
-     * @param  {Class}   The abstract class.
-     * 
-     * @return {boolean} If the packet was registered successfully or not.
-     */
-    public boolean registerPacket(Class <? extends AbstractPacket> abstractClass) 
-    {
-        if(packets.size() > 256) 
-        {
-            return false;
-        }
 
-        if(packets.contains(abstractClass)) 
-        {
-            return false;
-        }
-
-        if(isPostInitialised) 
-        {
-            return false;
-        }
-
-        packets.add(abstractClass);
-        
-        return true;
-    }
-
-    
     // Encodes the packet.
-    
     @Override
     protected void encode(ChannelHandlerContext context, AbstractPacket message, List <Object> output) throws Exception 
     {
@@ -102,9 +67,7 @@ public class PacketPipeline extends MessageToMessageCodec <FMLProxyPacket, Abstr
         output.add(proxyPacket);
     }
 
-    
     // Decodes the packet.
-    
     @Override
     protected void decode(ChannelHandlerContext context, FMLProxyPacket message, List <Object> output) throws Exception
     {
@@ -144,11 +107,38 @@ public class PacketPipeline extends MessageToMessageCodec <FMLProxyPacket, Abstr
         output.add(packet);
     }
 
-    
+
     /**
-     * initialize Registers all packets.
-     * 
-     * @return {void}
+     * Adds a packet to the linked list if the size is smaller then 256.
+     *
+     * @param abstractClass
+     *
+     * @return boolean
+     */
+    public boolean registerPacket(Class <? extends AbstractPacket> abstractClass)
+    {
+        if(packets.size() > 256)
+        {
+            return false;
+        }
+
+        if(packets.contains(abstractClass))
+        {
+            return false;
+        }
+
+        if(isPostInitialised)
+        {
+            return false;
+        }
+
+        packets.add(abstractClass);
+
+        return true;
+    }
+
+    /**
+     * Registers all packets.
      */
     public void initialize() 
     {
@@ -158,12 +148,9 @@ public class PacketPipeline extends MessageToMessageCodec <FMLProxyPacket, Abstr
         registerPacket(PacketMobRadarSignal.class);
         registerPacket(PacketMobRadarRadius.class);
     }
-
     
     /**
-     * getClientPlayer Gets the current player.
-     * 
-     * @return {void}
+     * Gets the current player.
      */
     @SideOnly(Side.CLIENT)
     private EntityPlayer getClientPlayer() 
@@ -171,13 +158,10 @@ public class PacketPipeline extends MessageToMessageCodec <FMLProxyPacket, Abstr
         return Minecraft.getMinecraft().thePlayer;
     }
 
-    
     /**
-     * sendToAll Sends a packet to the server and all clients.
+     * Sends a packet to the server and all clients.
      * 
-     * @param  {AbstractPacket} packet The packet that should be send.
-     * 
-     * @return {void}
+     * @param packet The packet that should be send.
      */
     public void sendToAll(AbstractPacket packet) 
     {
@@ -185,14 +169,11 @@ public class PacketPipeline extends MessageToMessageCodec <FMLProxyPacket, Abstr
         channels.get(Side.SERVER).writeAndFlush(packet);
     }
 
-    
     /**
-     * sendToAll Sends a packet to a specific client.
+     * Sends a packet to a specific client.
      * 
-     * @param  {AbstractPacket} packet The packet that should be send.
-     * @param  {EntityPlayerMP} player The player that should receive the packet.
-     * 
-     * @return {void}
+     * @param packet The packet that should be send.
+     * @param player The player that should receive the packet.
      */
     public void sendTo(AbstractPacket packet, EntityPlayerMP player) 
     {
@@ -201,14 +182,11 @@ public class PacketPipeline extends MessageToMessageCodec <FMLProxyPacket, Abstr
         channels.get(Side.SERVER).writeAndFlush(packet);
     }
 
-    
     /**
-     * sendToAllAround Sends a packet to nearby players.
+     * Sends a packet to nearby players.
      * 
-     * @param  {AbstractPacket} packet The packet that should be send.
-     * @param  {TargetPoint} point     The location the packet should be send to.
-     * 
-     * @return {void}
+     * @param packet The packet that should be send.
+     * @param point  The location the packet should be send to.
      */
     public void sendToAllAround(AbstractPacket packet, TargetPoint point)
     {
@@ -216,15 +194,12 @@ public class PacketPipeline extends MessageToMessageCodec <FMLProxyPacket, Abstr
         channels.get(Side.SERVER).attr(FMLOutboundHandler.FML_MESSAGETARGETARGS).set(point);
         channels.get(Side.SERVER).writeAndFlush(packet);
     }
-
     
     /**
-     * sendToDimension Sends a packet to everyone in a certain dimension.
+     * Sends a packet to everyone in a certain dimension.
      * 
-     * @param  {AbstractPacket} packet The packet that should be send.
-     * @param  {int} dimensionId       The dimension Id.
-     * 
-     * @return {void}
+     * @param packet      The packet that should be send.
+     * @param dimensionId The dimension Id.
      */
     public void sendToDimension(AbstractPacket packet, int dimensionId) 
     {
@@ -233,13 +208,10 @@ public class PacketPipeline extends MessageToMessageCodec <FMLProxyPacket, Abstr
         channels.get(Side.SERVER).writeAndFlush(packet);
     }
 
-    
     /**
-     * sendToServer Sends a packet to the server.
+     * Sends a packet to the server.
      * 
-     * @param  {AbstractPacket} packet The packet that should be send.
-     * 
-     * @return {void}
+     * @param packet The packet that should be send.
      */
     public void sendToServer(AbstractPacket packet) 
     {

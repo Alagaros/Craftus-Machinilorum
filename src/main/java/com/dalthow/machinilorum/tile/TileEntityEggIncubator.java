@@ -13,23 +13,18 @@ import net.minecraft.world.World;
 /**
  * Craftus Machinilorum
  *
- * 
- * @author Dalthow Game Studios 
- * @class TileEntityEggIncubator.java
- * 
+ * @author Trevi Awater
  **/
 
 public class TileEntityEggIncubator extends TileEntity
 {
 	// Declaration of the tickToHatch counter and canPutEgg in flag.
-	
     public int tickToHatch; 
     
     public boolean canPutEggIn; 
     
 	
-	// Constructor that sets the declared variables.
-	
+	// Constructor.
 	public TileEntityEggIncubator()
 	{
 		canPutEggIn = true;
@@ -38,30 +33,24 @@ public class TileEntityEggIncubator extends TileEntity
 
 
 	// Validates the tile entity.
-	
 	@Override
 	public void validate()
 	{
 		worldObj.addBlockEvent(xCoord, yCoord, zCoord, Main.blockEggIncubator, 0, 0);
 	}
-	
-	
+
 	// Gets triggered 20 times every second.
-	
     public void updateEntity()  
     { 
     	// Checks if we are not on a server.
-    	
         if(!worldObj.isRemote) 
         {
         	// Checks if its time to hatch.
-        	
             if(tickToHatch <= 0) 
             { 
                 if(canPutEggIn == false) 
                 { 
                 	// Spawns a baby chicken on the correct position, based on the rotation.
-                	
                 	switch(getBlockMetadata())
                     {
             	        case 0: spawnBabyChicken(worldObj, xCoord + 0.5F, yCoord + 1F, zCoord + 0.5F); 
@@ -98,33 +87,8 @@ public class TileEntityEggIncubator extends TileEntity
                 tickToHatch--; 
             } 
         }  
-    } 
-     
-   
-    /**
-     * spawnBabyChicken Spawns a chicken at the block location and setting his age to a baby.
-     * 
-     * @param  {World} world The world object.
-     * @param  {float} xPos  The x position of the desired spawn location.
-     * @param  {float} yPos  The y position of the desired spawn location.
-     * @param  {float} zPos  The z position of the desired spawn location.
-     * 
-     * @return {void}
-     */
-    public static void spawnBabyChicken(World world, float xPos, float yPos, float zPos) 
-    { 
-        EntityChicken chicken = new EntityChicken(world); 
-        
-        chicken.setPosition(xPos, yPos, zPos); 
-        chicken.setGrowingAge(-24000); 
-        
-        world.spawnEntityInWorld(chicken); 
-        world.markBlockForUpdate((int)xPos, (int)yPos, (int)zPos); 
-    } 
-      
-      
-    // Reading from the tag compound.
-      
+    }
+
     public void readFromNBT(NBTTagCompound tag) 
     { 
         canPutEggIn = tag.getBoolean("canPutEggIn"); 
@@ -132,10 +96,7 @@ public class TileEntityEggIncubator extends TileEntity
        
         super.readFromNBT(tag);     
     } 
-      
-      
-    // Writing to the tag compound.
-       
+
     public void writeToNBT(NBTTagCompound tag) 
     { 
     	tag.setBoolean("canPutEggIn", canPutEggIn);  
@@ -143,19 +104,13 @@ public class TileEntityEggIncubator extends TileEntity
        
         super.writeToNBT(tag); 
     } 
-      
-   
-	// Tells the game that the tile can update.
-	
+
 	@Override
 	public boolean canUpdate()
     {
         return true;
     }
-	
-	
-	// Used for reading packets.
-	
+
 	@Override
 	public Packet getDescriptionPacket() 
 	{
@@ -170,5 +125,25 @@ public class TileEntityEggIncubator extends TileEntity
 	public void onDataPacket(NetworkManager networkManager, S35PacketUpdateTileEntity packet)
     {	
 		this.readFromNBT(packet.func_148857_g());
+    }
+
+
+    /**
+     * Spawns a chicken at the block location and setting his age to a baby.
+     *
+     * @param world The world object.
+     * @param xPos  The x position of the desired spawn location.
+     * @param yPos  The y position of the desired spawn location.
+     * @param zPos  The z position of the desired spawn location.
+     */
+    public static void spawnBabyChicken(World world, float xPos, float yPos, float zPos)
+    {
+        EntityChicken chicken = new EntityChicken(world);
+
+        chicken.setPosition(xPos, yPos, zPos);
+        chicken.setGrowingAge(-24000);
+
+        world.spawnEntityInWorld(chicken);
+        world.markBlockForUpdate((int)xPos, (int)yPos, (int)zPos);
     }
 }

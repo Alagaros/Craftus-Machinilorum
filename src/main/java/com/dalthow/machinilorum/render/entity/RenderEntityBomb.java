@@ -17,24 +17,19 @@ import cpw.mods.fml.relauncher.SideOnly;
 /**
  * Craftus Machinilorum
  *
- * 
- * @author Dalthow Game Studios 
- * @class RenderEntityBomb.java
- * 
+ * @author Trevi Awater
  **/
 
 @SideOnly(Side.CLIENT)
 public class RenderEntityBomb extends Render
 {
 	// Declaration of the bomb item and metadata.
-	
     private Item item;
     
     private int metadata;
   
     
-    // Constructor that sets the declared variables.
-    
+    // Constructors.
     public RenderEntityBomb(Item item, int metadata)
     {
         this.item = item;
@@ -48,7 +43,6 @@ public class RenderEntityBomb extends Render
 
     
     // Draws the bomb icon on the entity.
-    
     public void doRender(Entity entity, double par1, double par2, double par3, float par4, float par5)
     {
         IIcon icon = item.getIconFromDamage(metadata);
@@ -73,25 +67,22 @@ public class RenderEntityBomb extends Render
 
 
     /**
-     * getEntityTexture Gets the texture of a certain entity.
+     * Gets the texture of a certain entity.
      * 
-     * @param  {Entity} entity The entity.
+     * @param entity The entity.
      * 
-     * @return {ResourceLocation} The texture.
+     * @return ResourceLocation
      */
     protected ResourceLocation getEntityTexture(Entity entity)
     {
         return TextureMap.locationItemsTexture;
     }
-    
-    
+
     /**
-     * doTurn Turns the icon based on the point of view.
+     * Turns the icon based on the point of view.
      * 
-     * @param  {Tessellator} tessellator The tessellator.
-     * @param  {IIcon} The icon.
-     * 
-     * @return {void}
+     * @param tessellator The tessellator.
+     * @param icon
      */
     private void doTurn(Tessellator tessellator, IIcon icon)
     {
