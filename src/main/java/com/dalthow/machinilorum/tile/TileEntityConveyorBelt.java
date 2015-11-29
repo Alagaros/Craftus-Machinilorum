@@ -16,7 +16,6 @@ import net.minecraft.util.AxisAlignedBB;
 
 public class TileEntityConveyorBelt extends TileEntity
 {
-	// Declaration of isActive flag.
 	public boolean isActive;
     
 	
@@ -24,7 +23,6 @@ public class TileEntityConveyorBelt extends TileEntity
 	public TileEntityConveyorBelt() {}
 
 
-	// Validates the tile entity.
 	@Override
 	public void validate()
 	{
@@ -77,7 +75,6 @@ public class TileEntityConveyorBelt extends TileEntity
     	}
     } 
 
-	// Tells the game that the tile can update
 	@Override
 	public boolean canUpdate()
     {

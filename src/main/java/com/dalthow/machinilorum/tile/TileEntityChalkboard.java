@@ -26,9 +26,8 @@ public class TileEntityChalkboard extends TileEntity
 	public float endPosZ = 0;
 	
 	public boolean startDefined = false;
-	
-	
-    // Reading from the tag compound.
+
+
     public void readFromNBT(NBTTagCompound tag) 
     { 
     	startPosX = tag.getFloat("startPosX"); 
@@ -44,7 +43,6 @@ public class TileEntityChalkboard extends TileEntity
         super.readFromNBT(tag);     
     } 
 
-    // Writing to the tag compound.
     public void writeToNBT(NBTTagCompound tag) 
     { 
     	tag.setFloat("startPosX", startPosX); 
@@ -60,14 +58,12 @@ public class TileEntityChalkboard extends TileEntity
         super.writeToNBT(tag); 
     } 
 
- 	// Tells the game that the tile can update.
  	@Override
  	public boolean canUpdate()
     {
          return true;
     }
 
- 	// Used for reading packets.
  	@Override
  	public Packet getDescriptionPacket() 
  	{

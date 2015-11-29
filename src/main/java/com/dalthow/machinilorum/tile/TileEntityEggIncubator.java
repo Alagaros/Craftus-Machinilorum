@@ -18,7 +18,6 @@ import net.minecraft.world.World;
 
 public class TileEntityEggIncubator extends TileEntity
 {
-	// Declaration of the tickToHatch counter and canPutEgg in flag.
     public int tickToHatch; 
     
     public boolean canPutEggIn; 
@@ -32,14 +31,12 @@ public class TileEntityEggIncubator extends TileEntity
 	}
 
 
-	// Validates the tile entity.
 	@Override
 	public void validate()
 	{
 		worldObj.addBlockEvent(xCoord, yCoord, zCoord, Main.blockEggIncubator, 0, 0);
 	}
 
-	// Gets triggered 20 times every second.
     public void updateEntity()  
     { 
     	// Checks if we are not on a server.

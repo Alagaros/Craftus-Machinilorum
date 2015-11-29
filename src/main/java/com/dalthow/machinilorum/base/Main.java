@@ -89,7 +89,6 @@ public class Main
 	
 	public static Property recipeShoppingCart;
 
-	// Used to reference to itself.
 	@Instance
 	public static Main instance;
 
@@ -98,8 +97,7 @@ public class Main
 	
 	public static CommonProxy CommonProxy; 
     public static ClientProxy ClientProxy;
-    
-    // Network packet declaration.
+
  	public static final PacketPipeline packetPipeline = new PacketPipeline();
 
 	// Creative tabs declaration.
@@ -145,11 +143,9 @@ public class Main
 		blockSprinkler = new BlockSprinkler().setBlockName("sprinkler");
 		blockChalkboard = new BlockChalkboard().setBlockName("chalkboard");
 
-		// Registering the blocks in the block registry.
 		RegisterHandler.registerBlock(blockStoneCutter);
 		RegisterHandler.registerBlock(blockFragmentizer);
 
-		// Registering the item blocks, this is used for every block that has a custom render.
 		RegisterHandler.registerBlockWithItem(blockChalk, ItemChalk.class);
 		RegisterHandler.registerBlockWithItem(blockEggIncubator, ItemEggIncubator.class);
 		RegisterHandler.registerBlockWithItem(blockWoodCutter, ItemWoodCutter.class);
@@ -158,7 +154,6 @@ public class Main
 		RegisterHandler.registerBlockWithItem(blockSprinkler, ItemSprinkler.class);
 		RegisterHandler.registerBlockWithItem(blockChalkboard, ItemChalkboard.class);
 
-		// Registering the tile entities so they get ticked.
 		RegisterHandler.registerTileEntity(TileEntityFragmentizer.class, "fragmentizer");
 		RegisterHandler.registerTileEntity(TileEntityEggIncubator.class, "eggIncubator");
 		RegisterHandler.registerTileEntity(TileEntityWoodCutter.class, "woodCutter");
@@ -167,17 +162,14 @@ public class Main
 		RegisterHandler.registerTileEntity(TileEntitySprinkler.class, "sprinkler");
 		RegisterHandler.registerTileEntity(TileEntityChalkboard.class, "chalkboard");
 
-		// Registering the items in the item registry.
 		RegisterHandler.registerItem(itemFilter);
 		RegisterHandler.registerItem(itemBomb);
 		RegisterHandler.registerItem(itemShoppingCart);
 		RegisterHandler.registerItem(itemChecker);
 
-		// Registering the entities in the entity registry.
 		RegisterHandler.registerEntity(EntityShoppingCart.class, "shoppingCart");
 		RegisterHandler.registerEntity(EntityBomb.class, "bomb");
 
-		// Registering the world generator so chalk gets created.
 		GameRegistry.registerWorldGenerator(new WorldBlockGenerator(), 1);
 
 		// Allowing some of the utility items to be spawned in randomly generated chests.
