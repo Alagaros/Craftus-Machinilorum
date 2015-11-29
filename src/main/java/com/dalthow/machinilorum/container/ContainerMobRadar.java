@@ -11,28 +11,21 @@ import net.minecraft.inventory.ICrafting;
 /**
  * Craftus Machinilorum
  *
- * 
- * @author Dalthow Game Studios 
- * @class ContainerMobRadar.java
- * 
+ * @author Trevi Awater
  **/
 
 public class ContainerMobRadar extends Container 
 {
 	// Declaration of the TileEntity.
-	
 	private TileEntityMobRadar tile;
 
-	
 	// Declaring some other variables.
-	
 	public int lastMobId;
 	public int lastRadius;
 	public int lastSignal;
 
-	
+
 	// Constructor that sets the local TileEntity to the one that is provided as parameter.
-	
 	public ContainerMobRadar(TileEntityMobRadar tile) 
 	{
 		this.tile = tile;
@@ -40,7 +33,6 @@ public class ContainerMobRadar extends Container
 	
 	
 	// Detects and send changes to the gui from the tile entity.
-	
 	public void detectAndSendChanges() 
 	{
 		super.detectAndSendChanges();
@@ -69,10 +61,8 @@ public class ContainerMobRadar extends Container
 		lastRadius = tile.radius;
 		lastSignal = tile.signal;
 	}
-	
-	
+
 	// Updates the progress bar in the interface.
-	
 	@SideOnly(Side.CLIENT)
     public void updateProgressBar(int par1, int par2)
     {
@@ -91,10 +81,8 @@ public class ContainerMobRadar extends Container
             tile.signal = par2;
         }
     }
-	
-	
+
 	// Makes the container able to interact with the player.
-	
 	@Override
 	public boolean canInteractWith(EntityPlayer player) 
 	{

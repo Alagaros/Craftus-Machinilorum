@@ -21,35 +21,27 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 /**
-* Craftus Machinilorum
-*
-* 
-* @author Dalthow Game Studios 
-* @class EntityShoppingCart.java
-* 
-**/
+ * Craftus Machinilorum
+ *
+ * @author Trevi Awater
+ **/
 
 public class EntityShoppingCart extends Entity
 {
     // Declaration of some variables
-	
     private boolean isCartEmpty;
   
     private int cartPosRotationIncrements;
-    
-    
-    // Declaration of the position and rotation.
-    
+
+    // Declaration of the carts position and rotation.
     private double xCart;
     private double yCart;
     private double zCard;
     
     private double cartYaw;
     private double cartPitch;
-    
-    
+
     // Declaration of the velocities. This get's ignored on the server.
-    
     @SideOnly(Side.CLIENT)
     private double velocityX;
     
@@ -60,8 +52,7 @@ public class EntityShoppingCart extends Entity
     private double velocityZ;
     
     
-    // Constructor that adds information to the entity.
-    
+    // Constructor.
     public EntityShoppingCart(World world)
     {
         super(world);
@@ -74,59 +65,46 @@ public class EntityShoppingCart extends Entity
         setSize(1.3F, 1.3F);
     }
 
-    
+
     // Tells the entity class that it should make the walking noise and animation.
-    
     protected boolean canTriggerWalking()
     {
         return false;
     }
 
-    
     // Gets called on creation.
-    
     protected void entityInit()
     {
-        dataWatcher.addObject(17, new Integer(0));
-        dataWatcher.addObject(18, new Integer(1));
-        dataWatcher.addObject(19, new Float(0.0F));
+        dataWatcher.addObject(17, 0);
+        dataWatcher.addObject(18, 1);
+        dataWatcher.addObject(19, 0.0F);
     }
-
    
-    // Returns a bounding box used to collide the entity with other entities and blocks.
-     
+    // Returns a bounding box used to collide the entity with other entities and blocks
     public AxisAlignedBB getCollisionBox(Entity entity)
     {
         return entity.boundingBox;
     }
-
     
     // Returns the bounding box for this entity.
-    
     public AxisAlignedBB getBoundingBox()
     {
         return boundingBox;
     }
 
-    
     // Returns true if this entity should push and be pushed by other entities when colliding.
-    
     public boolean canBePushed()
     {
         return true;
     }
 
-    
     // Puts the player further down.
-    
     public double getMountedYOffset()
     {
-        return 0.42d;
+        return 0.42D;
     }
 
-    
     // Called when the entity is attacked.
-    
     public boolean attackEntityFrom(DamageSource source, float par1)
     {
         if(isEntityInvulnerable())
@@ -166,19 +144,14 @@ public class EntityShoppingCart extends Entity
             return true;
         }
     }
-    
-    
-    // Makes the player stand up instead of sit.
-    
+
     @SideOnly(Side.CLIENT)
     public boolean shouldRiderSit()
     {    	
     	return true;
     }
 
-    
     // Setups the entity to do the hurt animation.
-    
     @SideOnly(Side.CLIENT)
     public void performHurtAnimation()
     {
@@ -187,17 +160,13 @@ public class EntityShoppingCart extends Entity
         setDamageTaken(getDamageTaken() * 11.0F);
     }
 
-   
     // Returns true if other Entities should be prevented from moving through this Entity.
-    
     public boolean canBeCollidedWith()
     {
         return !isDead;
     }
 
-    
     // Sets the position and rotation.
-    
     @SideOnly(Side.CLIENT)
     public void setPositionAndRotation2(double par1, double par2, double par3, float par4, float par5, int par6)
     {
@@ -233,9 +202,7 @@ public class EntityShoppingCart extends Entity
         motionZ = velocityZ;
     }
 
-    
     // Sets the velocity to the arguments.
-    
     @SideOnly(Side.CLIENT)
     public void setVelocity(double par1, double par2, double par5)
     {
@@ -244,9 +211,7 @@ public class EntityShoppingCart extends Entity
         velocityZ = motionZ = par5;
     }
 
-    
     // Called to update the entity.
-     
     public void onUpdate()
     {
         super.onUpdate();
@@ -351,7 +316,6 @@ public class EntityShoppingCart extends Entity
                 var3 = 0.35D / var2;
                 motionX *= var3;
                 motionZ *= var3;
-                var2 = 0.35D;
             }
 
             for(int i = 0; i < 4; ++i)
@@ -440,9 +404,7 @@ public class EntityShoppingCart extends Entity
         }
     }
 
-    
     // Updates where the player sits in the cart.
-    
     public void updateRiderPosition()
     {
         if(riddenByEntity != null)
@@ -450,35 +412,25 @@ public class EntityShoppingCart extends Entity
             riddenByEntity.setPosition(posX, posY + getMountedYOffset() + riddenByEntity.getYOffset(), posZ + 0.4);
         }
     }
-    
-    
-    // Writing to the tag.
-    
+
     protected void writeEntityToNBT(NBTTagCompound tag) 
     {
     	// TODO: Add cart rotation.
     }
 
-    
-    // Reading from the tag.
-    
     protected void readEntityFromNBT(NBTTagCompound tag)
     {
     	// TODO: Add cart rotation.
     }
 
-    
     // Puts down a shadow under the cart.
-    
     @SideOnly(Side.CLIENT)
     public float getShadowSize()
     {
         return 1.0F;
     }
 
-    
     // First layer of player interaction.
-    
     public boolean interactFirst(EntityPlayer player)
     {
         if(riddenByEntity != null && riddenByEntity instanceof EntityPlayer && riddenByEntity != player)
@@ -496,67 +448,51 @@ public class EntityShoppingCart extends Entity
             return true;
         }
     }
-
     
     // Sets the damage taken from the last hit.
-     
     public void setDamageTaken(float par1)
     {
         dataWatcher.updateObject(19, Float.valueOf(par1));
     }
 
- 
     // Gets the damage taken from the last hit.
-    
     public float getDamageTaken()
     {
         return dataWatcher.getWatchableObjectFloat(19);
     }
 
-  
     // Sets the time to count down from since the last time entity was hit.
-  
     public void setTimeSinceHit(int par1)
     {
         dataWatcher.updateObject(17, Integer.valueOf(par1));
     }
 
-   
     // Gets the time since the last hit.
-    
     public int getTimeSinceHit()
     {
         return dataWatcher.getWatchableObjectInt(17);
     }
 
-   
     // Sets the forward direction of the entity.
-   
     public void setForwardDirection(int par1)
     {
         dataWatcher.updateObject(18, Integer.valueOf(par1));
     }
 
-    
     // Gets the forward direction of the entity.
-    
     public int getForwardDirection()
     {
         return dataWatcher.getWatchableObjectInt(18);
     }
-    
 
     // True if the player is not in the cart.
-    
     @SideOnly(Side.CLIENT)
     public void setIsCartEmpty(boolean par1)
     {
         isCartEmpty = par1;
     }
-    
 
     // Checks if the user is triggering movement forwards or backwards.
-
     public boolean isMoving()
     {
     	if(Keyboard.isKeyDown(Keyboard.KEY_W) || Keyboard.isKeyDown(Keyboard.KEY_S))

@@ -16,21 +16,15 @@ import cpw.mods.fml.relauncher.SideOnly;
 /**
  * Craftus Machinilorum
  *
- * 
- * @author Dalthow Game Studios 
- * @class ContainerFragmentizer.java
- * 
+ * @author Trevi Awater
  **/
 
 public class ContainerFragmentizer extends Container
 {
 	// Declaration of the TileEntity.
-
 	private TileEntityFragmentizer tile;
 
-	
 	// Declaring some other variables.
-	
 	public int lastBurnTime;
 	public int lastCurrentItemBurnTime;
 	public int lastCookTime;
@@ -38,7 +32,6 @@ public class ContainerFragmentizer extends Container
 	
 	
 	// Constructor that sets the local TileEntity and InventoryPlayer to the one's that are provide in the parameters.
-	
 	public ContainerFragmentizer(InventoryPlayer inventory, TileEntityFragmentizer tile) 
 	{
 		this.tile = tile;
@@ -46,10 +39,8 @@ public class ContainerFragmentizer extends Container
 		addSlotToContainer(new Slot(tile, 0, 56, 17));
 		addSlotToContainer(new Slot(tile, 1, 56, 53));
 		addSlotToContainer(new SlotFurnace(inventory.player, tile, 2, 116, 35));
-		
-		
+
 		// Looping trough the inventory slots.
-		
 		for(int i = 0; i < 3; i++) 
 		{
 			for(int j = 0; j < 9; j++) 
@@ -57,19 +48,16 @@ public class ContainerFragmentizer extends Container
 				addSlotToContainer(new Slot(inventory, j + i * 9 + 9, 8 + j * 18, 84 + i * 18));
 			}
 		}
-		
-		
+
 		// Looping trough the hotbar.
-		
 		for(int i = 0; i < 9; i++) 
 		{
 			addSlotToContainer(new Slot(inventory, i, 8 + i * 18, 142));
 		}
 	}
 
-	
+
 	// Tells the container to keep track of certain values in the tile entity.
-	
 	public void addCraftingToCrafters (ICrafting iCrafting) 
 	{
 		super.addCraftingToCrafters(iCrafting);
@@ -79,9 +67,7 @@ public class ContainerFragmentizer extends Container
 		iCrafting.sendProgressBarUpdate(this, 2, tile.currentItemBurnTime);
 	}
 
-	
 	// Detects and send changes to the gui from the tile entity.
-	
 	public void detectAndSendChanges()
 	{
 		super.detectAndSendChanges();
@@ -111,9 +97,7 @@ public class ContainerFragmentizer extends Container
 		lastCurrentItemBurnTime = tile.currentItemBurnTime;
 	}
 
-	
 	// Updates the progress bar in the interface.
-	
 	@SideOnly(Side.CLIENT)
     public void updateProgressBar(int par1, int par2)
     {
@@ -133,9 +117,7 @@ public class ContainerFragmentizer extends Container
         }
     }
 
-	
 	// Allows shift clicking from the players inventory into the other slots.
-	
 	public ItemStack transferStackInSlot(EntityPlayer player, int par1)
     {
         ItemStack var1 = null;
@@ -214,9 +196,7 @@ public class ContainerFragmentizer extends Container
         return var1;
     }
 
-	
 	// Makes the container able to interact with the player.
-	
 	public boolean canInteractWith(EntityPlayer player) 
 	{
 		return true;

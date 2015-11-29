@@ -19,16 +19,12 @@ import cpw.mods.fml.relauncher.SideOnly;
 /**
  * Craftus Machinilorum
  *
- * 
- * @author Dalthow Game Studios 
- * @class BlockMobRadar.java
- * 
+ * @author Trevi Awater
  **/
 
 public class BlockMobRadar extends Block implements ITileEntityProvider
 {
 	// Constructor that adds data to the block.
-	
 	public BlockMobRadar()
 	{
 		super(Material.rock);
@@ -38,28 +34,21 @@ public class BlockMobRadar extends Block implements ITileEntityProvider
 		setHardness(2.5F);
 		setHarvestLevel("pickaxe", 1);
 	}
-	
-	
+
 	// Determines the textures displayed on the blocks based on the side and meta data also gets ignored by the server.
-	
 	@SideOnly(Side.CLIENT)
 	public IIcon getIcon(int side, int meta)
 	{
 		return side == 1 ? Blocks.furnace.getBlockTextureFromSide(side) : side == 0 ? Blocks.furnace.getBlockTextureFromSide(side) : Blocks.furnace.getBlockTextureFromSide(side);
 	}
-	
-	
+
 	// If a redstone wire is next to this block it connects.
-	
 	@Override
 	public boolean canConnectRedstone(IBlockAccess access, int xPos, int yPos, int zPos, int par1)
 	{
 	    return true;
 	}
-	
-	
-	// Whenever the tile entity tells the block to emit power this is how it gets triggered.
-	
+
 	public boolean canProvidePower()
     {
         return true;
@@ -71,10 +60,8 @@ public class BlockMobRadar extends Block implements ITileEntityProvider
 		 
 		return tile.signalStrength;
 	}
-	 
-	
+
 	// Opens the user interface.
-	    
 	@Override
     public boolean onBlockActivated(World world, int xPos, int yPos, int zPos, EntityPlayer player, int par1, float par2, float par3, float par4)  
     {
@@ -90,29 +77,23 @@ public class BlockMobRadar extends Block implements ITileEntityProvider
 			return false;
 		}
     }
-	
-	
+
 	// Creates a TileEntity when you place it down.
-	
 	public TileEntity createNewTileEntity(World World, int par1) 
 	{
 		TileEntityMobRadar tile = new TileEntityMobRadar(); 
         
 		return tile;
 	}
-	
-	
+
 	// Makes you not see trough the world because the block isn't full.
-	
 	@Override
 	public boolean isOpaqueCube()
     {
         return false;
     }
-	
-	
+
 	// Makes the block render as a custom block.
-	
 	@Override
     public int getRenderType()
     {

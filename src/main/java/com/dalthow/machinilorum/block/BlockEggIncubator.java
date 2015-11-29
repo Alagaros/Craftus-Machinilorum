@@ -20,16 +20,12 @@ import cpw.mods.fml.relauncher.SideOnly;
 /**
  * Craftus Machinilorum
  *
- * 
- * @author Dalthow Game Studios 
- * @class BlockEggIncubator.java
- * 
+ * @author Trevi Awater
  **/
 
 public class BlockEggIncubator extends Block implements ITileEntityProvider
 {
 	// Constructor that adds data to the block.
-	
 	public BlockEggIncubator()
 	{
 		super(Material.rock);
@@ -38,38 +34,30 @@ public class BlockEggIncubator extends Block implements ITileEntityProvider
 		setHardness(2.5F);
 		setHarvestLevel("pickaxe", 1);
 	}
-	
-	
+
 	// Determines the textures displayed on the blocks based on the side and meta data also gets ignored by the server.
-	
 	@SideOnly(Side.CLIENT)
 	public IIcon getIcon(int side, int meta)
 	{
 		return side == 1 ? Blocks.glass.getBlockTextureFromSide(side) : side == 0 ? Blocks.furnace.getBlockTextureFromSide(side) : Blocks.furnace.getBlockTextureFromSide(side);
 	}
-	
-	
+
 	// Creates a TileEntity when you place it down.
-	
 	public TileEntity createNewTileEntity(World world, int par1) 
 	{
 		TileEntityEggIncubator tile = new TileEntityEggIncubator(); 
         
 		return tile;
 	}
-	
-	
+
 	// Makes you not see trough the world because the block isn't full.
-	
 	@Override
 	public boolean isOpaqueCube()
     {
         return false;
     }
-	
-	
+
 	// Makes the block render as a custom block.
-	
 	@Override
     public int getRenderType()
     {
@@ -81,20 +69,15 @@ public class BlockEggIncubator extends Block implements ITileEntityProvider
     {
         return false;
     }
-	
-	
+
 	// Makes something happen when you click the block.
-	
     @Override
     public boolean onBlockActivated(World world, int xPos, int yPos, int zPos, EntityPlayer player, int par1, float par2, float par3, float par4) 
     {  
     	// Getting the TileEntity bound to this block.
-    	
         TileEntityEggIncubator tile = (TileEntityEggIncubator)world.getTileEntity(xPos, yPos, zPos); 
-        
-        
+
         // Rotating the block if its clicked with an empty hand.
-        
         if(player.getHeldItem() == null) 
         { 
         	if(world.getBlockMetadata(xPos, yPos, zPos) < 5)
@@ -109,15 +92,13 @@ public class BlockEggIncubator extends Block implements ITileEntityProvider
         	
             return true; 
         }
-        
-        
+
         // Speeding up the hatching process if the item is wheat.
-        
         if(player.getHeldItem().getItem() == Items.wheat) 
         { 
         	world.spawnParticle("heart", xPos + 0.5F, yPos + 1.2F, zPos + 0.5F, 0, 0, 0);
             
-        	if(tile.canPutEggIn == true) 
+        	if(tile.canPutEggIn)
             { 
                 if(!world.isRemote) 
                 { 
@@ -138,13 +119,11 @@ public class BlockEggIncubator extends Block implements ITileEntityProvider
             
           	return true;
         }
-        
-        
+
         // Inserting or resetting if the item is an egg.
-        
         if(player.getHeldItem().getItem() == Items.egg) 
         { 
-            if(tile.canPutEggIn == false) 
+            if(!tile.canPutEggIn)
             { 
                 if(!world.isRemote) 
                 { 

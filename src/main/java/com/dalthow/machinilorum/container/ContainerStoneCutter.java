@@ -17,35 +17,25 @@ import net.minecraft.world.World;
 /**
  * Craftus Machinilorum
  *
- * 
- * @author Dalthow Game Studios 
- * @class ContainerStoneCutter.java
- * 
+ * @author Trevi Awater
  **/
 
 public class ContainerStoneCutter extends Container 
 {
 	// Declaration of the World object.
-	
 	private World world;
-	
-	
+
 	// Declaration of the position the block is at.
-	
 	private int xPos;
 	private int yPos;
 	private int zPos;
 
-	
-	// Declaring some other variables.
-	
 	public InventoryCrafting craftMatrix;
 	public IInventory craftResult;
 	
 	
-	// Constructor that fills the local value's with the one's provided in the parameters.
-	
-	public ContainerStoneCutter(InventoryPlayer inventoryPlayer, World world, int xPos, int yPos, int zPos) 
+	// Constructor.
+	public ContainerStoneCutter(InventoryPlayer inventoryPlayer, World world, int xPos, int yPos, int zPos)
 	{
 		craftMatrix = new InventoryCrafting(this, 5, 5);
 		craftResult = new InventoryCraftResult();
@@ -57,9 +47,7 @@ public class ContainerStoneCutter extends Container
 
 		addSlotToContainer(new SlotCrafting(inventoryPlayer.player, craftMatrix, craftResult, 0, 141, 43));
 
-		
 		// Creating a 5 by 5 crafting grid.
-		
 		for (int i = 0; i < 5; i++) 
 		{
 			for(int j = 0; j < 5; j++) 
@@ -67,10 +55,8 @@ public class ContainerStoneCutter extends Container
 				addSlotToContainer(new Slot(craftMatrix, j + i * 5, 8 + j * 18, 8 + i * 18));
 			}
 		}
-		
-		
+
 		// Looping trough the inventory slots.
-		
 		for (int i = 0; i < 3; i++) 
 		{
 			for(int j = 0; j < 9; j++) 
@@ -78,10 +64,8 @@ public class ContainerStoneCutter extends Container
 				addSlotToContainer(new Slot(inventoryPlayer, j + i * 9 + 9, 8 + j * 18, 102 + i * 18));
 			}
 		}
-		
-		
-		// Looping trough the hotbar.
 
+		// Looping trough the hotbar.
 		for (int i = 0; i < 9; i++) 
 		{
 			addSlotToContainer(new Slot(inventoryPlayer, i, 8 + i * 18, 160));
@@ -92,15 +76,12 @@ public class ContainerStoneCutter extends Container
 
 
 	// Callback for when the crafting matrix is changed.
-	
 	public void onCraftMatrixChanged(IInventory iiventory) 
 	{
 		craftResult.setInventorySlotContents(0, StoneCutterRecipeManager.getInstance().findMatchingRecipe(craftMatrix, world));
 	}
 
-	
 	// Checks if the player is in range of the container.
-
 	@Override
 	public boolean canInteractWith(EntityPlayer player) 
 	{
@@ -115,9 +96,7 @@ public class ContainerStoneCutter extends Container
 		}
 	}
 
-	
 	// Called when the container is closed.
-	
 	public void onContainerClosed(EntityPlayer par1EntityPlayer) 
 	{
         super.onContainerClosed(par1EntityPlayer);
@@ -136,9 +115,7 @@ public class ContainerStoneCutter extends Container
         }
     }
 
-	
 	// Allows shift clicking from the players inventory into the other slots.
-	
 	public ItemStack transferStackInSlot(EntityPlayer player, int par1) 
 	{
         ItemStack var1 = null;

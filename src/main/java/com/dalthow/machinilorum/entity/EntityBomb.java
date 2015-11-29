@@ -8,25 +8,20 @@ import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.world.World;
 
 /**
-* Craftus Machinilorum
-*
-* 
-* @author Dalthow Game Studios 
-* @class EntityBomb.java
-* 
-**/
+ * Craftus Machinilorum
+ *
+ * @author Trevi Awater
+ **/
 
 public class EntityBomb extends EntityThrowable 
 { 
 	// Declarations for the fuse time and explosion radius.
-	
 	private int fuse; 
 	
 	public static float explosionRadius;
 	
 	
-	// Constructors, the first one adds data to the entity.
-	
+	// Constructors.
 	public EntityBomb(World world) 
 	{ 
 		super(world); 
@@ -49,7 +44,6 @@ public class EntityBomb extends EntityThrowable
 	
 	
 	// Setting up how the bomb acts when its on ground or in the air.
-	
 	public void onUpdate() 
 	{ 
 		prevPosX = posX; 
@@ -86,41 +80,27 @@ public class EntityBomb extends EntityThrowable
 			worldObj.spawnParticle("smoke", this.posX, this.posY + 0.5D, this.posZ, 0.0D, 0.0D, 0.0D); 
 		} 
 	} 
-	
-	
+
 	// Do the explosion.
-	
 	private void explode() 
 	{ 
 		worldObj.createExplosion((Entity)null, this.posX, this.posY, this.posZ, explosionRadius, true); 
-	} 
-	
+	}
 	
 	// Writing the bomb fuse time to the world file.
-	
 	public void writeEntityToNBT(NBTTagCompound tag) 
 	{ 
 		super.writeEntityToNBT(tag); 
 		tag.setByte("fuse", (byte)fuse); 
 	} 
-	
-	
+
 	// Reading the bomb fuse time from the world file.
-	
 	public void readEntityFromNBT(NBTTagCompound tag) 
 	{ 
 		super.readEntityFromNBT(tag); 
 		fuse = tag.getByte("fuse"); 
-	} 
-	
-	
-	// If the bomb hits a other entity.
-	
-	public void onCollideWithEntity(EntityBomb entity) 
-	{ 
-		entity.explode(); 
-	} 
-		
+	}
+
 	@Override
 	protected void onImpact(MovingObjectPosition movingPosition){} 
 }

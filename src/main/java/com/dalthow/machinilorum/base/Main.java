@@ -208,9 +208,9 @@ public class Main
 		recipeMobRadar = config.get("Recipes", "Mob Radar", true);
 		recipeConveyorBelt = config.get("Recipes", "Conveyor Belt", true);
 		recipeSprinkler = config.get("Recipes", "Sprinkler", true);
-		recipeChalkboard = config.get("Recipes", "Chalkboard", true);
+		recipeChalkboard = config.get("Recipes", "Chalkboard", false);
 		
-		recipeShoppingCart = config.get("Recipes", "Shopping Cart", true);
+		recipeShoppingCart = config.get("Recipes", "Shopping Cart", false);
 		
 		config.save();
 

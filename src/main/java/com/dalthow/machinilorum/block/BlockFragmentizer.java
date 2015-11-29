@@ -26,16 +26,12 @@ import cpw.mods.fml.relauncher.SideOnly;
 /**
  * Craftus Machinilorum
  *
- * 
- * @author Dalthow Game Studios
- * @class BlockFragmentizer.java 
- * 
+ * @author Trevi Awater
  **/
 
 public class BlockFragmentizer extends BlockContainer
 {
 	// Constructor that adds data to the block.
-	
 	public BlockFragmentizer() 
 	{
 		super(Material.rock);
@@ -48,56 +44,43 @@ public class BlockFragmentizer extends BlockContainer
 
 	
 	// Only make the texture variables on the client side so the server ignores this.
-	
 	@SideOnly(Side.CLIENT)
 	private IIcon frontIcon;
 
-	
 	// Determines the textures displayed on the blocks based on the side and meta data also gets ignored by the server.
-	
 	@SideOnly(Side.CLIENT)
 	public IIcon getIcon(int side, int meta)
 	{
 		return side == 1 ? Main.blockStoneCutter.getBlockTextureFromSide(side) : side == 0 ? Blocks.furnace.getBlockTextureFromSide(side) : (side == 3 ? frontIcon : Blocks.furnace.getBlockTextureFromSide(side));
 	}
-	
-	
+
 	// Loads the different textures also gets ignored by the server.
-	
 	@SideOnly(Side.CLIENT)
 	public void registerBlockIcons(IIconRegister registry)
 	{
 		frontIcon = registry.registerIcon(getTextureName() + "front");
 	}
-	
-	
+
 	// If a redstone wire is next to this block it connects.
-	
 	@Override
 	public boolean canConnectRedstone(IBlockAccess access, int xPos, int yPos, int zPos, int par1)
 	{
 	    return true;
 	}
-	
-	
+
 	// Tells the game that a comparator can be used on this block.
-	
 	public boolean hasComparatorInputOverride()
     {
         return true;
     }
-	
-	
+
 	// Tells the game how the comparator can be used on this block.
-	
     public int getComparatorInputOverride(World world, int xPos, int yPos, int zPos, int par1)
     {
         return Container.calcRedstoneFromInventory((IInventory)world.getTileEntity(xPos, yPos, zPos));
     }
-	    
 	
 	// Checks if there is a hopper on top and a lever on the side, then it opens the user interface.
-    
     @Override
     public boolean onBlockActivated(World world, int xPos, int yPos, int zPos, EntityPlayer player, int par1, float par2, float par3, float par4)  
     {
@@ -121,20 +104,16 @@ public class BlockFragmentizer extends BlockContainer
 			return false;
 		}
     }
-   
-    
+
 	// Creates a TileEntity when you place down this block.
-	
 	public TileEntity createNewTileEntity(World world, int par1) 
 	{
 		TileEntityFragmentizer tile = new TileEntityFragmentizer(); 
         
 		return tile;
 	}
-	
-	
+
 	// When the player breaks the block.
-	
 	public void breakBlock(World world, int xPos, int yPos, int zPos, Block block, int meta) 
 	{
 		TileEntityFragmentizer tile = (TileEntityFragmentizer)world.getTileEntity(xPos, yPos, zPos);
@@ -142,7 +121,6 @@ public class BlockFragmentizer extends BlockContainer
 		if(tile != null) 
 		{
 			// Getting all the items in the inventory.
-			
 			for(int i = 0; i < tile.getSizeInventory(); i++) 
 			{
 				ItemStack itemStack = tile.getStackInSlot(i);

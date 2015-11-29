@@ -16,23 +16,17 @@ import net.minecraft.client.resources.I18n;
 import net.minecraft.util.ResourceLocation;
 
 /**
-* Craftus Machinilorum
-*
-* 
-* @author Dalthow Game Studios 
-* @class GuiMobRadar.java
-* 
-**/
+ * Craftus Machinilorum
+ *
+ * @author Trevi Awater
+ **/
 
 public class GuiMobRadar extends GuiContainer
 {
 	// Declaration of the TileEntity.
-	
 	private TileEntityMobRadar tile;
-	
-	
+
 	// Declaration of the elements used in the gui.
-	
 	private GuiButton highSignal;
 	private GuiButton lowSignal;
 	private GuiButton close;
@@ -42,17 +36,13 @@ public class GuiMobRadar extends GuiContainer
 	private GuiTextField radius;
 
 	private final ResourceLocation background = new ResourceLocation(Reference.modId + ":" + "textures/gui/mob radar.png");
-	
-	
-	// Declaring some other variables.
-	
+
 	private int localMobId;
 	
 	private boolean errorNoNummer = false;
 	
 	
 	// Constructor that adds data to the gui.
-	
 	public GuiMobRadar(TileEntityMobRadar tile) 
 	{
 		super(new ContainerMobRadar(tile));
@@ -65,7 +55,6 @@ public class GuiMobRadar extends GuiContainer
 	
 	
 	// Everything in front of the slots.
-	
 	@Override	
 	protected void drawGuiContainerForegroundLayer(int par1, int par2)
 	{
@@ -120,10 +109,8 @@ public class GuiMobRadar extends GuiContainer
 	    
 		radius.drawTextBox();
 	}
-	
-	
-	// Everything behind the slots.
 
+	// Everything behind the slots.
 	@Override
 	protected void drawGuiContainerBackgroundLayer(float var1, int var2, int var3) 
 	{
@@ -184,15 +171,13 @@ public class GuiMobRadar extends GuiContainer
 			break;
 		}
 		
-		if(errorNoNummer == true)
+		if(errorNoNummer)
 		{
 			drawTexturedModalRect(guiLeft + 8, guiTop + 104, 127, 108, 78, 26);
 		}
 	}
 	
-	
 	// The first method that gets called once when the gui opens.
-
 	public void initGui()
 	{
 		super.initGui();
@@ -204,18 +189,14 @@ public class GuiMobRadar extends GuiContainer
 
 		radius.setFocused(true);
 	}
-	
-	
+
 	// Gets called when the player presses a key.
-	
 	protected void keyTyped(char par1, int par2)
 	{
 		radius.textboxKeyTyped(par1, par2);
 	}
 	
-	
 	// Executes something after a button press.
-	
 	protected void actionPerformed(GuiButton guiButton)
     {
 		if(guiButton.id == 0)

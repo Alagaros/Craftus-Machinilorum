@@ -19,16 +19,12 @@ import cpw.mods.fml.relauncher.SideOnly;
 /**
  * Craftus Machinilorum
  *
- * 
- * @author Dalthow Game Studios 
- * @class ItemShoppingCart.java
- * 
+ * @author Trevi Awater
  **/
 
 public class ItemShoppingCart extends Item 
 {
-	// Constructor that adds data to the item.
-	
+	// Constructor.
 	public ItemShoppingCart()
 	{
 		super();
@@ -36,10 +32,9 @@ public class ItemShoppingCart extends Item
 		setUnlocalizedName("shoppingCart");
 		setCreativeTab(Main.tabMachinilorumMachines);
 	}
-	
+
 	
 	// Gets triggered when you use the item on a block.
-	
 	public boolean onItemUse(ItemStack itemStack, EntityPlayer player, World world, int xPos, int yPos, int zPos, int par1, float par2, float par3, float par4)
 	{
 		if(!world.isRemote)
@@ -55,10 +50,8 @@ public class ItemShoppingCart extends Item
 		
 		return true;
 	}
-	
-	
-   // Adds a tool-tip to the item.
 
+    // Adds a tool-tip to the item.
 	@SideOnly(Side.CLIENT)
     public void addInformation(ItemStack itemStack, EntityPlayer player, List list, boolean isValid)
     {
@@ -66,7 +59,7 @@ public class ItemShoppingCart extends Item
 		{
 			list.clear();
 		
-			list.add(I18n.format("item.shoppingCart.name", new Object[0]));
+			list.add(I18n.format("item.shoppingCart.name"));
 	    	list.add("Used to store items and");
 	    	list.add("push it around.");
 		}

@@ -16,16 +16,12 @@ import cpw.mods.fml.relauncher.SideOnly;
 /**
  * Craftus Machinilorum
  *
- * 
- * @author Dalthow Game Studios 
- * @class BlockStoneCutter.java
- * 
+ * @author Trevi Awater
  **/
 
 public class BlockStoneCutter extends Block 
 {
 	// Constructor that adds data to the block.
-	
 	public BlockStoneCutter()
 	{
 		super(Material.rock);
@@ -38,35 +34,28 @@ public class BlockStoneCutter extends Block
 	
 	
 	// Only make the texture variables on the client side so the server ignores this.
-	
 	@SideOnly(Side.CLIENT)
 	private IIcon frontIcon;
 	
 	@SideOnly(Side.CLIENT)
 	private IIcon topIcon;
 	
-	
 	// Determines the textures displayed on the blocks based on the side and meta data also gets ignored by the server.
-	
 	@SideOnly(Side.CLIENT)
 	public IIcon getIcon(int side, int meta)
 	{
 		return side == 1 ? topIcon : side == 0 ? Blocks.furnace.getBlockTextureFromSide(side) : (side == 2 || side == 3 ? frontIcon : Blocks.furnace.getBlockTextureFromSide(side));
 	}
-	
-	
+
 	// Loads the different textures also gets ignored by the server.
-	
 	@SideOnly(Side.CLIENT)
 	public void registerBlockIcons(IIconRegister registry)
 	{
 		topIcon = registry.registerIcon(getTextureName() + "top");
 		frontIcon = registry.registerIcon(getTextureName() + "front");
 	}
-	
-	
+
 	// Opens the user interface.
-    
     @Override
     public boolean onBlockActivated(World world, int xPos, int yPos, int zPos, EntityPlayer player, int par1, float par2, float par3, float par4)  
     {
