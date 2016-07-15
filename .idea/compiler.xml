@@ -18,5 +18,10 @@
         <processorPath useClasspath="true" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="craftus-machinilorum_api" target="1.6" />
+      <module name="craftus-machinilorum_main" target="1.6" />
+      <module name="craftus-machinilorum_test" target="1.6" />
+    </bytecodeTargetLevel>
   </component>
 </project>
