@@ -55,7 +55,7 @@ public class ClientProxy extends CommonProxy
 		// Registering the item renders.
 		MinecraftForgeClient.registerItemRenderer(Main.itemFilter, new RenderFilter());
 		MinecraftForgeClient.registerItemRenderer(Main.itemBomb, new RenderBomb()); 
-//		MinecraftForgeClient.registerItemRenderer(Main.itemShoppingCart, new RenderItemShoppingCart());
+		MinecraftForgeClient.registerItemRenderer(Main.itemShoppingCart, new RenderItemShoppingCart());
 		
 		MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(Main.blockWoodCutter), new RenderItemWoodCutter());
 		MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(Main.blockEggIncubator), new RenderItemEggIncubator());
