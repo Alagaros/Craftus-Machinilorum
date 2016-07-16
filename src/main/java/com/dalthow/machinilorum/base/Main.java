@@ -28,8 +28,6 @@ import com.dalthow.machinilorum.block.item.ItemMobRadar;
 import com.dalthow.machinilorum.block.item.ItemSprinkler;
 import com.dalthow.machinilorum.block.item.ItemWoodCutter;
 import com.dalthow.machinilorum.entity.EntityBomb;
-import com.dalthow.machinilorum.entity.EntityShoppingCart;
-import com.dalthow.machinilorum.entity.item.ItemShoppingCart;
 import com.dalthow.machinilorum.handler.GuiHandler;
 import com.dalthow.machinilorum.handler.RecipeHandler;
 import com.dalthow.machinilorum.handler.RegisterHandler;
@@ -86,8 +84,6 @@ public class Main
 	public static Property recipeConveyorBelt;
 	public static Property recipeSprinkler;
 	public static Property recipeChalkboard;
-	
-	public static Property recipeShoppingCart;
 
 	@Instance
 	public static Main instance;
@@ -107,7 +103,6 @@ public class Main
 	// Declaration for items.
 	public static Item itemFilter;
 	public static Item itemBomb;
-	public static Item itemShoppingCart;
 	public static Item itemChecker;
 
 	// Declaration for blocks.
@@ -128,7 +123,6 @@ public class Main
 		// Setting up the items.
 		itemFilter  = new ItemFilter();
 		itemBomb = new ItemBomb();
-		itemShoppingCart = new ItemShoppingCart();
 		itemChecker = new ItemChecker();
 
 		// Setting up the blocks.
@@ -163,10 +157,8 @@ public class Main
 
 		RegisterHandler.registerItem(itemFilter);
 		RegisterHandler.registerItem(itemBomb);
-		RegisterHandler.registerItem(itemShoppingCart);
 		RegisterHandler.registerItem(itemChecker);
 
-		RegisterHandler.registerEntity(EntityShoppingCart.class, "shoppingCart");
 		RegisterHandler.registerEntity(EntityBomb.class, "bomb");
 
 		GameRegistry.registerWorldGenerator(new WorldBlockGenerator(), 1);
@@ -200,9 +192,7 @@ public class Main
 		recipeConveyorBelt = config.get("Recipes", "Conveyor Belt", true);
 		recipeSprinkler = config.get("Recipes", "Sprinkler", true);
 		recipeChalkboard = config.get("Recipes", "Chalkboard", false);
-		
-		recipeShoppingCart = config.get("Recipes", "Shopping Cart", false);
-		
+
 		config.save();
 
 		// Adding and removing custom recipe's to or out of the game.

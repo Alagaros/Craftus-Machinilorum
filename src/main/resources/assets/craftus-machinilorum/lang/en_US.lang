@@ -3,14 +3,11 @@ itemGroup.tabMachinilorumMachines=Machinilorum Machines
 
 item.filter.name=Filter
 item.bomb.name=Bomb
-item.shoppingCart.name=Shopping Cart
 item.checker.name=Checker
 
 container.fragmentizer=Fragmentizer
 container.stoneCutter=Stone Cutter
 container.mobRadar=Mob Radar
-
-entity.shoppingCart.name=Shopping Cart
 
 tile.stoneCutter.name=Stone Cutter
 tile.fragmentizer.name=Fragmentizer

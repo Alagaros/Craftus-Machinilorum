@@ -3,13 +3,10 @@ itemGroup.tabMachinilorumBlocks=Machinilorum Machines
 
 item.filter.name=Filter
 item.bomb.name=Bom
-item.shoppingCart.name=Winkelwagen
 
 container.fragmentizer=Fragmenteerder
 container.stoneCutter=Steen Snijder
 container.mobRadar=Mob Radar
-
-entity.shoppingCart.name=Winkelwagen
 
 tile.stoneCutter.name=Steen Snijder
 tile.fragmentizer.name=Fragmenteerder

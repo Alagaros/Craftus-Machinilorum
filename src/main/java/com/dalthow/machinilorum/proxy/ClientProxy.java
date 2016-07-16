@@ -1,9 +1,7 @@
 package com.dalthow.machinilorum.proxy;
 
 import com.dalthow.machinilorum.base.Main;
-import com.dalthow.machinilorum.base.Reference;
 import com.dalthow.machinilorum.entity.EntityBomb;
-import com.dalthow.machinilorum.entity.EntityShoppingCart;
 import com.dalthow.machinilorum.render.block.RenderChalkboard;
 import com.dalthow.machinilorum.render.block.RenderConveyorBelt;
 import com.dalthow.machinilorum.render.block.RenderEggIncubator;
@@ -11,14 +9,12 @@ import com.dalthow.machinilorum.render.block.RenderMobRadar;
 import com.dalthow.machinilorum.render.block.RenderSprinkler;
 import com.dalthow.machinilorum.render.block.RenderWoodCutter;
 import com.dalthow.machinilorum.render.entity.RenderEntityBomb;
-import com.dalthow.machinilorum.render.entity.RenderEntityShoppingCart;
 import com.dalthow.machinilorum.render.item.RenderBomb;
 import com.dalthow.machinilorum.render.item.RenderFilter;
 import com.dalthow.machinilorum.render.item.inventory.RenderItemChalkboard;
 import com.dalthow.machinilorum.render.item.inventory.RenderItemConveyorBelt;
 import com.dalthow.machinilorum.render.item.inventory.RenderItemEggIncubator;
 import com.dalthow.machinilorum.render.item.inventory.RenderItemMobRadar;
-import com.dalthow.machinilorum.render.item.inventory.RenderItemShoppingCart;
 import com.dalthow.machinilorum.render.item.inventory.RenderItemSprinkler;
 import com.dalthow.machinilorum.render.item.inventory.RenderItemWoodCutter;
 import com.dalthow.machinilorum.tile.TileEntityChalkboard;
@@ -54,8 +50,7 @@ public class ClientProxy extends CommonProxy
 	    
 		// Registering the item renders.
 		MinecraftForgeClient.registerItemRenderer(Main.itemFilter, new RenderFilter());
-		MinecraftForgeClient.registerItemRenderer(Main.itemBomb, new RenderBomb()); 
-		MinecraftForgeClient.registerItemRenderer(Main.itemShoppingCart, new RenderItemShoppingCart());
+		MinecraftForgeClient.registerItemRenderer(Main.itemBomb, new RenderBomb());
 		
 		MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(Main.blockWoodCutter), new RenderItemWoodCutter());
 		MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(Main.blockEggIncubator), new RenderItemEggIncubator());
@@ -73,8 +68,7 @@ public class ClientProxy extends CommonProxy
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityChalkboard.class, new RenderChalkboard());
 		
 		// Registering the entity renders.
-		RenderingRegistry.registerEntityRenderingHandler(EntityBomb.class, new RenderEntityBomb(Main.itemBomb));    
-		RenderingRegistry.registerEntityRenderingHandler(EntityShoppingCart.class, new RenderEntityShoppingCart());
+		RenderingRegistry.registerEntityRenderingHandler(EntityBomb.class, new RenderEntityBomb(Main.itemBomb));
 	} 
 }
  

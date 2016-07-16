@@ -124,14 +124,6 @@ public class RecipeHandler
 
 			'S', Items.stick, 'C', Blocks.stained_hardened_clay);
 
-		if(Main.recipeShoppingCart.getBoolean(false))
-			GameRegistry.addRecipe(new ItemStack(Main.itemShoppingCart, 1),
-			"S T",
-			"SSS",
-			"I I",
-
-			'I', Items.iron_ingot, 'S', Items.string, 'T', Items.stick);
-
 		if(Main.recipeChecker.getBoolean(false))
 			GameRegistry.addRecipe(new ItemStack(Main.itemChecker, 1),
 			"RI ",
