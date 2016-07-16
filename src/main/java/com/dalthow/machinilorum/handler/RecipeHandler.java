@@ -116,14 +116,6 @@ public class RecipeHandler
 
 			'C', Blocks.cobblestone, 'I', Items.iron_ingot, 'G', Items.gold_ingot, 'R', Items.redstone, 'L', new ItemStack(Items.dye, 1, 4));
 
-		if(Main.recipeChalkboard.getBoolean(false))
-			GameRegistry.addRecipe(new ItemStack(Main.blockChalkboard, 1),
-			"SSS",
-			"SCS",
-			"SSS",
-
-			'S', Items.stick, 'C', Blocks.stained_hardened_clay);
-
 		if(Main.recipeChecker.getBoolean(false))
 			GameRegistry.addRecipe(new ItemStack(Main.itemChecker, 1),
 			"RI ",

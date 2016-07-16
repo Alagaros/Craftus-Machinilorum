@@ -40,7 +40,6 @@ public class TileEntityFragmentizer extends TileEntity implements ISidedInventor
 	// Declaration of the furnace speed.
 	public int furnaceSpeed = 100;
 
-
 	// Gets the display name of the gui.
 	public String getInventoryName()
 	{

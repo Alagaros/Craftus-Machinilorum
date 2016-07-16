@@ -2,7 +2,6 @@ package com.dalthow.machinilorum.proxy;
 
 import com.dalthow.machinilorum.base.Main;
 import com.dalthow.machinilorum.entity.EntityBomb;
-import com.dalthow.machinilorum.render.block.RenderChalkboard;
 import com.dalthow.machinilorum.render.block.RenderConveyorBelt;
 import com.dalthow.machinilorum.render.block.RenderEggIncubator;
 import com.dalthow.machinilorum.render.block.RenderMobRadar;
@@ -17,7 +16,6 @@ import com.dalthow.machinilorum.render.item.inventory.RenderItemEggIncubator;
 import com.dalthow.machinilorum.render.item.inventory.RenderItemMobRadar;
 import com.dalthow.machinilorum.render.item.inventory.RenderItemSprinkler;
 import com.dalthow.machinilorum.render.item.inventory.RenderItemWoodCutter;
-import com.dalthow.machinilorum.tile.TileEntityChalkboard;
 import com.dalthow.machinilorum.tile.TileEntityConveyorBelt;
 import com.dalthow.machinilorum.tile.TileEntityEggIncubator;
 import com.dalthow.machinilorum.tile.TileEntityMobRadar;
@@ -57,7 +55,6 @@ public class ClientProxy extends CommonProxy
 		MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(Main.blockMobRadar), new RenderItemMobRadar());
 		MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(Main.blockConveyorBelt), new RenderItemConveyorBelt());
 		MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(Main.blockSprinkler), new RenderItemSprinkler());
-		MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(Main.blockChalkboard), new RenderItemChalkboard());
 		
 		// Registering the TileEntity renders.
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityEggIncubator.class, new RenderEggIncubator());
@@ -65,7 +62,6 @@ public class ClientProxy extends CommonProxy
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityMobRadar.class, new RenderMobRadar());
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityConveyorBelt.class, new RenderConveyorBelt());
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntitySprinkler.class, new RenderSprinkler());
-		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityChalkboard.class, new RenderChalkboard());
 		
 		// Registering the entity renders.
 		RenderingRegistry.registerEntityRenderingHandler(EntityBomb.class, new RenderEntityBomb(Main.itemBomb));

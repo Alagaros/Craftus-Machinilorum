@@ -12,7 +12,6 @@ import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.common.config.Property;
 
 import com.dalthow.machinilorum.block.BlockChalk;
-import com.dalthow.machinilorum.block.BlockChalkboard;
 import com.dalthow.machinilorum.block.BlockConveyorBelt;
 import com.dalthow.machinilorum.block.BlockEggIncubator;
 import com.dalthow.machinilorum.block.BlockFragmentizer;
@@ -39,7 +38,6 @@ import com.dalthow.machinilorum.proxy.ClientProxy;
 import com.dalthow.machinilorum.proxy.CommonProxy;
 import com.dalthow.machinilorum.tab.TabMachines;
 import com.dalthow.machinilorum.tab.TabTools;
-import com.dalthow.machinilorum.tile.TileEntityChalkboard;
 import com.dalthow.machinilorum.tile.TileEntityConveyorBelt;
 import com.dalthow.machinilorum.tile.TileEntityEggIncubator;
 import com.dalthow.machinilorum.tile.TileEntityFragmentizer;
@@ -83,7 +81,6 @@ public class Main
 	public static Property recipeMobRadar;
 	public static Property recipeConveyorBelt;
 	public static Property recipeSprinkler;
-	public static Property recipeChalkboard;
 
 	@Instance
 	public static Main instance;
@@ -114,7 +111,6 @@ public class Main
 	public static Block blockConveyorBelt;
 	public static Block blockChalk;
 	public static Block blockSprinkler;
-	public static Block blockChalkboard;
 
 	// Initialization that happens before any of the world is loaded.
 	@Mod.EventHandler
@@ -134,7 +130,6 @@ public class Main
 		blockConveyorBelt = new BlockConveyorBelt().setBlockName("conveyorBelt");
 		blockChalk = new BlockChalk().setBlockName("chalk");
 		blockSprinkler = new BlockSprinkler().setBlockName("sprinkler");
-		blockChalkboard = new BlockChalkboard().setBlockName("chalkboard");
 
 		RegisterHandler.registerBlock(blockStoneCutter);
 		RegisterHandler.registerBlock(blockFragmentizer);
@@ -145,7 +140,6 @@ public class Main
 		RegisterHandler.registerBlockWithItem(blockMobRadar, ItemMobRadar.class);
 		RegisterHandler.registerBlockWithItem(blockConveyorBelt, ItemConveyorBelt.class);
 		RegisterHandler.registerBlockWithItem(blockSprinkler, ItemSprinkler.class);
-		RegisterHandler.registerBlockWithItem(blockChalkboard, ItemChalkboard.class);
 
 		RegisterHandler.registerTileEntity(TileEntityFragmentizer.class, "fragmentizer");
 		RegisterHandler.registerTileEntity(TileEntityEggIncubator.class, "eggIncubator");
@@ -153,7 +147,6 @@ public class Main
 		RegisterHandler.registerTileEntity(TileEntityMobRadar.class, "mobRadar");
 		RegisterHandler.registerTileEntity(TileEntityConveyorBelt.class, "conveyorBelt");
 		RegisterHandler.registerTileEntity(TileEntitySprinkler.class, "sprinkler");
-		RegisterHandler.registerTileEntity(TileEntityChalkboard.class, "chalkboard");
 
 		RegisterHandler.registerItem(itemFilter);
 		RegisterHandler.registerItem(itemBomb);
@@ -191,7 +184,6 @@ public class Main
 		recipeMobRadar = config.get("Recipes", "Mob Radar", true);
 		recipeConveyorBelt = config.get("Recipes", "Conveyor Belt", true);
 		recipeSprinkler = config.get("Recipes", "Sprinkler", true);
-		recipeChalkboard = config.get("Recipes", "Chalkboard", false);
 
 		config.save();
 
