@@ -24,12 +24,11 @@ import cpw.mods.fml.relauncher.SideOnly;
 @SideOnly(Side.CLIENT)
 public class RenderMobRadar extends TileEntitySpecialRenderer
 {
-	// Declaration of the model files.
+	// Declaration of the models files.
     private IModelCustom top;
     private IModelCustom bottom;
 
     private final ResourceLocation texture = new ResourceLocation(Reference.modId, "textures/models/mob radar.png");
-
 
     // Constructor.
     public RenderMobRadar()
@@ -37,8 +36,7 @@ public class RenderMobRadar extends TileEntitySpecialRenderer
     	top = AdvancedModelLoader.loadModel(new ResourceLocation(Reference.modId, "models/mobradar/top.obj"));
     	bottom = AdvancedModelLoader.loadModel(new ResourceLocation(Reference.modId, "models/mobradar/bottom.obj"));
     }
-    
-    
+
     // Renders the TileEntity at a specific location.
 	@Override
 	public void renderTileEntityAt(TileEntity tile, double xPos, double yPos, double zPos, float par1)

@@ -1,4 +1,4 @@
-package com.dalthow.machinilorum.model;
+package com.dalthow.machinilorum.models;
 
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.model.ModelRenderer;
@@ -12,16 +12,15 @@ import net.minecraft.entity.Entity;
 
 public class ModelBomb extends ModelBase
 {
-	// Declaration of the model parts.
+	// Declaration of the models parts.
 	public ModelRenderer round1;
 	public ModelRenderer round2;
 	public ModelRenderer round3;
 	public ModelRenderer round4;
 	
 	public ModelRenderer defuser;
-	
-	
-	// Registering all the model parts.
+
+	// Registering all the models parts.
 	public ModelBomb()
 	{
 		textureWidth = 256;
@@ -68,8 +67,7 @@ public class ModelBomb extends ModelBase
 		setRotation(defuser, 0F, 0F, 0F);
 	}
 
-
-	// Renders the model.
+	// Renders the models.
 	public void render(Entity entity, float par1, float par2, float par3, float par4, float par5, float par6)
 	{
 		super.render(entity, par1, par2, par3, par4, par5, par6);
@@ -82,12 +80,11 @@ public class ModelBomb extends ModelBase
 		
 		defuser.render(par6);
 	}
-	
-	
+
 	/**
-     * Sets the rotation of the model.
+     * Sets the rotation of the models.
      * 
-     * @param renderer The model renderer.
+     * @param renderer The models renderer.
      * @param par1     X axis rotation.
      * @param par2 	   Y axis rotation.
      * @param par3     Z axis rotation.
@@ -99,9 +96,8 @@ public class ModelBomb extends ModelBase
 		renderer.rotateAngleZ = par3;
 	}
 
-
 	/**
-	 * Sets the rotation angles of the model.
+	 * Sets the rotation angles of the models.
 	 *
 	 * @param par1
 	 * @param par2

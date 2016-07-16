@@ -81,14 +81,10 @@ public class BlockEggIncubator extends Block implements ITileEntityProvider
         if(player.getHeldItem() == null) 
         { 
         	if(world.getBlockMetadata(xPos, yPos, zPos) < 5)
-    		{
-    			world.setBlockMetadataWithNotify(xPos, yPos, zPos, (world.getBlockMetadata(xPos, yPos, zPos) + 1), 1);
-    		}
+                world.setBlockMetadataWithNotify(xPos, yPos, zPos, (world.getBlockMetadata(xPos, yPos, zPos) + 1), 1);
     		
     		else
-    		{
-    			world.setBlockMetadataWithNotify(xPos, yPos, zPos, 0, 1);
-    		}
+                world.setBlockMetadataWithNotify(xPos, yPos, zPos, 0, 1);
         	
             return true; 
         }
@@ -136,19 +132,16 @@ public class BlockEggIncubator extends Block implements ITileEntityProvider
                 tile.tickToHatch = 500 + world.rand.nextInt(250); 
             } 
               
-            else
-            { 
-                if(!world.isRemote) 
-                { 
-                	player.inventory.consumeInventoryItem(Items.egg); 
-                     
-                    tile.canPutEggIn = false; 
-                    tile.tickToHatch = 500 + world.rand.nextInt(250); 
-                    
-                    world.markBlockForUpdate(xPos, yPos, zPos);  
-                } 
-            }  
-              
+            else if(!world.isRemote)
+            {
+                player.inventory.consumeInventoryItem(Items.egg);
+
+                tile.canPutEggIn = false;
+                tile.tickToHatch = 500 + world.rand.nextInt(250);
+
+                world.markBlockForUpdate(xPos, yPos, zPos);
+            }
+
             return true; 
         }
         

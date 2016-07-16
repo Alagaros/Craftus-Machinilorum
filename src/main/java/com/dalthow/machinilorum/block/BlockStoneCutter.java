@@ -31,8 +31,7 @@ public class BlockStoneCutter extends Block
 		setHardness(2.5F);
 		setHarvestLevel("pickaxe", 1);
 	}
-	
-	
+
 	// Only make the texture variables on the client side so the server ignores this.
 	@SideOnly(Side.CLIENT)
 	private IIcon frontIcon;
@@ -67,8 +66,6 @@ public class BlockStoneCutter extends Block
     	}
     	
     	else
-    	{
-    		return false;
-    	}
+			return false;
     }
 }

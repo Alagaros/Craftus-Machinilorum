@@ -21,7 +21,6 @@ public class StoneCutterRecipeSorter implements Comparator<Object>
 		this.stoneCutterRecipeManager = stoneCutterRecipeManager;
 	}
 
-
 	/**
      * Checks if the recipes are no duplicates.
      * 

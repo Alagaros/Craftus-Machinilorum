@@ -9,7 +9,7 @@ import net.minecraftforge.client.IItemRenderer;
 import org.lwjgl.opengl.GL11;
 
 import com.dalthow.machinilorum.base.Reference;
-import com.dalthow.machinilorum.model.ModelFilter;
+import com.dalthow.machinilorum.models.ModelFilter;
 
 /**
  * Craftus Machinilorum
@@ -19,19 +19,17 @@ import com.dalthow.machinilorum.model.ModelFilter;
 
 public class RenderFilter implements IItemRenderer
 {
-	// Declaration of the model files.
+	// Declaration of the models files.
 	private ModelFilter model;
 	private ResourceLocation texture = new ResourceLocation(Reference.modId, "textures/models/filter.png");
-	
-	
+
 	// Constructor.
 	public RenderFilter()
 	{
 		this.model = new ModelFilter();
 	}
-	
-	
-	// Tells the game when to render the model.
+
+	// Tells the game when to render the models.
 	public boolean handleRenderType(ItemStack item, ItemRenderType type) 
 	{
 		switch(type) 
@@ -49,7 +47,7 @@ public class RenderFilter implements IItemRenderer
 		return false;
 	}
 
-	// Renders the actual model.
+	// Renders the actual models.
 	public void renderItem(ItemRenderType type, ItemStack item, Object... data) 
 	{
 		// Switching the render between first and third person. 
@@ -98,9 +96,7 @@ public class RenderFilter implements IItemRenderer
 				GL11.glPopMatrix(); 
 			} 
 		
-			break; 
-			
-			default: break; 
+			break;
 		} 
 	}
 }

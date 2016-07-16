@@ -22,11 +22,10 @@ import com.dalthow.machinilorum.base.Reference;
 @SideOnly(Side.CLIENT)
 public class RenderItemChalkboard implements IItemRenderer
 {
-	// Declaration of the model files.
+	// Declaration of the models files.
     private IModelCustom model;
 
 	private final ResourceLocation texture = new ResourceLocation(Reference.modId, "textures/models/chalkboard.png");
-
 
     // Constructor.
     public RenderItemChalkboard()
@@ -34,7 +33,6 @@ public class RenderItemChalkboard implements IItemRenderer
     	model = AdvancedModelLoader.loadModel(new ResourceLocation(Reference.modId, "models/chalkboard.obj"));
     }
 
-    
     // Renders the TileEntity at a specific location.
     public boolean handleRenderType(ItemStack itemStack, ItemRenderType itemRenderType)
     {
@@ -77,11 +75,6 @@ public class RenderItemChalkboard implements IItemRenderer
                 render(0.0F, 0.94F, 1.0F);
                 
                 return;
-            }
-            
-            default:
-            {
-            	return;
             }
         }
     }

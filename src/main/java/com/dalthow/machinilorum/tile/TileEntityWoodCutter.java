@@ -33,7 +33,6 @@ public class TileEntityWoodCutter extends TileEntity
 	
 	public boolean hasCutted;
 
-	
 	// Constructor.
 	public TileEntityWoodCutter()
 	{
@@ -42,7 +41,6 @@ public class TileEntityWoodCutter extends TileEntity
 		
 		hasCutted = false;
 	}
-
 
 	@Override
 	public void validate()
@@ -55,14 +53,10 @@ public class TileEntityWoodCutter extends TileEntity
     	if(worldObj.isBlockIndirectlyGettingPowered(xCoord, yCoord, zCoord))
 		{
 			if(rotationAngle < 360)
-    		{
     			rotationAngle += 15;
-    		}
     		
     		else
-    		{
-    			rotationAngle = 0;
-    		}
+				rotationAngle = 0;
 		}
     	
     	if(!worldObj.isRemote)
@@ -79,9 +73,7 @@ public class TileEntityWoodCutter extends TileEntity
     				Entity currentEntity = (Entity)allEntitiesInAxis.get(i);
     			   
     			    if(!(currentEntity instanceof EntityItem))
-    			    {
-    			    	currentEntity.attackEntityFrom(DamageSource.generic, 2F);
-    			    }
+						currentEntity.attackEntityFrom(DamageSource.generic, 2F);
     		    }
     			
     			if(tickToCut <= 0)
@@ -97,20 +89,14 @@ public class TileEntityWoodCutter extends TileEntity
     			}
     			
     			if(tickToCut >= 0 && worldObj.getBlock(xTarget, yTarget, zTarget) != null && worldObj.getBlock(xTarget, yTarget, zTarget).getMaterial() == Material.wood)
-    			{
-    				tickToCut--;
-    			}
+					tickToCut--;
     			
     			if(tickToCut == 35)
-    			{
-    				worldObj.playSoundAtEntity(worldObj.getClosestPlayer(xCoord, yCoord, zCoord, 25), "minecart.base", 0.25F, 1F);
-    			}
+					worldObj.playSoundAtEntity(worldObj.getClosestPlayer(xCoord, yCoord, zCoord, 25), "minecart.base", 0.25F, 1F);
     		}
     		
     		else
-    		{
-    			tickToCut = 36;
-    		}
+				tickToCut = 36;
     	}
     }
 
@@ -151,7 +137,6 @@ public class TileEntityWoodCutter extends TileEntity
     {	
 		this.readFromNBT(packet.func_148857_g());
     }
-
 
 	/**
 	 * Sets the target for the Wood Cutter.

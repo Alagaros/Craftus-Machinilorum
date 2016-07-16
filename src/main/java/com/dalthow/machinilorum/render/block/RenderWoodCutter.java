@@ -24,21 +24,19 @@ import cpw.mods.fml.relauncher.SideOnly;
 @SideOnly(Side.CLIENT)
 public class RenderWoodCutter extends TileEntitySpecialRenderer
 {
-	// Declaration of the model files.
+	// Declaration of the models files.
     private IModelCustom engine;
     private IModelCustom blades;
 
     private final ResourceLocation texture = new ResourceLocation(Reference.modId, "textures/models/wood cutter.png");
- 
-    
+
     // Constructor.
     public RenderWoodCutter()
     {
     	engine = AdvancedModelLoader.loadModel(new ResourceLocation(Reference.modId, "models/woodcutter/engine.obj"));
     	blades = AdvancedModelLoader.loadModel(new ResourceLocation(Reference.modId, "models/woodcutter/blades.obj"));
     }
-    
-    
+
     // Renders the TileEntity at a specific location.
 	@Override
 	public void renderTileEntityAt(TileEntity tile, double xPos, double yPos, double zPos, float par1)

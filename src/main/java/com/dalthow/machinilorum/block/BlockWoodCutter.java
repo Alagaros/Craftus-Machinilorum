@@ -32,8 +32,7 @@ public class BlockWoodCutter extends Block implements ITileEntityProvider
 		setHardness(2.5F);
 		setHarvestLevel("pickaxe", 1);
 	}
-	
-	
+
 	// Determines the textures displayed on the blocks based on the side and meta data also gets ignored by the server.
 	@SideOnly(Side.CLIENT)
 	public IIcon getIcon(int side, int meta)
@@ -84,14 +83,10 @@ public class BlockWoodCutter extends Block implements ITileEntityProvider
     	if(player.getHeldItem() == null) 
         { 
 			if(world.getBlockMetadata(xPos, yPos, zPos) < 5)
-			{
 				world.setBlockMetadataWithNotify(xPos, yPos, zPos, (world.getBlockMetadata(xPos, yPos, zPos) + 1), 1);
-			}
 			
 			else
-			{
 				world.setBlockMetadataWithNotify(xPos, yPos, zPos, 0, 1);
-			}
 			
 			return true;
         }

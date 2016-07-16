@@ -26,7 +26,6 @@ public class StoneCutterShapedRecipes implements IRecipe
     // Declaring the items that can now be crafted.
     public final ItemStack[] recipeItems;
 
-
     // Constructor that sets the local variables based on its parameters.
     public StoneCutterShapedRecipes(int recipeWidth, int recipeHeight, ItemStack[] recipeItems, ItemStack recipeOutput)
     {
@@ -35,7 +34,6 @@ public class StoneCutterShapedRecipes implements IRecipe
         this.recipeItems = recipeItems;
         this.recipeOutput = recipeOutput;
     }
-
 
     /**
      * Returns the output of a recipe.
@@ -62,14 +60,10 @@ public class StoneCutterShapedRecipes implements IRecipe
             for(int j = 0; j <= 5 - recipeHeight; ++j)
             {
                 if(checkMatch(inventoryCrafting, i, j, true))
-                {
                     return true;
-                }
 
                 if(checkMatch(inventoryCrafting, i, j, false))
-                {
                     return true;
-                }
             }
         }
 
@@ -100,14 +94,10 @@ public class StoneCutterShapedRecipes implements IRecipe
                 if(k >= 0 && l >= 0 && k < recipeWidth && l < recipeHeight)
                 {
                     if(par3)
-                    {
                         var1 = recipeItems[recipeWidth - k - 1 + l * recipeWidth];
-                    }
                     
                     else
-                    {
                         var1 = recipeItems[k + l * recipeWidth];
-                    }
                 }
 
                 ItemStack var2 = inventoryCrafting.getStackInRowAndColumn(i, j);
@@ -115,19 +105,13 @@ public class StoneCutterShapedRecipes implements IRecipe
                 if(var2 != null || var1 != null)
                 {
                     if(var2 == null && var1 != null || var2 != null && var1 == null)
-                    {
                         return false;
-                    }
 
                     if(var1.getItem() != var2.getItem())
-                    {
                         return false;
-                    }
 
                     if(var1.getItemDamage() != 32767 && var1.getItemDamage() != var2.getItemDamage())
-                    {
                         return false;
-                    }
                 }
             }
         }
@@ -147,17 +131,13 @@ public class StoneCutterShapedRecipes implements IRecipe
         ItemStack var1 = getRecipeOutput().copy();
 
         if(flag)
-        {
             for(int i = 0; i < inventoryCrafting.getSizeInventory(); ++i)
             {
                 ItemStack var2 = inventoryCrafting.getStackInSlot(i);
 
                 if(var2 != null && var2.hasTagCompound())
-                {
                     var1.setTagCompound((NBTTagCompound)var2.stackTagCompound.copy());
-                }
             }
-        }
 
         return var1;
     }

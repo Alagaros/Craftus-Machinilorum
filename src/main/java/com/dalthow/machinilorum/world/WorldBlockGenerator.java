@@ -31,15 +31,13 @@ public class WorldBlockGenerator implements IWorldGenerator
 	private void generateSurface(World world, Random random, int xChunk, int zChunk)
 	{
 		if(world.provider.getBiomeGenForCoords(xChunk, zChunk) instanceof BiomeGenOcean)
-		{
 			for (int i = 0; i < 16; i++)
 			{
 				int randPosX = xChunk + random.nextInt(16);
 				int randPosY = (32 + random.nextInt(64));
 				int randPosZ = zChunk + random.nextInt(16);
-	
+
 				(new WorldGenMinable(Main.blockChalk, 32)).generate(world, random, randPosX, randPosY, randPosZ);
 			}
-		}
 	}
 }

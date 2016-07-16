@@ -33,33 +33,24 @@ public class BlockChalkboard extends Block implements ITileEntityProvider
 		setHardness(2.5F);
 		setHarvestLevel("axe", 1);
 	}
-	
-	
+
 	// Sets the block bounds based on the meta data.
 	public void setBlockBoundsBasedOnState(IBlockAccess access, int xPos, int yPos, int zPos)
-    {
+	{
 		int meta = access.getBlockMetadata(xPos, yPos, zPos);
-		
-		if(meta == 0)
-		{
-			setBlockBounds(0.0F, 0.0F, 0.0F, 0.12F, 1.0F,  1.0F);
-		}
-		
+
+		if (meta == 0)
+			setBlockBounds(0.0F, 0.0F, 0.0F, 0.12F, 1.0F, 1.0F);
+
 		if (meta == 1)
-		{
-		    setBlockBounds(0.0F, 0.0F, 1.0F - 0.12F,  1.0F, 1.0F, 1.0F);
-		}
-		
+			setBlockBounds(0.0F, 0.0F, 1.0F - 0.12F, 1.0F, 1.0F, 1.0F);
+
 		if (meta == 2)
-		{
 			setBlockBounds(1.0F - 0.12F, 0.0F, 0.0F, 1.0F, 1.0F, 1.0F);
-		}
-		
+
 		if (meta == 3)
-		{
-		    setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, 1.0F, 0.12F);
-		}
-    }
+			setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, 1.0F, 0.12F);
+	}
 
 	// Determines the textures displayed on the blocks based on the side and meta data also gets ignored by the server.
 	@SideOnly(Side.CLIENT)
@@ -115,14 +106,10 @@ public class BlockChalkboard extends Block implements ITileEntityProvider
 		else if(player.getHeldItem() == null)
 		{
 			if(world.getBlockMetadata(xPos, yPos, zPos) < 3)
-			{
 				world.setBlockMetadataWithNotify(xPos, yPos, zPos, (world.getBlockMetadata(xPos, yPos, zPos) + 1), 1);
-			}
 			
 			else
-			{
 				world.setBlockMetadataWithNotify(xPos, yPos, zPos, 0, 1);
-			}
 			
 			clearChalkBoard(tile);
 		}
@@ -149,9 +136,7 @@ public class BlockChalkboard extends Block implements ITileEntityProvider
 
 				// Checking if the player is in creative mode, if not consume a piece of chalk.
 				if(!player.capabilities.isCreativeMode)
-				{
 					player.inventory.consumeInventoryItem(new ItemStack(Main.blockChalk).getItem());
-				}
 			}
 				
 			return true;
@@ -159,8 +144,7 @@ public class BlockChalkboard extends Block implements ITileEntityProvider
 		
 		return false;
     }
-	
-	
+
 	/**
      * Adds custom recipe's to the game if they are allowed to be crafted.
      *

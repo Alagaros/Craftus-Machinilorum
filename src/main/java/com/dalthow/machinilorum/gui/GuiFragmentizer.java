@@ -27,8 +27,7 @@ public class GuiFragmentizer extends GuiContainer
 	// Declaration of the elements used in the gui.
 	private GuiButton close;
 	private final ResourceLocation background = new ResourceLocation(Reference.modId + ":" + "textures/gui/fragmentizer.png");
-	
-	
+
 	// Constructor that adds data to the gui.
 	public GuiFragmentizer(InventoryPlayer inventoryPlayer, TileEntityFragmentizer tile) 
 	{
@@ -39,7 +38,6 @@ public class GuiFragmentizer extends GuiContainer
 		xSize = 256;
 		ySize = 166;
 	}
-
 
 	// Everything in front of the slots.
 	@Override	
@@ -78,8 +76,6 @@ public class GuiFragmentizer extends GuiContainer
 	protected void actionPerformed(GuiButton guiButton)
     {
 		if(guiButton.id == 0)
-        {
-        	mc.thePlayer.closeScreen();
-        }
+			mc.thePlayer.closeScreen();
     }
 }

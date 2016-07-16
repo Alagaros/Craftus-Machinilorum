@@ -20,8 +20,7 @@ public class CommonProxy
      * Gets extended in the ClientProxy.
      */
 	public void loadRenderers() {}
-	
-	
+
 	/**
      * Removes the crafting recipe of an item.
      *
@@ -38,9 +37,7 @@ public class CommonProxy
 	    	ItemStack itemStack = removerIterator.next().getRecipeOutput();
 	    	
 	    	if(itemStack != null && itemStack.getItem() == item)
-	    	{
-	            removerIterator.remove();
-	    	}
+				removerIterator.remove();
 	    }
 	}
 }

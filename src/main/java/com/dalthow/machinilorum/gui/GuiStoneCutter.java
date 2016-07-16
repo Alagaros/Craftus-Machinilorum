@@ -24,7 +24,6 @@ public class GuiStoneCutter extends GuiContainer
 	// Declaration of the elements used in the gui.
 	private final ResourceLocation background = new ResourceLocation(Reference.modId + ":" + "textures/gui/stone cutter.png");
 
-	
 	// Constructor that adds data to the gui.
 	public GuiStoneCutter(InventoryPlayer inventoryPlayer, World world, int xPos, int yPos, int zPos)
 	{
@@ -34,7 +33,6 @@ public class GuiStoneCutter extends GuiContainer
 		ySize = 184;
 	}
 
-	
 	// Gets called when the gui gets closed.
 	public void onGuiClosed() 
 	{
@@ -67,8 +65,6 @@ public class GuiStoneCutter extends GuiContainer
 	protected void actionPerformed(GuiButton guiButton)
     {
 		if (guiButton.id == 0)
-        {
-        	mc.thePlayer.closeScreen();
-        }
+			mc.thePlayer.closeScreen();
     }
 }

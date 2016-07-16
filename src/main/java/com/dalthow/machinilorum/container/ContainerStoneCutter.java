@@ -32,8 +32,7 @@ public class ContainerStoneCutter extends Container
 
 	public InventoryCrafting craftMatrix;
 	public IInventory craftResult;
-	
-	
+
 	// Constructor.
 	public ContainerStoneCutter(InventoryPlayer inventoryPlayer, World world, int xPos, int yPos, int zPos)
 	{
@@ -48,32 +47,21 @@ public class ContainerStoneCutter extends Container
 		addSlotToContainer(new SlotCrafting(inventoryPlayer.player, craftMatrix, craftResult, 0, 141, 43));
 
 		// Creating a 5 by 5 crafting grid.
-		for (int i = 0; i < 5; i++) 
-		{
-			for(int j = 0; j < 5; j++) 
-			{
+		for (int i = 0; i < 5; i++)
+			for(int j = 0; j < 5; j++)
 				addSlotToContainer(new Slot(craftMatrix, j + i * 5, 8 + j * 18, 8 + i * 18));
-			}
-		}
 
 		// Looping trough the inventory slots.
-		for (int i = 0; i < 3; i++) 
-		{
-			for(int j = 0; j < 9; j++) 
-			{
+		for (int i = 0; i < 3; i++)
+			for(int j = 0; j < 9; j++)
 				addSlotToContainer(new Slot(inventoryPlayer, j + i * 9 + 9, 8 + j * 18, 102 + i * 18));
-			}
-		}
 
 		// Looping trough the hotbar.
-		for (int i = 0; i < 9; i++) 
-		{
+		for (int i = 0; i < 9; i++)
 			addSlotToContainer(new Slot(inventoryPlayer, i, 8 + i * 18, 160));
-		}
 
 		onCraftMatrixChanged(craftMatrix);
 	}
-
 
 	// Callback for when the crafting matrix is changed.
 	public void onCraftMatrixChanged(IInventory iiventory) 
@@ -86,14 +74,10 @@ public class ContainerStoneCutter extends Container
 	public boolean canInteractWith(EntityPlayer player) 
 	{
 		if(world.getBlock(xPos, yPos, zPos) != Main.blockStoneCutter)
-		{
 			return false;
-		}
 		
 		else
-		{
 			return player.getDistanceSq((double)xPos + 0.5D, (double)yPos + 0.5D, (double)zPos + 0.5D) <= 64.0D;
-		}
 	}
 
 	// Called when the container is closed.
@@ -102,17 +86,13 @@ public class ContainerStoneCutter extends Container
         super.onContainerClosed(par1EntityPlayer);
 
         if(!world.isRemote)
-        {
-            for(int i = 0; i < 25; ++i)
-            {
-                ItemStack var1 = craftMatrix.getStackInSlotOnClosing(i);
+			for(int i = 0; i < 25; ++i)
+			{
+				ItemStack var1 = craftMatrix.getStackInSlotOnClosing(i);
 
-                if(var1 != null)
-                {
-                    par1EntityPlayer.dropPlayerItemWithRandomChoice(var1, false);
-                }
-            }
-        }
+				if(var1 != null)
+					par1EntityPlayer.dropPlayerItemWithRandomChoice(var1, false);
+			}
     }
 
 	// Allows shift clicking from the players inventory into the other slots.
@@ -129,48 +109,30 @@ public class ContainerStoneCutter extends Container
             if(par1 == 0)
             {
                 if(!mergeItemStack(var3, 10, 46, true))
-                {
-                    return null;
-                }
+					return null;
 
                 var2.onSlotChange(var3, var1);
             }
             
             else if(par1 >= 10 && par1 < 37)
-            {
-                if(!mergeItemStack(var3, 37, 46, false))
-                {
-                    return null;
-                }
-            }
+				if(!mergeItemStack(var3, 37, 46, false))
+					return null;
             
             else if(par1 >= 37 && par1 < 46)
-            {
-                if(!mergeItemStack(var3, 10, 37, false))
-                {
-                    return null;
-                }
-            }
+				if(!mergeItemStack(var3, 10, 37, false))
+					return null;
             
             else if(!mergeItemStack(var3, 10, 46, false))
-            {
-                return null;
-            }
+            	return null;
 
             if(var3.stackSize == 0)
-            {
-                var2.putStack((ItemStack)null);
-            }
+				var2.putStack((ItemStack)null);
             
             else
-            {
-                var2.onSlotChanged();
-            }
+				var2.onSlotChanged();
 
             if(var3.stackSize == var1.stackSize)
-            {
-                return null;
-            }
+				return null;
 
             var2.onPickupFromSlot(player, var3);
         }

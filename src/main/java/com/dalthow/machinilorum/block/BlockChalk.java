@@ -30,7 +30,6 @@ public class BlockChalk extends Block
 	@SideOnly(Side.CLIENT)
 	private IIcon[] texture;
 
-
 	// Constructor that adds data to the block.
 	public BlockChalk()
 	{
@@ -41,7 +40,6 @@ public class BlockChalk extends Block
 		setHardness(0.50F);
 	}
 
-	
 	// Loads the different textures also gets ignored by the server.
 	@SideOnly(Side.CLIENT)
 	public void registerBlockIcons(IIconRegister registry) 
@@ -49,20 +47,16 @@ public class BlockChalk extends Block
 		texture = new IIcon[subBlocks.length];
 
 		// Looping trough all the sub blocks and giving them their appropriate texture.
-		for(int i = 0; i < subBlocks.length; i++) 
-		{
+		for(int i = 0; i < subBlocks.length; i++)
 			texture[i] = registry.registerIcon(getTextureName() + subBlocks[i]);
-		}
 	}
 
 	// Returns a list of blocks with different meta data.
 	@SideOnly(Side.CLIENT)
 	public void getSubBlocks(Item item, CreativeTabs tabs, List list) 
 	{
-		for(int i = 0; i < subBlocks.length; i++) 
-		{
+		for(int i = 0; i < subBlocks.length; i++)
 			list.add(new ItemStack(item, 1, i));
-		}
 	}
 
 	// Determines the textures displayed on the blocks based on the side and metadata also gets ignored by the server.

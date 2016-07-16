@@ -22,19 +22,17 @@ import com.dalthow.machinilorum.base.Reference;
 @SideOnly(Side.CLIENT)
 public class RenderItemEggIncubator implements IItemRenderer
 {
-	// Declaration of the model files.
+	// Declaration of the models files.
     private IModelCustom model;
 
 	private final ResourceLocation texture = new ResourceLocation(Reference.modId, "textures/models/egg incubator.png");
-	 
-	
+
 	// Constructor.
     public RenderItemEggIncubator()
     {
     	model = AdvancedModelLoader.loadModel(new ResourceLocation(Reference.modId, "models/egg incubator.obj"));
     }
 
-    
     // Render settings.
     public boolean handleRenderType(ItemStack itemStack, ItemRenderType itemRenderType)
     {
@@ -77,11 +75,6 @@ public class RenderItemEggIncubator implements IItemRenderer
                 render(0.0F, 0F, 1.0F);
                 
                 return;
-            }
-            
-            default:
-            {
-            	return;
             }
         }
     }

@@ -17,11 +17,9 @@ import net.minecraft.util.AxisAlignedBB;
 public class TileEntityConveyorBelt extends TileEntity
 {
 	public boolean isActive;
-    
-	
+
 	// Constructor.
 	public TileEntityConveyorBelt() {}
-
 
 	@Override
 	public void validate()
@@ -50,19 +48,15 @@ public class TileEntityConveyorBelt extends TileEntity
 			    	switch(getBlockMetadata())
 			    	{
 				    	case 0: currentEntity.addVelocity(0F, 0F, -0.1F);
-				    			
 				    	break;
 				
 				    	case 1: currentEntity.addVelocity(0F, 0F, 0.1F);
-								
 				    	break;
 			    	
 			    		case 2: currentEntity.addVelocity(-0.1F, 0F, 0F);
-			    				
 			    		break;
 			    		
 			    		case 3: currentEntity.addVelocity(0.1F, 0F, 0F);
-			    				
 			    		break;
 			    	}
 			    }
@@ -70,9 +64,7 @@ public class TileEntityConveyorBelt extends TileEntity
 		}
 		
 		else
-    	{
-    		isActive = false;
-    	}
+			isActive = false;
     } 
 
 	@Override

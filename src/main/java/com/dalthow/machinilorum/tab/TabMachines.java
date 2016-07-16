@@ -19,7 +19,6 @@ public class TabMachines extends CreativeTabs
 		super(identifier, name);
 	}
 
-	
 	// Sets the icon for the creative tab.
 	@Override
 	public Item getTabIconItem() 

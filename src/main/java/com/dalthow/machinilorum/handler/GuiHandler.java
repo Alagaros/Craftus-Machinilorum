@@ -40,35 +40,21 @@ public class GuiHandler implements IGuiHandler
 		TileEntity tile = world.getTileEntity(xPos, yPos, zPos);
 		
 		if(tile != null)
-		{
 			switch(id)
 			{
 				case 0: if(tile instanceof TileEntityFragmentizer)
-						{
 							return new ContainerFragmentizer(player.inventory, (TileEntityFragmentizer) tile);
-						}
-						
 						else
-						{
 							return null;
-						}
-				
+
 				case 2: if(tile instanceof TileEntityMobRadar)
-						{
 							return new ContainerMobRadar((TileEntityMobRadar) tile);
-						}
-						
 						else
-						{
 							return null;
-						}
-			}			
-		}
+			}
 
 		if(id == 1)
-		{
 			return world.getBlock(xPos, yPos, zPos) == Main.blockStoneCutter ? new ContainerStoneCutter(player.inventory, world, xPos, yPos, zPos) : null;
-		}
 		
 		return null;
 	}
@@ -94,31 +80,19 @@ public class GuiHandler implements IGuiHandler
 			switch(id)
 			{
 				case 0: if(tile instanceof TileEntityFragmentizer)
-						{
 							return new GuiFragmentizer(player.inventory, (TileEntityFragmentizer) tile);
-						}
-						
 						else
-						{
 							return null;
-						}
-				
+
 				case 2: if(tile instanceof TileEntityMobRadar)
-						{
 							return new GuiMobRadar((TileEntityMobRadar) tile);
-						}
-						
 						else
-						{
 							return null;
-						}
 			}
 		}
 		
-		if(id == 1) 
-		{
+		if(id == 1)
 			return id == 1 && world.getBlock(xPos, yPos, zPos) == Main.blockStoneCutter ? new GuiStoneCutter(player.inventory, world, xPos, yPos, zPos) : null;
-		}
 		
 		return null;
 	}

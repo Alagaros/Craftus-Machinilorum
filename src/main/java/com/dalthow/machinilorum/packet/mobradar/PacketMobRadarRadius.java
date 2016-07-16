@@ -1,6 +1,6 @@
 package com.dalthow.machinilorum.packet.mobradar;
 
-import com.dalthow.machinilorum.packet.AbstractPacket;
+import com.dalthow.machinilorum.packet.IPacket;
 import com.dalthow.machinilorum.tile.TileEntityMobRadar;
 
 import io.netty.buffer.ByteBuf;
@@ -13,7 +13,7 @@ import net.minecraft.entity.player.EntityPlayer;
  * @author Trevi Awater
  **/
 
-public class PacketMobRadarRadius extends AbstractPacket 
+public class PacketMobRadarRadius extends IPacket
 {
 	// Declaration for the position of the block.
 	int xPos;
@@ -22,7 +22,6 @@ public class PacketMobRadarRadius extends AbstractPacket
 
 	// Declaring radius that is entered.
 	int radius;
-
 
 	// Constructors.
 	public PacketMobRadarRadius(){}
@@ -35,7 +34,6 @@ public class PacketMobRadarRadius extends AbstractPacket
 		
 		this.radius = radius;
 	}
-
 
 	// Encodes the packet.
 	@Override

@@ -23,7 +23,6 @@ public class ItemChalk extends ItemBlock
 		setHasSubtypes(true);
 	}
 
-
 	/**
 	 * Returns the names of the sub blocks.
 	 *
@@ -35,10 +34,8 @@ public class ItemChalk extends ItemBlock
 	{
 		int i = itemStack.getItemDamage();
 		
-		if (i < 0 || i >= subBlocks.length) 
-		{
+		if (i < 0 || i >= subBlocks.length)
 			i = 0;
-		}
 
 		return super.getUnlocalizedName() + "." + subBlocks[i];
 	}

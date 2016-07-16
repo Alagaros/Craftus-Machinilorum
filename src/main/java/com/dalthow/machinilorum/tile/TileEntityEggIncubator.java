@@ -50,28 +50,22 @@ public class TileEntityEggIncubator extends TileEntity
                 	// Spawns a baby chicken on the correct position, based on the rotation.
                 	switch(getBlockMetadata())
                     {
-            	        case 0: spawnBabyChicken(worldObj, xCoord + 0.5F, yCoord + 1F, zCoord + 0.5F); 
-            	        		
+            	        case 0: spawnBabyChicken(worldObj, xCoord + 0.5F, yCoord + 1F, zCoord + 0.5F);
             	        break;
             	        
-            	        case 1: spawnBabyChicken(worldObj, xCoord + 0.5F, yCoord - 1F, zCoord + 0.5F); 
-            	        
+            	        case 1: spawnBabyChicken(worldObj, xCoord + 0.5F, yCoord - 1F, zCoord + 0.5F);
             	        break;
             	        		
-            	        case 2: spawnBabyChicken(worldObj, xCoord - 0.5F, yCoord, zCoord + 0.5F); 
-            			
+            	        case 2: spawnBabyChicken(worldObj, xCoord - 0.5F, yCoord, zCoord + 0.5F);
             	        break;
             	        	
-            	        case 3: spawnBabyChicken(worldObj, xCoord + 1.5F, yCoord, zCoord + 0.5F); 
-            			
+            	        case 3: spawnBabyChicken(worldObj, xCoord + 1.5F, yCoord, zCoord + 0.5F);
             	        break;
             					
-            	        case 4: spawnBabyChicken(worldObj, xCoord + 0.5F, yCoord, zCoord + 1.5F); 
-            			
+            	        case 4: spawnBabyChicken(worldObj, xCoord + 0.5F, yCoord, zCoord + 1.5F);
             	        break;
             					
-            	        case 5: spawnBabyChicken(worldObj, xCoord + 0.5F, yCoord, zCoord - 0.5F); 
-            			
+            	        case 5: spawnBabyChicken(worldObj, xCoord + 0.5F, yCoord, zCoord - 0.5F);
             	        break;
                     }
                 	
@@ -80,9 +74,7 @@ public class TileEntityEggIncubator extends TileEntity
             } 
               
             else
-            { 
-                tickToHatch--; 
-            } 
+                tickToHatch--;
         }  
     }
 

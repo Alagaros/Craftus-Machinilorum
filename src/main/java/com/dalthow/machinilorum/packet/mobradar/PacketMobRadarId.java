@@ -1,6 +1,6 @@
 package com.dalthow.machinilorum.packet.mobradar;
 
-import com.dalthow.machinilorum.packet.AbstractPacket;
+import com.dalthow.machinilorum.packet.IPacket;
 import com.dalthow.machinilorum.tile.TileEntityMobRadar;
 
 import io.netty.buffer.ByteBuf;
@@ -13,7 +13,7 @@ import net.minecraft.entity.player.EntityPlayer;
  * @author Trevi Awater
  **/
 
-public class PacketMobRadarId extends AbstractPacket 
+public class PacketMobRadarId extends IPacket
 {
 	// Declaration for the position of the block.
 	int xPos;
@@ -22,7 +22,6 @@ public class PacketMobRadarId extends AbstractPacket
 
 	// Declaring the kind of mob that is selected.
 	int mobId;
-
 
 	// Constructors.
 	public PacketMobRadarId(){}
@@ -35,8 +34,7 @@ public class PacketMobRadarId extends AbstractPacket
 		
 		this.mobId = mobId;
 	}
-	
-	
+
 	// Encodes the packet.
 	@Override
 	public void encodeInto(ChannelHandlerContext context, ByteBuf buffer) 

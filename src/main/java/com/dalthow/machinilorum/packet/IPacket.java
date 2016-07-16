@@ -11,7 +11,7 @@ import net.minecraft.entity.player.EntityPlayer;
  * @author Trevi Awater
  **/
 
-public abstract class AbstractPacket 
+public abstract class IPacket
 {	
 	/**
      * Encodes a packet.

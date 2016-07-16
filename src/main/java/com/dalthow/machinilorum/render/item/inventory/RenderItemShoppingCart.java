@@ -22,19 +22,17 @@ import com.dalthow.machinilorum.base.Reference;
 @SideOnly(Side.CLIENT)
 public class RenderItemShoppingCart implements IItemRenderer
 {
-	// Declaration of the model files.
+	// Declaration of the models files.
     private IModelCustom model;
 
 	private final ResourceLocation texture = new ResourceLocation(Reference.modId, "textures/models/shopping cart.png");
-	 
-	
+
 	// Constructor.
     public RenderItemShoppingCart()
     {
     	model = AdvancedModelLoader.loadModel(new ResourceLocation(Reference.modId, "models/shopping cart.obj"));
     }
 
-    
     // Render settings.
     public boolean handleRenderType(ItemStack itemStack, ItemRenderType itemRenderType)
     {
@@ -77,11 +75,6 @@ public class RenderItemShoppingCart implements IItemRenderer
                 render(-0.3F, -0.05F, 0.5F, 0.5F);
                 
                 return;
-            }
-            
-            default:
-            {
-            	return;
             }
         }
     } 

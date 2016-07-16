@@ -22,19 +22,17 @@ import com.dalthow.machinilorum.base.Reference;
 @SideOnly(Side.CLIENT)
 public class RenderItemMobRadar implements IItemRenderer
 {
-	// Declaration of the model files.
+	// Declaration of the models files.
     private IModelCustom model;
 
 	private final ResourceLocation texture = new ResourceLocation(Reference.modId, "textures/models/mob radar.png");
-	 
-	
+
 	// Constructor.
     public RenderItemMobRadar()
     {
     	model = AdvancedModelLoader.loadModel(new ResourceLocation(Reference.modId, "models/mob radar.obj"));
     }
 
-    
     // Render settings.
     public boolean handleRenderType(ItemStack itemStack, ItemRenderType itemRenderType)
     {
@@ -77,11 +75,6 @@ public class RenderItemMobRadar implements IItemRenderer
                 render(1F, -1.15F, 1.0F, 0.32F);
                 
                 return;
-            }
-            
-            default:
-            {
-            	return;
             }
         }
     } 

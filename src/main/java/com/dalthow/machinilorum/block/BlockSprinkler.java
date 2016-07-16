@@ -36,7 +36,6 @@ public class BlockSprinkler extends Block implements ITileEntityProvider
 		setHarvestLevel("pickaxe", 1);
 	}
 
-
 	// Determines the textures displayed on the blocks based on the side and meta data also gets ignored by the server.
 	@SideOnly(Side.CLIENT)
 	public IIcon getIcon(int side, int meta)
@@ -92,9 +91,7 @@ public class BlockSprinkler extends Block implements ITileEntityProvider
     	TileEntity tile = world.getTileEntity(xPos, yPos, zPos);
     	
     	if(!((tile) instanceof TileEntitySprinkler))
-		{
 			return 0;
-		}
     	
     	TileEntitySprinkler tileEntitySprinkler = (TileEntitySprinkler) tile;
     	
@@ -108,14 +105,10 @@ public class BlockSprinkler extends Block implements ITileEntityProvider
     	if(player.getHeldItem() == null) 
         { 
 			if(world.getBlockMetadata(xPos, yPos, zPos) < 3)
-			{
 				world.setBlockMetadataWithNotify(xPos, yPos, zPos, (world.getBlockMetadata(xPos, yPos, zPos) + 1), 1);
-			}
 			
 			else
-			{
 				world.setBlockMetadataWithNotify(xPos, yPos, zPos, 0, 1);
-			}
 			
 			return true;
         }

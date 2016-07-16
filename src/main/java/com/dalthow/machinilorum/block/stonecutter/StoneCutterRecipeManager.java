@@ -36,7 +36,6 @@ public class StoneCutterRecipeManager
         return instance;
     }
 
-
     // Constructor.
     private StoneCutterRecipeManager()
     {
@@ -80,8 +79,7 @@ public class StoneCutterRecipeManager
         // Giving the sorter the recipe list.
         Collections.sort(recipes, new StoneCutterRecipeSorter(this));
     }
-    
-    
+
     /**
      * Adds a shaped recipe to the recipe list.
      * 
@@ -130,19 +128,13 @@ public class StoneCutterRecipeManager
             ItemStack var7 = null;
 
             if(arrayOfObject[var2 + 1] instanceof Item)
-            {
                 var7 = new ItemStack((Item)arrayOfObject[var2 + 1]);
-            }
             
             else if(arrayOfObject[var2 + 1] instanceof Block)
-            {
                 var7 = new ItemStack((Block)arrayOfObject[var2 + 1], 1, 32767);
-            }
             
             else if(arrayOfObject[var2 + 1] instanceof ItemStack)
-            {
                 var7 = (ItemStack)arrayOfObject[var2 + 1];
-            }
 
             map.put(character, var7);
         }
@@ -154,14 +146,10 @@ public class StoneCutterRecipeManager
             char var9 = var1.charAt(i);
 
             if (map.containsKey(Character.valueOf(var9)))
-            {
                 var8[i] = ((ItemStack)map.get(Character.valueOf(var9))).copy();
-            }
             
             else
-            {
                 var8[i] = null;
-            }
         }
 
         StoneCutterShapedRecipes shapedrecipes = new StoneCutterShapedRecipes(var3, var4, var8, itemStack);
@@ -188,21 +176,15 @@ public class StoneCutterRecipeManager
             Object var2 = aobject[i];
 
             if(var2 instanceof ItemStack)
-            {
                 arraylist.add(((ItemStack)var2).copy());
-            }
             
             else if(var2 instanceof Item)
-            {
                 arraylist.add(new ItemStack((Item)var2));
-            }
             
             else
             {
                 if(!(var2 instanceof Block))
-                {
                     throw new RuntimeException("Invalid shapeless recipe!");
-                }
 
                 arraylist.add(new ItemStack((Block)var2));
             }
@@ -234,14 +216,10 @@ public class StoneCutterRecipeManager
             if (var5 != null)
             {
                 if (var1 == 0)
-                {
                     var3 = var5;
-                }
 
                 if (var1 == 1)
-                {
                     var4 = var5;
-                }
 
                 ++var1;
             }
@@ -257,9 +235,7 @@ public class StoneCutterRecipeManager
             int var10 = var6.getMaxDamage() - var9;
 
             if(var10 < 0)
-            {
                 var10 = 0;
-            }
 
             return new ItemStack(var3.getItem(), 1, var10);
         }
@@ -271,9 +247,7 @@ public class StoneCutterRecipeManager
                 IRecipe var11 = (IRecipe)recipes.get(var2);
 
                 if(var11.matches(inventoryCrafting, world))
-                {
                     return var11.getCraftingResult(inventoryCrafting);
-                }
             }
 
             return null;

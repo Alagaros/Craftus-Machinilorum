@@ -73,9 +73,7 @@ public class BlockMobRadar extends Block implements ITileEntityProvider
     	}
 		
 		else
-		{
 			return false;
-		}
     }
 
 	// Creates a TileEntity when you place it down.

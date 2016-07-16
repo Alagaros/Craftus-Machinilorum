@@ -47,14 +47,10 @@ public class ItemChecker extends Item
 			int metadata;
 			
 			if(world.getTileEntity(xPos, yPos, zPos) != null)
-			{
 				metadata = world.getTileEntity(xPos, yPos, zPos).getBlockMetadata();
-			}
 			
 			else
-			{
 				metadata = world.getBlockMetadata(xPos, yPos, zPos);
-			}
 			
 			player.addChatMessage(new ChatComponentText(EnumChatFormatting.WHITE + "Name:" + " " + world.getBlock(xPos, yPos, zPos).getUnlocalizedName().substring(5)));
 			player.addChatMessage(new ChatComponentText(EnumChatFormatting.WHITE + "Metadata:" + " " + metadata));

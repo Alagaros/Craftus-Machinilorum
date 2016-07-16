@@ -24,21 +24,19 @@ import cpw.mods.fml.relauncher.SideOnly;
 @SideOnly(Side.CLIENT)
 public class RenderSprinkler extends TileEntitySpecialRenderer
 {
-	// Declaration of the model files.
+	// Declaration of the models files.
     private IModelCustom engine;
     private IModelCustom top;
 
     private final ResourceLocation texture = new ResourceLocation(Reference.modId, "textures/models/sprinkler.png");
-   
-    
+
     // Constructor.
     public RenderSprinkler()
     {
     	top = AdvancedModelLoader.loadModel(new ResourceLocation(Reference.modId, "models/sprinkler/top.obj"));
     	engine = AdvancedModelLoader.loadModel(new ResourceLocation(Reference.modId, "models/sprinkler/engine.obj"));
     }
-    
-    
+
     // Renders the TileEntity at a specific location.
 	@Override
 	public void renderTileEntityAt(TileEntity tile, double xPos, double yPos, double zPos, float par1)

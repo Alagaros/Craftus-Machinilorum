@@ -85,18 +85,14 @@ public class TileEntityFragmentizer extends TileEntity implements ISidedInventor
 				var1 = slots[par1].splitStack(par2);
 
 				if(slots[par1].stackSize == 0)
-				{
 					slots[par1] = null;
-				}
 
 				return var1;
 			}
 		}
 
 		else
-		{
 			return null;
-		}
 	}
 
 	// When some containers are closed they call this on each slot, then drop whatever it returns .
@@ -119,9 +115,7 @@ public class TileEntityFragmentizer extends TileEntity implements ISidedInventor
 		slots[var1] = itemStack;
 
 		if(itemStack != null && itemStack.stackSize > getInventoryStackLimit())
-		{
 			itemStack.stackSize = getInventoryStackLimit();
-		}
 	}
 
 	// Gets how many items are allowed in the custom slots.
@@ -177,45 +171,29 @@ public class TileEntityFragmentizer extends TileEntity implements ISidedInventor
 				Block block = Block.getBlockFromItem(item);
 
 				if(block == Blocks.wooden_slab)
-				{
 					return 150;
-				}
 
 				if(block.getMaterial() == Material.wood)
-				{
 					return 300;
-				}
 
 				if(block == Blocks.coal_block)
-				{
 					return 16000;
-				}
 			}
 
 			if(item == Items.stick)
-			{
 				return 100;
-			}
 
 			if(item == Items.coal)
-			{
 				return 1600;
-			}
 
 			if(item == Items.lava_bucket)
-			{
 				return 20000;
-			}
 
 			if(item == Item.getItemFromBlock(Blocks.sapling))
-			{
 				return 100;
-			}
 
 			if(item == Items.blaze_rod)
-			{
 				return 2400;
-			}
 
 			return GameRegistry.getFuelValue(itemStack);
 		}
@@ -233,9 +211,7 @@ public class TileEntityFragmentizer extends TileEntity implements ISidedInventor
 			boolean flag = false;
 
 			if(isFragmenting())
-			{
 				burnTime -= (furnaceSpeed / 32);
-			}
 
 			if(!worldObj.isRemote)
 			{
@@ -252,9 +228,7 @@ public class TileEntityFragmentizer extends TileEntity implements ISidedInventor
 							slots[1].stackSize--;
 
 							if(slots[1].stackSize == 0)
-							{
 								slots[1] = slots[1].getItem().getContainerItem(slots[1]);
-							}
 						}
 					}
 				}
@@ -272,15 +246,11 @@ public class TileEntityFragmentizer extends TileEntity implements ISidedInventor
 				}
 
 				else
-				{
 					cookTime = 0;
-				}
 			}
 
 			if(flag)
-			{
 				markDirty();
-			}
 		}
 	}
 
@@ -288,28 +258,20 @@ public class TileEntityFragmentizer extends TileEntity implements ISidedInventor
 	public boolean canFragment()
 	{
 		if(slots[0] == null)
-		{
 			return false;
-		}
 
 		else
 		{
 			ItemStack var1 = FragmentingHandler.fragmenting().getFragmentingResult(slots[0]);
 
 			if(var1 == null)
-			{
 				return false;
-			}
 
 			if(slots[2] == null)
-			{
 				return true;
-			}
 
 			if(!slots[2].isItemEqual(var1))
-			{
 				return false;
-			}
 
 			int var2 = slots[2].stackSize + var1.stackSize;
 
@@ -325,21 +287,15 @@ public class TileEntityFragmentizer extends TileEntity implements ISidedInventor
 			ItemStack var1 = FragmentingHandler.fragmenting().getFragmentingResult(slots[0]);
 
 			if(slots[2] == null)
-			{
 				slots[2] = var1.copy();
-			}
 
 			else if(slots[2].isItemEqual(var1))
-			{
 				slots[2].stackSize += var1.stackSize;
-			}
 
 			slots[0].stackSize--;
 
 			if(slots[0].stackSize <= 0)
-			{
 				slots[0] = null;
-			}
 		}
 	}
 
@@ -363,9 +319,7 @@ public class TileEntityFragmentizer extends TileEntity implements ISidedInventor
 	public int getBurnTimeRemainingScaled(int par1)
 	{
 		if(currentItemBurnTime == 0)
-		{
 			currentItemBurnTime = furnaceSpeed;
-		}
 
 		return burnTime * par1 / currentItemBurnTime;
 	}
@@ -390,9 +344,7 @@ public class TileEntityFragmentizer extends TileEntity implements ISidedInventor
 			byte var3 = var2.getByte("slot");
 
 			if(var3 >= 0 && var3 < slots.length)
-			{
 				slots[var3] = ItemStack.loadItemStackFromNBT(var2);
-			}
 		}
 
 		burnTime = (int)tag.getShort("burnTime");
@@ -400,9 +352,7 @@ public class TileEntityFragmentizer extends TileEntity implements ISidedInventor
 		currentItemBurnTime = (int)tag.getShort("currentBurnTime");
 
 		if(tag.hasKey("customName"))
-		{
 			localizedName = tag.getString("customName");
-		}
 	}
 
 	public void writeToNBT(NBTTagCompound tag)
@@ -416,7 +366,6 @@ public class TileEntityFragmentizer extends TileEntity implements ISidedInventor
 		NBTTagList var1 = new NBTTagList();
 
 		for(int i = 0; i < slots.length; i++)
-		{
 			if(slots[i] != null)
 			{
 				NBTTagCompound var2 = new NBTTagCompound();
@@ -424,13 +373,10 @@ public class TileEntityFragmentizer extends TileEntity implements ISidedInventor
 				slots[i].writeToNBT(var2);
 				var1.appendTag(var2);
 			}
-		}
 
 		tag.setTag("items", var1);
 
 		if(hasCustomInventoryName())
-		{
 			tag.setString("customName", localizedName);
-		}
 	}
 }

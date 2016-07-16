@@ -40,8 +40,7 @@ public class GuiMobRadar extends GuiContainer
 	private int localMobId;
 	
 	private boolean errorNoNummer = false;
-	
-	
+
 	// Constructor that adds data to the gui.
 	public GuiMobRadar(TileEntityMobRadar tile) 
 	{
@@ -52,8 +51,7 @@ public class GuiMobRadar extends GuiContainer
 		xSize = 256;
 		ySize = 133;
 	}
-	
-	
+
 	// Everything in front of the slots.
 	@Override	
 	protected void drawGuiContainerForegroundLayer(int par1, int par2)
@@ -79,24 +77,16 @@ public class GuiMobRadar extends GuiContainer
 		}
 		
 		if(tile.signal == 0)
-		{
 			lowSignal.enabled = false;
-		}
 		
 		if(tile.signal == 1)
-		{
 			highSignal.enabled = false;
-		}
 		
 		if(localMobId == 0)
-		{
 			previous.enabled = false;
-		}
 		
 		if(localMobId == 9)
-		{
 			next.enabled = false;
-		}
 		
 		buttonList.add(new GuiButton(0, width / 2 + 51, height / 2 - 53, 71, 20, I18n.format("Close", new Object[0])));	
 	    buttonList.add(next);
@@ -120,61 +110,48 @@ public class GuiMobRadar extends GuiContainer
 		switch(tile.mobId)
 		{
 			case 0: drawTexturedModalRect(guiLeft + 129, guiTop + 19, 0, 133, 32, 32);
-			
 			break;
 			
 			case 1: drawTexturedModalRect(guiLeft + 129, guiTop + 19, 32, 133, 32, 32);
-			
 			break;
 			
 			case 2: drawTexturedModalRect(guiLeft + 129, guiTop + 19, 64, 133, 32, 32);
-			
 			break;
 			
 			case 3: drawTexturedModalRect(guiLeft + 129, guiTop + 19, 96, 133, 32, 32);
-			
 			break;
 			
 			case 4: drawTexturedModalRect(guiLeft + 129, guiTop + 19, 0, 165, 32, 32);
-						
+
 			break;
 						
 			case 5: drawTexturedModalRect(guiLeft + 129, guiTop + 19, 32, 165, 32, 32);
-			
 			break;
 			
 			case 6: drawTexturedModalRect(guiLeft + 129, guiTop + 19, 64, 165, 32, 32);
-			
 			break;
 			
 			case 7: drawTexturedModalRect(guiLeft + 129, guiTop + 19, 96, 165, 32, 32);
-			
 			break;
 			
 			case 8: drawTexturedModalRect(guiLeft + 129, guiTop + 19, 128, 165, 32, 32);
-			
 			break;
 			
 			case 9: drawTexturedModalRect(guiLeft + 129, guiTop + 19, 160, 165, 32, 32);
-			
 			break;
 		}
 		
 		switch(tile.signal)
 		{
 			case 0: drawTexturedModalRect(guiLeft + 185, guiTop + 71, 8, 197, 8, 22);
-				
 			break;
 			
 			case 1: drawTexturedModalRect(guiLeft + 185, guiTop + 71, 0, 197, 8, 22);
-			
 			break;
 		}
 		
 		if(errorNoNummer)
-		{
 			drawTexturedModalRect(guiLeft + 8, guiTop + 104, 127, 108, 78, 26);
-		}
 	}
 	
 	// The first method that gets called once when the gui opens.
@@ -200,39 +177,29 @@ public class GuiMobRadar extends GuiContainer
 	protected void actionPerformed(GuiButton guiButton)
     {
 		if(guiButton.id == 0)
-        {
-        	mc.thePlayer.closeScreen();
-        }
+			mc.thePlayer.closeScreen();
 		
 		if(guiButton.id == 1)
-        {
 			if(tile.mobId < 9)
 			{
 				localMobId++;
-				
+
 				Main.packetPipeline.sendToServer(new PacketMobRadarId(tile.xCoord, tile.yCoord, tile.zCoord, localMobId));
 			}
-        }
 		
 		if(guiButton.id == 2)
-        {
-			if(tile.mobId > 0)
+        	if(tile.mobId > 0)
 			{
 				localMobId--;
-				
+
 				Main.packetPipeline.sendToServer(new PacketMobRadarId(tile.xCoord, tile.yCoord, tile.zCoord, localMobId));
 			}
-        }
 		
 		if(guiButton.id == 3)
-		{
 			Main.packetPipeline.sendToServer(new PacketMobRadarSignal(tile.xCoord, tile.yCoord, tile.zCoord, 1));
-		}
 		
 		if(guiButton.id == 4)
-		{
 			Main.packetPipeline.sendToServer(new PacketMobRadarSignal(tile.xCoord, tile.yCoord, tile.zCoord, 0));
-		}
 		
 		if(guiButton.id == 5)
 		{

@@ -26,7 +26,6 @@ public class FragmentingHandler
     // Creating a new instance.
     private static final FragmentingHandler fragmentingBase = new FragmentingHandler();
 
-
     // Constructors.
     public static FragmentingHandler fragmenting()
     {
@@ -54,7 +53,6 @@ public class FragmentingHandler
         addItem(Items.blaze_rod, new ItemStack(Items.blaze_powder, 4), 0.5F);
     }
 
-    
     /**
      * Adds a block to the fragmentation list.
      * 

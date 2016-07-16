@@ -1,6 +1,7 @@
 package com.dalthow.machinilorum.item;
 
 import java.util.List;
+import java.util.Random;
 
 import net.minecraft.client.resources.I18n;
 import net.minecraft.entity.item.EntityItem;
@@ -15,7 +16,6 @@ import org.lwjgl.input.Keyboard;
 
 import com.dalthow.machinilorum.base.Main;
 import com.dalthow.machinilorum.base.Reference;
-import com.dalthow.machinilorum.util.MathHelper;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -38,8 +38,7 @@ public class ItemFilter extends Item
 		setMaxDamage(24);
 		setMaxStackSize(1);
 	}
-	
-	
+
 	// Gets triggered when you use the item on a block.
 	public boolean onItemUse(ItemStack itemStack, EntityPlayer player, World world, int xPos, int yPos, int zPos, int par1, float par2, float par3, float par4)
 	{
@@ -51,8 +50,10 @@ public class ItemFilter extends Item
 			{
 				world.setBlock(xPos, yPos, zPos, Blocks.sand);
 
+				Random random = new Random();
+
 				// Checks if the user is lucky.
-				if(MathHelper.randomNumber(1, 3) == 1)
+				if(random.nextInt(3 - 1 + 1) == 1)
 				{
 					// Create a gold nugget at the position the block is.
 					EntityItem Reward = new EntityItem(world, xPos, yPos, zPos, new ItemStack(Items.gold_nugget, 1));

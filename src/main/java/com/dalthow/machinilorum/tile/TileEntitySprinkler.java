@@ -15,7 +15,6 @@ public class TileEntitySprinkler extends TileEntity
 {
 	private boolean hasPulsed;
 
-
 	@Override
 	public void validate()
 	{
@@ -29,23 +28,17 @@ public class TileEntitySprinkler extends TileEntity
 			if(hasPulsed == false)
 			{
 				if(this.blockMetadata < 3)
-				{
 					this.blockMetadata++;
-				}
 				
 				else
-				{
 					this.blockMetadata = 0;
-				}
 			}
 			
 			hasPulsed = true;
 		}
 		
 		else
-		{
 			hasPulsed = false;
-		}
 		
 		switch(getBlockMetadata())
 		{
@@ -56,20 +49,14 @@ public class TileEntitySprinkler extends TileEntity
 					}
 			
 					for(int i = 0; i < 22; i++)
-					{
 						for(int j = 0; j < 15; j++)
 						{
 							if(worldObj.getBlock(xCoord + 10 - i, yCoord - 1, zCoord - 1 - j) == Blocks.farmland && worldObj.rand.nextInt(15) == 1)
-							{
 								worldObj.setBlockMetadataWithNotify(xCoord + 10 - i, yCoord - 1, zCoord - 1 - j, 2, 0);
-							}
-							
+
 							if(worldObj.getBlock(xCoord + 10 - i, yCoord, zCoord - 1 - j) == Blocks.fire && worldObj.rand.nextInt(15) == 1)
-							{
 								worldObj.setBlock(xCoord + 10 - i, yCoord, zCoord - 1 - j, Blocks.air);
-							}
 						}
-					}	
 			break;
 			
 			case 1: for(float i = 0; i < 1; i += 0.05F)
@@ -79,20 +66,14 @@ public class TileEntitySprinkler extends TileEntity
 					}
 			
 					for(int i = 0; i < 15; i++)
-					{
 						for(int j = 1; j < 22; j++)
 						{
 							if(worldObj.getBlock(xCoord + i, yCoord - 1, zCoord - 11 + j) == Blocks.farmland && worldObj.rand.nextInt(15) == 1)
-							{
 								worldObj.setBlockMetadataWithNotify(xCoord + i, yCoord - 1, zCoord - 11 + j, 2, 0);
-							}
-							
+
 							if(worldObj.getBlock(xCoord + i, yCoord, zCoord - 11 + j) == Blocks.fire && worldObj.rand.nextInt(15) == 1)
-							{
 								worldObj.setBlock(xCoord + i, yCoord, zCoord - 11 + j, Blocks.air);
-							}
 						}
-					}	
 			break;
 			
 			case 2: for(float i = 0; i < 1; i += 0.05F)
@@ -102,20 +83,14 @@ public class TileEntitySprinkler extends TileEntity
 					}
 			
 					for(int i = 0; i < 22; i++)
-					{
 						for(int j = 0; j < 15; j++)
 						{
 							if(worldObj.getBlock(xCoord + 10 - i, yCoord - 1, zCoord + 1 + j) == Blocks.farmland && worldObj.rand.nextInt(15) == 1)
-							{
 								worldObj.setBlockMetadataWithNotify(xCoord + 10 - i, yCoord - 1, zCoord + 1 + j, 2, 0);
-							}
-							
+
 							if(worldObj.getBlock(xCoord + 10 - i, yCoord, zCoord + 1 + j) == Blocks.fire && worldObj.rand.nextInt(15) == 1)
-							{
 								worldObj.setBlock(xCoord + 10 - i, yCoord, zCoord + 1 + j, Blocks.air);
-							}
 						}
-					}	
 			break;
 			
 			case 3: for(float i = 0; i < 1; i += 0.05F)
@@ -125,20 +100,14 @@ public class TileEntitySprinkler extends TileEntity
 					}
 			
 					for(int i = 0; i < 15; i++)
-					{
 						for(int j = 1; j < 22; j++)
 						{
 							if(worldObj.getBlock(xCoord - i, yCoord - 1, zCoord - 11 + j) == Blocks.farmland && worldObj.rand.nextInt(15) == 1)
-							{
 								worldObj.setBlockMetadataWithNotify(xCoord - i, yCoord - 1, zCoord - 11 + j, 2, 0);
-							}
-							
+
 							if(worldObj.getBlock(xCoord - i, yCoord, zCoord - 11 + j) == Blocks.fire && worldObj.rand.nextInt(15) == 1)
-							{
 								worldObj.setBlock(xCoord - i, yCoord, zCoord - 11 + j, Blocks.air);
-							}
 						}
-					}
 			break;
 		}
 	}

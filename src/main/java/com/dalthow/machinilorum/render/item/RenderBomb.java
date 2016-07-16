@@ -9,7 +9,7 @@ import net.minecraftforge.client.IItemRenderer;
 import org.lwjgl.opengl.GL11;
 
 import com.dalthow.machinilorum.base.Reference;
-import com.dalthow.machinilorum.model.ModelBomb;
+import com.dalthow.machinilorum.models.ModelBomb;
 
 /**
  * Craftus Machinilorum
@@ -19,19 +19,17 @@ import com.dalthow.machinilorum.model.ModelBomb;
 
 public class RenderBomb implements IItemRenderer
 {
-	// Declaration of the model files.
+	// Declaration of the models files.
 	private ModelBomb model;
 	private ResourceLocation texture = new ResourceLocation(Reference.modId, "textures/models/bomb.png");
-	
-	
+
 	// Constructor.
 	public RenderBomb()
 	{
 		model = new ModelBomb();
 	}
-	
-	
-	// Tells the game when to render the model.
+
+	// Tells the game when to render the models.
 	public boolean handleRenderType(ItemStack item, ItemRenderType type) 
 	{
 		switch(type) 
@@ -49,7 +47,7 @@ public class RenderBomb implements IItemRenderer
 		return false;
 	}
 
-	// Renders the actual model.
+	// Renders the actual models.
 	public void renderItem(ItemRenderType type, ItemStack item, Object... data) 
 	{
 		// Switching the render between first and third person.
@@ -97,9 +95,7 @@ public class RenderBomb implements IItemRenderer
 				GL11.glPopMatrix(); 
 			} 
 		
-			break; 
-			
-			default: break; 
+			break;
 		} 
 	}
 }

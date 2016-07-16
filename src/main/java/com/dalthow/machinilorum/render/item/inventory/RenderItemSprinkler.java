@@ -22,12 +22,11 @@ import com.dalthow.machinilorum.base.Reference;
 @SideOnly(Side.CLIENT)
 public class RenderItemSprinkler implements IItemRenderer
 {
-	// Declaration of the model files.
+	// Declaration of the models files.
     private IModelCustom model;
 
 	private final ResourceLocation texture = new ResourceLocation(Reference.modId, "textures/models/sprinkler.png");
-	 
-	
+
 	// Constructor.
     public RenderItemSprinkler()
     {
@@ -76,11 +75,6 @@ public class RenderItemSprinkler implements IItemRenderer
                 render(0.0F, -0.1F, 1.0F, 0.475F);
                 
                 return;
-            }
-            
-            default:
-            {
-            	return;
             }
         }
     }

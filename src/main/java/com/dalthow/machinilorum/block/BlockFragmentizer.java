@@ -42,7 +42,6 @@ public class BlockFragmentizer extends BlockContainer
 		setHarvestLevel("pickaxe", 1);
 	}
 
-	
 	// Only make the texture variables on the client side so the server ignores this.
 	@SideOnly(Side.CLIENT)
 	private IIcon frontIcon;
@@ -94,15 +93,11 @@ public class BlockFragmentizer extends BlockContainer
 	    	}
 			
 			else
-			{
 				return false;
-			}
 		}
 		
 		else
-		{
 			return false;
-		}
     }
 
 	// Creates a TileEntity when you place down this block.
@@ -120,35 +115,30 @@ public class BlockFragmentizer extends BlockContainer
 	
 		if(tile != null) 
 		{
-			// Getting all the items in the inventory.
-			for(int i = 0; i < tile.getSizeInventory(); i++) 
+			for(int i = 0; i < tile.getSizeInventory(); i++)
 			{
 				ItemStack itemStack = tile.getStackInSlot(i);
-			
-				if(itemStack != null) 
+
+				if(itemStack != null)
 				{
 					float var1 = world.rand.nextFloat() * 0.8F + 0.1F;
 					float var2 = world.rand.nextFloat() * 0.8F + 0.1F;
 					float var3 = world.rand.nextFloat() * 0.8F + 0.1F;
-				
-					while(itemStack.stackSize > 0) 
+
+					while(itemStack.stackSize > 0)
 					{
 						int j = world.rand.nextInt(21) + 10;
-					
-						if(j > itemStack.stackSize) 
-						{
+
+						if(j > itemStack.stackSize)
 							j = itemStack.stackSize;
-						}
-					
+
 						itemStack.stackSize -= j;
-					
+
 						EntityItem item = new EntityItem(world, (double)((float)xPos + var1), (double)((float)yPos + var2), (double)((float)zPos + var3), new ItemStack(itemStack.getItem(), j, itemStack.getItemDamage()));
-					
-						if(itemStack.hasTagCompound()) 
-						{
+
+						if(itemStack.hasTagCompound())
 							item.getEntityItem().setTagCompound((NBTTagCompound)itemStack.getTagCompound().copy());
-						}
-					
+
 						world.spawnEntityInWorld(item);
 					}
 				}

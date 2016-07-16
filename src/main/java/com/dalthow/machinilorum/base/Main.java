@@ -120,8 +120,7 @@ public class Main
 	public static Block blockChalk;
 	public static Block blockSprinkler;
 	public static Block blockChalkboard;
-		
-	
+
 	// Initialization that happens before any of the world is loaded.
 	@Mod.EventHandler
 	public void preInit(FMLInitializationEvent event)

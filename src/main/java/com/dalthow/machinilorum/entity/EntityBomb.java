@@ -19,8 +19,7 @@ public class EntityBomb extends EntityThrowable
 	private int fuse; 
 	
 	public static float explosionRadius;
-	
-	
+
 	// Constructors.
 	public EntityBomb(World world) 
 	{ 
@@ -41,8 +40,7 @@ public class EntityBomb extends EntityThrowable
 	{ 
 		super(world, xPos, yPos, zPos); 
 	} 
-	
-	
+
 	// Setting up how the bomb acts when its on ground or in the air.
 	public void onUpdate() 
 	{ 
@@ -69,16 +67,12 @@ public class EntityBomb extends EntityThrowable
 		{ 
 			setDead(); 
 			
-			if (!worldObj.isRemote) 
-			{ 
-				explode(); 
-			} 
+			if (!worldObj.isRemote)
+				explode();
 		} 
 		
 		else
-		{ 
-			worldObj.spawnParticle("smoke", this.posX, this.posY + 0.5D, this.posZ, 0.0D, 0.0D, 0.0D); 
-		} 
+			worldObj.spawnParticle("smoke", this.posX, this.posY + 0.5D, this.posZ, 0.0D, 0.0D, 0.0D);
 	} 
 
 	// Do the explosion.

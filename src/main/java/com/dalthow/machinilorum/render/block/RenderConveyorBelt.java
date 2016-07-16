@@ -24,20 +24,18 @@ import cpw.mods.fml.relauncher.SideOnly;
 @SideOnly(Side.CLIENT)
 public class RenderConveyorBelt extends TileEntitySpecialRenderer
 {
-	// Declaration of the model files.
+	// Declaration of the models files.
     private IModelCustom model;
 
     private final ResourceLocation activeTexture = new ResourceLocation(Reference.modId, "textures/models/conveyor belt active.png");
     private final ResourceLocation offTexture = new ResourceLocation(Reference.modId, "textures/models/conveyor belt off.png");
-    
-    
+
     // Constructor.
     public RenderConveyorBelt()
     {
     	model = AdvancedModelLoader.loadModel(new ResourceLocation(Reference.modId, "models/conveyor belt.obj"));
     }
-    
-    
+
     // Renders the TileEntity at a specific location.
 	@Override
 	public void renderTileEntityAt(TileEntity tile, double xPos, double yPos, double zPos, float par1)
@@ -73,15 +71,11 @@ public class RenderConveyorBelt extends TileEntitySpecialRenderer
 
         // Switching the texture based on the active state.
         if(tileConveyorBelt.isActive)
-        {
-        	FMLClientHandler.instance().getClient().getTextureManager().bindTexture(activeTexture);
-        }
+            FMLClientHandler.instance().getClient().getTextureManager().bindTexture(activeTexture);
         
         else
-        {
-        	FMLClientHandler.instance().getClient().getTextureManager().bindTexture(offTexture);	
-        }
-        
+            FMLClientHandler.instance().getClient().getTextureManager().bindTexture(offTexture);
+
         model.renderAll();
         
         GL11.glPopMatrix();

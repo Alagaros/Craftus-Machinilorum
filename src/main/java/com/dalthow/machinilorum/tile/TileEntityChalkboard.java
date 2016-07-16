@@ -27,7 +27,6 @@ public class TileEntityChalkboard extends TileEntity
 	
 	public boolean startDefined = false;
 
-
     public void readFromNBT(NBTTagCompound tag) 
     { 
     	startPosX = tag.getFloat("startPosX"); 

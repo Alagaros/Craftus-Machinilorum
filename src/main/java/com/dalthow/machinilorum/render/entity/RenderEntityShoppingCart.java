@@ -22,20 +22,18 @@ import cpw.mods.fml.client.FMLClientHandler;
 
 public class RenderEntityShoppingCart extends Render 
 {
-	// Declaration of the model files.
+	// Declaration of the models files.
 	private IModelCustom model;
 
 	private final ResourceLocation texture = new ResourceLocation(Reference.modId, "textures/models/shopping cart.png");
-	 
-	
+
 	// Constructor.
 	public RenderEntityShoppingCart()
 	{
 		model = AdvancedModelLoader.loadModel(new ResourceLocation(Reference.modId, "models/shopping cart.obj"));
 	}
-	
-	
-	// Renders the shopping cart model on the entity.
+
+	// Renders the shopping cart models on the entity.
 	public void doRender(EntityShoppingCart entity, double par1, double par2, double par3, float par4, float par5)
 	{
         GL11.glPushMatrix();
@@ -49,14 +47,10 @@ public class RenderEntityShoppingCart extends Render
         GL11.glScalef(scale, scale, scale);
         
         if(damageTaken < 0.0F)
-        {
-        	damageTaken = 0.0F;
-        }
+			damageTaken = 0.0F;
         
         if(timeSinceLastHit > 0.0F)
-        {
-        	GL11.glRotatef(MathHelper.sin(timeSinceLastHit) * timeSinceLastHit *  damageTaken / 10.0F * 1, 0.0F, 0.0F, 1.0F);
-        }
+			GL11.glRotatef(MathHelper.sin(timeSinceLastHit) * timeSinceLastHit *  damageTaken / 10.0F * 1, 0.0F, 0.0F, 1.0F);
         
         if(entity.riddenByEntity != null)
         {
@@ -66,9 +60,7 @@ public class RenderEntityShoppingCart extends Render
         }
         
         else
-        {
-        	GL11.glTranslated(0, 0, -1.4);
-        }
+			GL11.glTranslated(0, 0, -1.4);
                 
         FMLClientHandler.instance().getClient().getTextureManager().bindTexture(texture);
        

@@ -33,7 +33,6 @@ public class ItemShoppingCart extends Item
 		setCreativeTab(Main.tabMachinilorumMachines);
 	}
 
-	
 	// Gets triggered when you use the item on a block.
 	public boolean onItemUse(ItemStack itemStack, EntityPlayer player, World world, int xPos, int yPos, int zPos, int par1, float par2, float par3, float par4)
 	{

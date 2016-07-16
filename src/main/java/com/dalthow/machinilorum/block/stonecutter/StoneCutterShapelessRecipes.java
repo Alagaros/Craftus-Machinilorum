@@ -22,16 +22,14 @@ public class StoneCutterShapelessRecipes implements IRecipe
 
     // Declaring the items that can now be crafted.
     public final List<?> recipeItems;
-  
-    
+
     // Constructor that sets the local variables based on its parameters.
     public StoneCutterShapelessRecipes(ItemStack recipeOutput, List<?> recipeItems)
     {
         this.recipeOutput = recipeOutput;
         this.recipeItems = recipeItems;
     }
-    
-    
+
     /**
      * Returns the output of a recipe.
      * 
@@ -55,7 +53,6 @@ public class StoneCutterShapelessRecipes implements IRecipe
         ArrayList<?> var1 = new ArrayList<Object>(recipeItems);
 
         for(int i = 0; i < 5; ++i)
-        {
             for(int j = 0; j < 5; ++j)
             {
                 ItemStack var2 = inventoryCrafting.getStackInRowAndColumn(j, i);
@@ -80,12 +77,9 @@ public class StoneCutterShapelessRecipes implements IRecipe
                     }
 
                     if(!flag)
-                    {
                         return false;
-                    }
                 }
             }
-        }
 
         return var1.isEmpty();
     }

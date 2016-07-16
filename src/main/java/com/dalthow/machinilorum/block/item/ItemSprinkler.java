@@ -26,8 +26,7 @@ public class ItemSprinkler extends ItemBlock
 	{
 		super(block);
 	}
-	
-	
+
 	// Adds a tool-tip to the item.
 	@SideOnly(Side.CLIENT)
     public void addInformation(ItemStack item, EntityPlayer player, List list, boolean isValid)

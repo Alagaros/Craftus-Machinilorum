@@ -50,8 +50,7 @@ public class EntityShoppingCart extends Entity
     
     @SideOnly(Side.CLIENT)
     private double velocityZ;
-    
-    
+
     // Constructor.
     public EntityShoppingCart(World world)
     {
@@ -64,7 +63,6 @@ public class EntityShoppingCart extends Entity
         
         setSize(1.3F, 1.3F);
     }
-
 
     // Tells the entity class that it should make the walking noise and animation.
     protected boolean canTriggerWalking()
@@ -108,9 +106,7 @@ public class EntityShoppingCart extends Entity
     public boolean attackEntityFrom(DamageSource source, float par1)
     {
         if(isEntityInvulnerable())
-        {
             return false;
-        }
         
         else if(!worldObj.isRemote && !isDead)
         {
@@ -124,14 +120,10 @@ public class EntityShoppingCart extends Entity
             if(flag || getDamageTaken() > 40.0F)
             {
                 if(riddenByEntity != null)
-                {
                     riddenByEntity.mountEntity(this);
-                }
 
                 if(!flag)
-                {
                     func_145778_a(Main.itemShoppingCart, 1, 0.0F);
-                }
 
                 setDead();
             }
@@ -140,9 +132,7 @@ public class EntityShoppingCart extends Entity
         }
         
         else
-        {
             return true;
-        }
     }
 
     @SideOnly(Side.CLIENT)
@@ -171,9 +161,7 @@ public class EntityShoppingCart extends Entity
     public void setPositionAndRotation2(double par1, double par2, double par3, float par4, float par5, int par6)
     {
         if(isCartEmpty)
-        {
             cartPosRotationIncrements = par6 + 5;
-        }
         
         else
         {
@@ -183,9 +171,7 @@ public class EntityShoppingCart extends Entity
             double var4 = var1 * var1 + var2 * var2 + var3 * var3;
 
             if(var4 <= 1.0D)
-            {
                 return;
-            }
 
             cartPosRotationIncrements = 3;
         }
@@ -217,14 +203,10 @@ public class EntityShoppingCart extends Entity
         super.onUpdate();
         
         if(getTimeSinceHit() > 0)
-        {
             setTimeSinceHit(getTimeSinceHit() - 1);
-        }
 
         if(getDamageTaken() > 0.0F)
-        {
             setDamageTaken(getDamageTaken() - 1.0F);
-        }
 
         prevPosX = posX;
         prevPosY = posY;
@@ -292,9 +274,7 @@ public class EntityShoppingCart extends Entity
             else
             {
                 if(motionY < 0.0D)
-                {
                     motionY /= 2.0D;
-                }
 
                 motionY += 0.007000000216066837D;
             }
@@ -360,21 +340,15 @@ public class EntityShoppingCart extends Entity
             var6 = prevPosZ - posZ;
 
             if(var5 * var5 + var6 * var6 > 0.001D)
-            {
                 var3 = (double)((float)(Math.atan2(var6, var5) * 180.0D / Math.PI));
-            }
 
             double var10 = MathHelper.wrapAngleTo180_double(var3 - (double)rotationYaw);
 
             if(var10 > 20.0D)
-            {
                 var10 = 20.0D;
-            }
 
             if(var10 < -20.0D)
-            {
                 var10 = -20.0D;
-            }
 
             rotationYaw = (float)((double)rotationYaw + var10);
             setRotation(rotationYaw, rotationPitch);
@@ -384,22 +358,16 @@ public class EntityShoppingCart extends Entity
                 List<?> list = worldObj.getEntitiesWithinAABBExcludingEntity(this, boundingBox.expand(0.20000000298023224D, 0.0D, 0.20000000298023224D));
 
                 if(list != null && !list.isEmpty())
-                {
                     for(int i = 0; i < list.size(); ++i)
                     {
                         Entity entity = (Entity)list.get(i);
 
                         if(entity != riddenByEntity && entity.canBePushed() && entity instanceof EntityShoppingCart)
-                        {
                             entity.applyEntityCollision(this);
-                        }
                     }
-                }
 
                 if(riddenByEntity != null && riddenByEntity.isDead)
-                {
                     riddenByEntity = null;
-                }
             }
         }
     }
@@ -408,9 +376,7 @@ public class EntityShoppingCart extends Entity
     public void updateRiderPosition()
     {
         if(riddenByEntity != null)
-        {
             riddenByEntity.setPosition(posX, posY + getMountedYOffset() + riddenByEntity.getYOffset(), posZ + 0.4);
-        }
     }
 
     protected void writeEntityToNBT(NBTTagCompound tag) 
@@ -434,16 +400,12 @@ public class EntityShoppingCart extends Entity
     public boolean interactFirst(EntityPlayer player)
     {
         if(riddenByEntity != null && riddenByEntity instanceof EntityPlayer && riddenByEntity != player)
-        {
             return true;
-        }
         
         else
         {
             if(!worldObj.isRemote)
-            {
                 player.mountEntity(this);
-            }
 
             return true;
         }
@@ -496,9 +458,7 @@ public class EntityShoppingCart extends Entity
     public boolean isMoving()
     {
     	if(Keyboard.isKeyDown(Keyboard.KEY_W) || Keyboard.isKeyDown(Keyboard.KEY_S))
-    	{
-    		return true;
-    	}
+            return true;
     	
     	return false;
     }

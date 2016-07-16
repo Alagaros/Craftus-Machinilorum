@@ -27,8 +27,7 @@ public class RenderEntityBomb extends Render
     private Item item;
     
     private int metadata;
-  
-    
+
     // Constructors.
     public RenderEntityBomb(Item item, int metadata)
     {
@@ -41,7 +40,6 @@ public class RenderEntityBomb extends Render
         this(Item, 0);
     }
 
-    
     // Draws the bomb icon on the entity.
     public void doRender(Entity entity, double par1, double par2, double par3, float par4, float par5)
     {
@@ -64,7 +62,6 @@ public class RenderEntityBomb extends Render
             GL11.glPopMatrix();
         }
     }
-
 
     /**
      * Gets the texture of a certain entity.
